@@ -1,139 +1,163 @@
 # TURUBO — Checklist de entrega NASA Space Apps 2026
 
-> **Issue:** [#2 — Investigación: lista de entrega y premios](https://github.com/federicorv25/turubo-atlas/issues/2) · **Responsable:** Erick · **Sede:** Santa Cruz de la Sierra, Bolivia · **Fecha de revisión:** 14 de noviembre de 2026 (UTC−4) · **Estado:** checklist preparada; **entrega del proyecto NO verificada**.
+> **Issue:** [#2 — Investigación: lista de entrega y premios](https://github.com/federicorv25/turubo-atlas/issues/2) · **Responsable checklist:** Erick ([#2](https://github.com/federicorv25/turubo-atlas/issues/2), [#14](https://github.com/federicorv25/turubo-atlas/issues/14)) · **Sede:** Santa Cruz de la Sierra, Bolivia · **Revisión:** 14 de noviembre de 2026 (UTC−4) · **Estado:** checklist actualizada con aclaraciones NASA 2026; **ningún envío realizado desde este repositorio**.
 >
-> **Uso:** Federico revisa y efectúa el envío; esta lista NO certifica que una tarea esté cumplida. Marcar [x] únicamente con evidencia. El formulario oficial de 2026 y las guías de entrega/evaluación deben comprobarse al entrar en la cuenta de TURUBO, porque las páginas de guías no respondieron de forma fiable en la revisión.
+> **Uso:** Federico cierra el envío en [#16](https://github.com/federicorv25/turubo-atlas/issues/16). Marcar [x] solo con evidencia. El formulario en spaceappschallenge.org prevalece sobre esta nota.
+
+## Reglas NASA 2026 — verificadas vs pendientes locales
+
+| Tema | Verificado (fuente) | Pendiente en TURUBO / sede |
+|------|---------------------|----------------------------|
+| Demo | **≤ 7 diapositivas** contando **portada y cierre**, **o** video **≤ 30 s** | Belinda arma materiales en #11; confirmar si se usan slides o video |
+| Enlaces | **Dos enlaces públicos distintos** (demo vs producto final); probar en incógnito sin cuenta | URLs reales: Federico #16 + Belinda #11 |
+| Idioma | Texto del proyecto en **inglés**; video en otro idioma solo con **subtítulos en inglés** | Belinda redacta; Erick revisa checklist |
+| Envío al jurado | **`Save Progress`** guarda borrador; **`Submit for Judging`** envía al jurado; leer casillas de **términos y originalidad**; guardar **banner de confirmación** | Federico #16 en sesión autenticada |
+| Plazo global | Antes de las **23:59 del 15/11/2026, hora local de la sede** | Confirmar zona horaria en la cuenta del equipo |
+| Dataset NASA | Para premios globales: **≥ 1 fuente de datos NASA del apartado Resources del reto**, con **uso demostrable** (no basta citar hechos o fotos) | Luciana #15 + pipeline Federico #12 |
+| IA | Permitida con **declaración**; **marca visible** en imágenes/video generados; código, datos, texto y audio reconocidos en descripción/metadatos; **no** usar ni alterar **branding NASA** en contenido generado | Luciana #15; Asael #7 y Belinda #11 en assets visibles |
+| Menores | Quienes participan &lt; 18 con tutor; **no** incluir en el envío nombres, voces, fotos, video ni rasgos reconocibles de menores | Revisar demo, web y página de equipo NASA |
+| Equipo global | **2 a 6** integrantes registrados en el **mismo** evento universal/local | Federico verifica panel NASA |
+| Material largo | Enlace a documental largo **puede ser complementario**; **no sustituye** la demo de 30 s o 7 slides | Opcional en página del proyecto |
+
+**Fuentes oficiales usadas en esta revisión:**
+
+- [The submission (discusión #1973)](https://github.com/nasa/spaceapps/discussions/1973)
+- [About Resources / IA (#1849)](https://github.com/nasa/spaceapps/discussions/1849)
+- [Aclaraciones jurado 2026 (#1947)](https://github.com/nasa/spaceapps/discussions/1947) — respuesta del equipo organizador (*chancyshah*)
+- [Participant Terms & Conditions](https://www.spaceappschallenge.org/legal/)
+- [Participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/) — menores y registro
+- Issues internas: [#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#15](https://github.com/federicorv25/turubo-atlas/issues/15), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)
 
 ## 0. Plazos, responsables y comprobantes
 
-- [ ] **Confirmar por escrito con la sede Santa Cruz** su corte local, método de envío y horario de defensa. **Plan interno del equipo, no plazo oficial independiente verificado:** domingo 15/11, envío NASA a **11:15**, entrega local a **12:00** y defensas aproximadamente **14:00** (hora Bolivia); estas horas vienen de *TURUBO Atlas — Guía del Equipo v5*, pp. 2 y 7.
-- [ ] No confundir la entrega presencial con la entrega global. La referencia de la guía v5 es **domingo 15/11/2026 a las 23:59, hora local de la sede**, pero verificar el plazo efectivo en la plataforma de NASA.
-- [ ] Federico: responsable de **Submit for Judging**, conservar confirmación y verificar el estado del proyecto.
-- [ ] Belinda: revisar todos los textos finales en inglés y la narrativa (coordinar con #4).
-- [ ] Erick: revisar esta checklist, enlaces, fuentes, elegibilidad y evidencias antes de que Federico envíe.
-- [ ] Todos: confirmar que el proyecto aparezca correctamente asociado al **desafío oficial** y a la **sede Santa Cruz**.
+| Integrante | Issues | Rol en la entrega |
+|------------|--------|-------------------|
+| **Federico** | [#12](https://github.com/federicorv25/turubo-atlas/issues/12), [#9](https://github.com/federicorv25/turubo-atlas/issues/9), [#16](https://github.com/federicorv25/turubo-atlas/issues/16) | Pipeline y datos publicados; versión integrada; **Submit for Judging**, confirmación y enlaces NASA |
+| **Belinda** | [#11](https://github.com/federicorv25/turubo-atlas/issues/11) | Demo pública (7 slides o video ≤ 30 s), borrador EN del formulario, dos enlaces probados |
+| **Luciana** | [#15](https://github.com/federicorv25/turubo-atlas/issues/15) | `credits-en.md`, recurso NASA del reto usado de verdad, declaración IA y licencias |
+| **Asael** | [#7](https://github.com/federicorv25/turubo-atlas/issues/7) | Escenas 3D y personajes; marcas visibles en arte IA; **no** sustituye evidencia del comparador #14 |
+| **Erick** | #2, [#14](https://github.com/federicorv25/turubo-atlas/issues/14) | Esta checklist, revisión de requisitos antes del envío; panel científico en el juego |
+| **Ana Raquel** | [#4](https://github.com/federicorv25/turubo-atlas/issues/4) | Guion jugable ES/EN (coordinación narrativa, no envío NASA) |
 
-**Evidencia de cierre:** captura/pantalla de confirmación, URL pública del proyecto NASA, URL pública de demo y URL pública del producto final; comprobarlas en otra sesión o incógnito.
+- [ ] **Confirmar con la sede Santa Cruz** corte operativo, defensa y si exige entrega adicional aparte del portal NASA. **Plan interno no verificado como regla NASA:** domingo 15/11, referencia de equipo **11:15** (envío interno), **12:00** (sede) y defensas ~**14:00** (Bolivia) según guía v5; **23:59** del 15/11 (hora local de la sede) es el tope citado en [#1973](https://github.com/nasa/spaceapps/discussions/1973).
+- [ ] No confundir **Save Progress** con participación en el jurado: solo cuenta **`Submit for Judging`** con casillas legales marcadas y banner de confirmación guardado ([#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+- [ ] Conservar evidencia: captura del banner, URL pública del proyecto NASA, URL de **demo** y URL de **proyecto final**; revalidar en otra sesión o incógnito.
 
 ## 1. Elegibilidad y equipo (verificación obligatoria)
 
-- [ ] Los **seis integrantes** están registrados en NASA Space Apps 2026, figuran confirmados en **el mismo equipo TURUBO y en la misma sede**, y no solo en WhatsApp ni en el formulario logístico local.
-- [ ] Seleccionado el reto oficial **“Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars”**: https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/
-- [ ] El entregable **responde científicamente** al reto: describe sitios terrestres análogos y qué similitudes medibles los conectan con la Luna/Marte; **no basta** con un juego de temática espacial.
-- [ ] Se utiliza, documenta y cita **al menos un recurso/dataset NASA del apartado Resources del desafío**, verificando su cumplimiento en las reglas 2026. Fuente del requisito publicada por una sede 2026: https://www.spaceappschallenge.org/2026/local-events/islamabad/ . Confirmar con la guía global si hubiera matices.
-- [ ] Se respeta la originalidad del trabajo y se declara claramente qué se creó **durante el hackatón**, qué es un recurso preexistente y qué se hizo con IA.
-- [ ] Material público sin credenciales ni datos personales, y respetando las condiciones de uso y licencias de mapas, fotografías, fuentes, código, ilustraciones, APIs y bibliotecas.
-- [ ] Antes del envío, revisar condiciones y casillas del formulario NASA en sesión autenticada; no asumir que subir un repositorio basta para participar en el jurado.
+- [ ] Entre **2 y 6** integrantes registrados en el **mismo** equipo, reto 2026 y sede/universal event; los seis de TURUBO confirmados en NASA, no solo en canales locales ([#1947](https://github.com/nasa/spaceapps/discussions/1947), FAQs).
+- [ ] Reto: **Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars** — https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/
+- [ ] El entregable **responde científicamente**: análogos terrestres medibles frente a referencias Luna/Marte; no basta temática espacial sin datos.
+- [ ] **Al menos un dataset NASA listado en Resources del reto**, con uso **significativo** en el producto (mapas, mediciones o procesamiento trazable). Citar sin usar no alcanza ([#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)). Luciana #15 documenta cuál quedó publicado.
+- [ ] Originalidad: declarar qué se creó en el hackatón, qué existía antes y qué pasó por IA; alinear con casillas del formulario.
+- [ ] Licencias y atribución de mapas, código, fuentes, ilustraciones, audio y bibliotecas en material público ([#15](https://github.com/federicorv25/turubo-atlas/issues/15)).
+- [ ] **Menores de 18:** no avatar con foto del menor; **no** fotos, video, voz ni rasgos reconocibles de menores en demo ni envío ([legal](https://www.spaceappschallenge.org/legal/), [FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/)).
 
 ## 2. Formulario NASA — campos y texto final
 
-Campos descritos en *TURUBO Atlas — Guía del Equipo v5*, pág. 2; la **redacción exacta del formulario actual prevalece**:
+Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → Edit**.
 
-- [ ] **Project Title:** `TURUBO — From Earth to New Worlds` (confirmar nombre definitivo).
-- [ ] **High-Level Summary:** resumen claro en inglés (objetivo, solución, uso de datos NASA, utilidad). La guía interna sugiere **50–200 palabras**; validar límite real del campo.
-- [ ] **Detailed Project Description:** en inglés, explicar: problema del desafío → enfoque → sitios evaluados → datos y método → resultados verificados → experiencia jugable → limitaciones → próximos pasos.
-- [ ] **NASA Data / References:** citar productos concretos, institución, identificador o URL de la fuente, resolución, licencia/atribución, transformación, fecha de consulta y correspondencia con cada figura o cálculo.
-- [ ] **AI/SI Disclosure:** declarar herramientas generativas para código, textos, imágenes, análisis y/o traducción cuando se hayan usado; indicar revisión humana. No afirmar haber entrenado un modelo si no ocurrió.
-- [ ] **Project Demo:** enlace público a **presentación de hasta siete diapositivas (incluida portada)** **O** **video de hasta 30 segundos** según guía v5. Confirmar el formato exacto en la guía vigente de NASA. No depender de una demo que exija login.
-- [ ] **Final Project:** URL pública de web/repo o resultado final; a diferencia de la demo, debe mostrar lo que funciona realmente. Validar ambos enlaces por separado.
-- [ ] Seleccionar opción de participación en evaluación / **Submit for Judging** y comprobar confirmación final (texto del botón según formulario real).
-- [ ] Registrar enlace NASA final y captura de estado; conservar copia offline de demo, texto y fuentes.
+### 2.1 Demo y enlaces (dos URLs distintas)
 
-**URLs por completar por Federico/Belinda (no inventar):**
-- Proyecto NASA: **PENDIENTE**
-- Demo pública (7 slides o video ≤30 s): **PENDIENTE**
-- Web del juego (GitHub Pages): **PENDIENTE**
-- Código fuente: https://github.com/federicorv25/turubo-atlas
+- [ ] **Project Demo:** presentación **≤ 7 diapositivas** (**incluyen portada y cierre**) **o** video **≤ 30 s**, alojado en URL pública (YouTube, Drive, etc.). Probar el enlace en ventana privada sin cuenta ([#1947](https://github.com/nasa/spaceapps/discussions/1947), [#1973](https://github.com/nasa/spaceapps/discussions/1973)).
+- [ ] Si el video no está en inglés, **subtítulos en inglés**. Un enlace a obra más larga puede ir como material complementario, pero **no reemplaza** la demo corta ([#1947](https://github.com/nasa/spaceapps/discussions/1947)).
+- [ ] **Final Project:** URL distinta al demo (web o repositorio con el producto que funciona de verdad). Abrir ambos enlaces por separado en incógnito ([#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+- [ ] La demo debe mostrar: qué resuelve, acción real del juego, al menos una comparación con fuente y un límite principal — ver guion de 7 slides en [#11](https://github.com/federicorv25/turubo-atlas/issues/11) (portada + cierre dentro del máximo de siete).
+
+### 2.2 Textos, datos NASA e IA
+
+- [ ] **Project Title:** `TURUBO — From Earth to New Worlds` (confirmar nombre final).
+- [ ] **High-Level Summary** y **Detailed Project Description:** problema → método → sitios → datos NASA usados → resultados verificados → juego → límites (sugerencia interna 50–200 palabras en resumen; validar límite real del campo).
+- [ ] **NASA Data / References:** producto del reto, institución, URL, resolución, licencia, transformación, fecha y correspondencia con figuras o cálculos ([#15](https://github.com/federicorv25/turubo-atlas/issues/15)).
+- [ ] **AI/SI Disclosure:** herramientas por uso en **código, datos, texto, audio e imágenes**; revisión humana. En assets generados: **marca visible** en imágenes y video; reconocimiento en texto/metadatos para audio, código y datos ([#1849](https://github.com/nasa/spaceapps/discussions/1849)). No afirmar entrenar modelos si no ocurrió. No generar ni alterar **logos, banderas o identificadores de misión NASA** en contenido IA; fotos NASA reales sin alterar suelen ser aceptables ([#1947](https://github.com/nasa/spaceapps/discussions/1947)).
+
+### 2.3 Guardar vs enviar al jurado
+
+- [ ] Completar borrador con **Save Progress** mientras #9 y #11 avanzan; **no** confundirlo con envío al jurado.
+- [ ] Revisar casillas de **términos y originalidad**; pulsar **`Submit for Judging`**; archivar **banner de confirmación** y enlace público del proyecto ([#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+
+**URLs por completar (no inventar):**
+
+| Campo | Estado |
+|-------|--------|
+| Proyecto NASA (spaceappschallenge.org) | **PENDIENTE** — Federico #16 |
+| Demo pública (≤ 7 slides o video ≤ 30 s) | **PENDIENTE** — Belinda #11 |
+| Final Project (juego / Pages) | **PENDIENTE** — Federico #9 |
+| Código fuente | https://github.com/federicorv25/turubo-atlas |
 
 ## 3. Contenido científico mínimo demostrable
 
-- [ ] Datos publicados en `web/public/data/analysis.json` verificados; si no hay medidas, usar estado **`not_assessed`**, jamás copiar el fixture de prueba.
-- [ ] Distinguir **Valle de la Luna (San José de Chiquitos)** de **Cerro Turubó**: son lugares diferentes. Cerro Turubó es **caso guiado**, no miembro del ranking.
-- [ ] Referencia lunar **Nobile Rim 1** y referencia marciana **Jezero** claramente identificadas.
-- [ ] Publicar, **solo cuando se hayan calculado realmente**, métricas de relieve, unidades, resolución de cada DEM, cobertura, método de remuestreo, límites del análisis y fuente.
-- [ ] Si se comparan pendientes y desniveles, indicar que **similitud topográfica no implica** similitud en gravedad, atmósfera, geología, radiación, recursos ni seguridad de aterrizaje.
-- [ ] Las decisiones ficticias **no alteran las mediciones**. Personajes, templos y encuentros son adaptación narrativa y no se colocan como elementos reales en mapas NASA.
-- [ ] Botón **«Ver análisis»** utilizable desde Tierra, Luna y Marte; mostrar evidencia y regresar conservando el avance.
-- [ ] Una persona diferente a quien procesó los DEM revisa visualmente y documentalmente una muestra de resultados y conserva prueba de esa revisión (coordinar #3, #8, #9).
+- [ ] `web/public/data/analysis.json` verificado; si falta evidencia, **`not_assessed`**; nunca publicar fixtures de prueba.
+- [ ] **Valle de la Luna (San José de Chiquitos)** ≠ **Cerro Turubó**; Turubó como **caso guiado**, fuera del ranking ([#14](https://github.com/federicorv25/turubo-atlas/issues/14)).
+- [ ] Referencias **Nobile Rim 1** (Luna) y **Jezero** (Marte) identificables en la entrega.
+- [ ] Métricas de relieve, unidades, resolución, cobertura y fuentes solo cuando el pipeline #12 las calcule de verdad.
+- [ ] Aclarar que similitud topográfica **no implica** gravedad, atmósfera, radiación, recursos ni seguridad de aterrizaje.
+- [ ] Ficción no altera mediciones; 3D narrativo (#7) no sustituye mapas del comparador.
+- [ ] **View analysis / Ver análisis** desde Tierra, Luna y Marte; volver conservando avance (probar en #9 / #14).
 
-**Fuentes previstas en la guía v5 (comprobar uso real, enlaces y crédito en la entrega):**
-- Reto y pestaña Resources: https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/?tab=resources
-- NASA LRO/LOLA, producto Site 06: https://pgda.gsfc.nasa.gov/products/78
-- USGS/JPL CTX Jezero DEM: https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif
-- Procedencia exacta del raster **NASADEM** usado para Santa Cruz: **PENDIENTE del pipeline y metadatos**, no basta con el nombre genérico del producto.
-- Adaptación cultural de Turubó: https://archivodefolkloreboliviano.org/motivo/turubo/
+**Recursos del reto (verificar uso real en #12 / #15):**
+
+- Resources: https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/?tab=resources
+- LRO/LOLA Site 06: https://pgda.gsfc.nasa.gov/products/78
+- USGS CTX Jezero DEM: https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif
+- NASADEM (Santa Cruz): producto y metadatos exactos **PENDIENTE** — Federico #12
+- Folklore Turubó: https://archivodefolkloreboliviano.org/motivo/turubo/
 
 ## 4. Auditoría de enlaces, funcionamiento y presentación
 
-- [ ] Abrir **en incógnito, sin cuenta**, el video/slides, la web y el repositorio; sin solicitudes de acceso.
-- [ ] Comprobar navegación completa de las escenas en **español e inglés** y botones para saltar a evidencias.
-- [ ] Probar celular y PC; carga razonable con conexión inestable; sin errores visibles graves.
-- [ ] Ejecutar `npm --prefix web run check` y `npm --prefix web run build`; anotar resultado y SHA del commit probado. **Esta issue es de documentación, por lo que esos comandos se verifican en la integración #9; aquí NO constan como ejecutados.**
-- [ ] La demo de 30 s o las 7 diapositivas deben enseñar **(1)** qué resuelve, **(2)** una acción real del juego, **(3)** al menos una comparación con fuente y **(4)** su límite principal.
-- [ ] No presentar mapas de prueba, métricas hipotéticas, animaciones fantásticas ni placeholders como hallazgos.
-- [ ] Ensayar discurso local de aproximadamente tres minutos **solo si lo confirma la sede**; reparto propuesto en guía v5: Federico abre, Luciana explica evidencia, Erick demuestra web y Belinda cierra; Asael y Ana Raquel responden preguntas.
-- [ ] Preparar copia de respaldo: diapositivas o video descargado, capturas de la web, fuentes de datos y resumen sin internet.
+- [ ] Demo, web y repo accesibles **sin login** desde otro dispositivo o incógnito.
+- [ ] Juego en **español e inglés**; botón a evidencias; prueba táctil y teclado (muestra corta en móvil; detalle en #9).
+- [ ] `npm --prefix web run check` y `build` en el commit que Federico publique (**#9**); esta issue solo documenta — **no ejecuta** esos comandos en el PR #13.
+- [ ] Sin placeholders, mapas de prueba ni métricas inventadas en demo ni formulario.
+- [ ] Ensayo de defensa ~3 min **si la sede lo confirma**; guion sugerido en #11 (Federico / Luciana / Erick / Belinda).
+- [ ] Copia offline: demo, capturas y fuentes.
 
-## 5. Evaluación: criterios y estrategia, sin confundirlos con premios
+## 5. Evaluación: criterios y categorías (referencia, no promesa de premio)
 
-La sede 2026 de Ajmer publica los **cinco criterios**: https://www.spaceappschallenge.org/2026/local-events/ajmer/ . En todo caso, comprobar la guía global más reciente.
+Cinco criterios (comprobar guía vigente; referencia sede Ajmer 2026): Impact, Creativity, Validity, Relevance, Presentation — https://www.spaceappschallenge.org/2026/local-events/ajmer/
 
-| Criterio | Qué necesita demostrar TURUBO |
-|---|---|
-| **Impact** | Valor educativo y reproducible de explorar análogos terrestres para otros mundos. |
-| **Creativity** | Una narrativa interactiva propia enlazada a una comparación científica auditable. |
-| **Validity** | Elevaciones, unidades, resolución y procesamiento reales; no afirmar conclusiones no respaldadas. |
-| **Relevance** | Respuesta específica al desafío de identificar y justificar lugares terrestres análogos. |
-| **Presentation** | Demo comprensible en segundos, fuente accesible y descripción completa en inglés. |
+| Criterio | Qué debe demostrar TURUBO |
+|----------|---------------------------|
+| Impact | Herramienta educativa y reproducible de análogos terrestres |
+| Creativity | Narrativa jugable ligada a comparación auditable |
+| Validity | Mediciones reales, unidades y límites honestos |
+| Relevance | Respuesta al reto de ubicaciones análogas |
+| Presentation | Demo clara, fuentes accesibles, texto EN completo |
 
-### Las diez categorías globales de referencia
+**Diez categorías globales:** referencia **2025** si no se publica listado 2026 — https://www.spaceappschallenge.org/2025/awards/
 
-**Fuente verificable disponible: premios globales oficiales de 2025**, no un listado 2026 confirmado: https://www.spaceappschallenge.org/2025/awards/ . NASA puede revisar las categorías; confirmar las de 2026 cuando se pueda consultar su guía.
+Prioridad estratégica interna (no casilla del formulario): Best Use of Data, Best Use of Storytelling, Art & Technology.
 
-| Categoría | Enfoque |
-|---|---|
-| Best Use of Science | Método y rigor científico. |
-| Best Use of Data | Accesibilidad y aplicación singular de datos espaciales. |
-| Best Use of Technology | Innovación tecnológica. |
-| Galactic Impact | Potencial de impacto amplio. |
-| Best Mission Concept | Plausibilidad de concepto de misión. |
-| Most Inspirational | Capacidad de inspirar. |
-| Best Use of Storytelling | Comunicar la utilidad de datos abiertos con una historia creativa. |
-| Global Connection | Conexión entre personas/comunidades mediante tecnología. |
-| Art & Technology | Integración significativa de creatividad y desarrollo técnico. |
-| Local Impact | Potencial de beneficio local. |
+**Premios monetarios Santa Cruz:** sin bases publicadas verificadas en esta revisión — no prometer dinero ni viajes.
 
-**Prioridad estratégica para TURUBO:** 1) **Best Use of Data** (mediciones verificables, mapa abierto, explicación); 2) **Best Use of Storytelling** (narrativa que enseña algo); 3) **Art & Technology** (arte original al servicio de una herramienta científica). **No son casillas que se marcan**, ni implican nominación o premio. La selección de **Global Nominees** depende del jurado local/universal y la candidatura global requiere los requisitos oficiales.
+## 6. Pendientes que bloquean el envío (dependen sobre todo de Federico)
 
-**Premios monetarios de Santa Cruz:** sin anuncio local verificable en esta revisión. No prometemos dinero, viajes ni equipos sin bases publicadas.
+| Pendiente | Quién cierra | Evidencia |
+|-----------|--------------|-----------|
+| Integrantes y sede confirmados en NASA | Federico #16 | Panel del equipo |
+| Versión publicada del juego + JSON/mapas | Federico #9, #12 | URL Final Project, commit SHA |
+| Demo + textos EN + dos enlaces públicos | Belinda #11 + Federico #16 | Incógnito, dos URLs distintas |
+| Recurso NASA del reto demostrado en el producto | Federico #12 + Luciana #15 | `credits-en.md`, formulario |
+| Declaración IA y marcas en assets | Luciana #15, Asael #7, Belinda #11 | Campos SI + demo visible |
+| **`Submit for Judging`** con términos y banner | **Federico #16** | Captura confirmación |
+| Hora corte sede Santa Cruz vs 23:59 NASA | Federico + organización local | Mensaje escrito sede |
 
-## 6. Pendientes para Federico: bloquear envío hasta resolver
+Erick (#2) revisa esta lista y los enlaces **antes** de que Federico pulse **Submit for Judging**. Erick **no** envía al portal NASA.
 
-| Pendiente crítico | Responsable | Cómo se cierra |
-|---|---|---|
-| Hora y modalidad de entrega presencial | Federico / organización local | Mensaje o cronograma confirmado por sede |
-| Registrados confirmados en NASA y sede | Federico / seis integrantes | Panel de equipo NASA |
-| Dos enlaces públicos válidos | Federico / Belinda | Incógnito desde otro dispositivo |
-| Requisito exacto de demo y campos de formulario 2026 | Erick / Belinda / Federico | Inspección en sesión del proyecto NASA |
-| Datos NASA realmente utilizados y fuente correcta del reto | Asael / Luciana / Belinda | Pipeline, metadatos y referencias |
-| Documento de atribución y declaración IA | Belinda / Federico | Declaración final completa |
-| Cierre de evaluación y confirmación | Federico | Captura del envío y URL NASA |
+## 7. Fuentes del repositorio y nivel de confianza
 
-## 7. Fuentes y nivel de confianza
+**Documentos del equipo (plan interno):**
 
-**Documentos del equipo (plan interno; no prueban hechos completados):**
-- *TURUBO Atlas — Guía del Equipo v5*, 13/11/2026, en especial pp. 2, 3, 4, 7 y 8.
-- [AGENTS.md](../AGENTS.md), [Guion](../content/GUION.md), [Contratos](../schema/README.md), [README de entrega](README.md), y issues [#2](https://github.com/federicorv25/turubo-atlas/issues/2), [#3](https://github.com/federicorv25/turubo-atlas/issues/3), [#4](https://github.com/federicorv25/turubo-atlas/issues/4), [#8](https://github.com/federicorv25/turubo-atlas/issues/8), [#9](https://github.com/federicorv25/turubo-atlas/issues/9).
+- Guía TURUBO v5 (13/11/2026), [AGENTS.md](../AGENTS.md), [GUION.md](../content/GUION.md), [submission/README.md](README.md)
 
-**Fuentes externas consultadas (distinta vigencia y autoridad):**
-- [NASA Space Apps 2026](https://www.spaceappschallenge.org/2026/) — convocatoria y fechas 14–15/11/2026.
-- [Recursos NASA Space Apps](https://www.spaceappschallenge.org/resources/) — entrada oficial; **acceso inestable durante esta investigación**.
-- [Project Submission Guide](https://www.spaceappschallenge.org/resources/project-submission-guide/) — enlace oficial proporcionado en #2; **no se pudo abrir directamente esta vez**. Confirmar su contenido en el navegador autenticado.
-- [Judging & Awards Guide](https://www.spaceappschallenge.org/resources/judging-awards-guide/) — enlace oficial proporcionado en #2; **no se pudo abrir directamente esta vez**.
-- [Premios NASA 2025](https://www.spaceappschallenge.org/2025/awards/) — fuente de las diez categorías **de referencia**, no prueba del catálogo 2026.
-- [Sede Ajmer 2026](https://www.spaceappschallenge.org/2026/local-events/ajmer/) — publica cinco criterios; información redactada por organizadores locales.
-- [Sede Islamabad 2026](https://www.spaceappschallenge.org/2026/local-events/islamabad/) — recuerda el recurso NASA obligatorio y distinción entre plazo local y global; **no establece el horario de Santa Cruz**.
-- [Sede Poznan 2026](https://www.spaceappschallenge.org/2026/local-events/poznan/) — menciona formato hasta siete slides o video de 30 s; comprobarlo en la guía global.
-- [NASA Space Apps 2022 FAQ — histórico](https://legacy.spaceappschallenge.org/resources/faq/) — solo antecedentes, **no utilizarlo como norma vigente de 2026**.
+**Externas — autoridad alta (consultadas 14/11/2026):**
 
-**Nota de auditoría:** Esta checklist distingue **confirmado en repositorio**, **plan interno** y **por verificar**. Ningún campo pendiente se considera cumplido hasta que haya prueba.
+- Discusiones [#1973](https://github.com/nasa/spaceapps/discussions/1973), [#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)
+- [Legal](https://www.spaceappschallenge.org/legal/), [Participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/)
+
+**Externas — acceso inestable en esta revisión (confirmar en navegador autenticado):**
+
+- [Project Submission Guide](https://www.spaceappschallenge.org/resources/project-submission-guide/)
+- [Judging & Awards Guide](https://www.spaceappschallenge.org/resources/judging-awards-guide/)
+
+**Nota:** Esta checklist distingue reglas **verificadas** (tabla inicial), **plan interno** y **pendiente**. Ningún ítem se considera cumplido sin prueba adjunta o en #16.
