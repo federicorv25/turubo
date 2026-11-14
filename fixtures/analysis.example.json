@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "simulated": true,
+  "terrains": [
+    {
+      "id": "earth-demo",
+      "name": "EJEMPLO SIMULADO: no publicar",
+      "body": "earth",
+      "source": "https://example.invalid/",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": { "slopeMedianDeg": 5, "slopeP90Deg": 12, "reliefM": 60 }
+    }
+  ],
+  "comparisons": {
+    "moon": { "status": "not_assessed", "ranked": [] },
+    "mars": { "status": "not_assessed", "ranked": [] }
+  }
+}

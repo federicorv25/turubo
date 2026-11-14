@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "simulated": false,
+  "terrains": [],
+  "comparisons": {
+    "moon": { "status": "not_assessed", "ranked": [] },
+    "mars": { "status": "not_assessed", "ranked": [] }
+  }
+}

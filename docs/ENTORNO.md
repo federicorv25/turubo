@@ -5,7 +5,7 @@
 Desde el ZIP o el clon, en PowerShell:
 
 ~~~powershell
-powershell -NoProfile -File .\scripts\check-env.ps1 -Area web
+.\scripts\check-env.cmd web
 ~~~
 
 Usa `web`, `datos` o `contenido` según tu issue. La comprobación no instala ni muestra tu correo o token. Los textos se pueden editar desde el navegador; el equipo web y de datos usan Git y GitHub CLI en su equipo.
@@ -27,7 +27,7 @@ winget install --id Python.Python.3.15 --exact --version 3.15.2 --source winget
 winget install --id astral-sh.uv --exact --version 0.13.6 --source winget
 ~~~
 
-Usa solo los comandos de tu área. Si falta esa versión o Windows pide permiso, el asistente explica la alternativa y pregunta antes de sustituir otras instalaciones. Reinicia la terminal y comprueba versiones. Si Windows restringe el script, usa los comandos `git --version`, `gh --version`, `node --version`, `npm --version`, `python --version` y `uv --version` que correspondan, sin cambiar la política del sistema. En macOS o Linux, pide al asistente los pasos para tu equipo.
+Usa solo los comandos de tu área. Si falta esa versión o Windows pide permiso, el asistente explica la alternativa y pregunta antes de sustituir otras instalaciones. Reinicia la terminal y repite la comprobación. En macOS o Linux, usa los comandos `git --version`, `gh --version`, `node --version`, `npm --version`, `python --version` y `uv --version` que correspondan, y pide al asistente los pasos para tu equipo.
 
 ## 3. Sesión de GitHub CLI
 

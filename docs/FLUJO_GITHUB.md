@@ -32,7 +32,7 @@ El PR debe incluir `Closes #4` **en el cuerpo** y apuntar a `main`. Añade alcan
 
 ## Pasar a revisión
 
-Relee la issue y sus comentarios, comprueba los criterios, ejecuta las pruebas y revisa la descripción. Cuando el responsable confirme que está listo:
+Relee la issue y sus comentarios, comprueba los criterios, ejecuta las pruebas y revisa la descripción. Cuando todo esté listo:
 
 ~~~powershell
 gh pr ready NUMERO_PR

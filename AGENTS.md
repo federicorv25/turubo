@@ -9,7 +9,7 @@
 ## Estado de la tarea
 
 - **En desarrollo:** issue con `en-curso`, PR **Draft** hacia `main`, y `Closes #NUMERO` en el cuerpo. Si aún falta el primer cambio, marca la issue y abre el Draft apenas tengas un commit útil. Comprueba el vínculo real; el número en el título no basta.
-- **Ready:** relee el issue; actualiza el PR con cambios, pruebas, uso de IA y pendientes. Cuando el responsable confirme que cumple los criterios y pasen sus comprobaciones, cambia el PR a **Ready for review**, sustituye `en-curso` por `en-revision` y pide revisión humana. Si vuelves a trabajar, convierte a Draft y restaura `en-curso`.
+- **Ready:** relee el issue; actualiza el PR con cambios, pruebas, uso de IA y pendientes. Cuando se cumplan los criterios y pasen sus comprobaciones, cambia el PR a **Ready for review**, sustituye `en-curso` por `en-revision` y pide revisión humana. Si vuelves a trabajar, convierte a Draft y restaura `en-curso`.
 - **Integrado:** solo Federico integra a `main` vía PR, después de revisar las pruebas y la aprobación en la revisión actual. No hagas push directo a `main` ni fusiones por tu cuenta. La issue vinculada se cierra al integrar su PR.
 
 ## Alcance y archivos
