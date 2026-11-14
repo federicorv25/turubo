@@ -9,7 +9,7 @@
 | Tema | Verificado (fuente) | Pendiente en TURUBO / sede |
 |------|---------------------|----------------------------|
 | Demo | **≤ 7 diapositivas** contando **portada y cierre**, **o** video **≤ 30 s** | Belinda arma materiales en #11; confirmar si se usan slides o video |
-| Enlaces | El Navigator exige una **demo pública accesible** ([#1973](https://github.com/nasa/spaceapps/discussions/1973)); la guía interna v5 distingue **Project Demo** y **Final Project** | **Confirmar ambos campos en el formulario NASA**; cargar enlaces diferentes si así lo solicita, y probar ambos sin cuenta (Federico #16 + Belinda #11) |
+| Enlaces | NASA confirma **dos enlaces públicos separados**: uno para la demo y otro para el proyecto final ([#1991](https://github.com/nasa/spaceapps/discussions/1991)); el envío se realiza en el portal NASA, no con un merge de GitHub | Belinda #11 y Federico #16 deben aportar las URL reales y probar ambas sin cuenta |
 | Idioma | Texto del proyecto en **inglés**; video en otro idioma solo con **subtítulos en inglés** | Belinda redacta; Erick revisa checklist |
 | Envío al jurado | La [issue #16](https://github.com/federicorv25/turubo-atlas/issues/16) describe **`Save Progress`** (borrador) y **`Submit for Judging`** (envío), además de casillas y banner; **no se pudo contrastar la pantalla oficial 2026 sin la sesión del equipo** | Federico debe verificar controles reales, aceptar términos/originalidad y guardar banner y URL del proyecto en sesión autenticada |
 | Plazo global | Antes de las **23:59 del 15/11/2026, hora local de la sede** | Confirmar zona horaria en la cuenta del equipo |
@@ -22,6 +22,7 @@
 **Fuentes oficiales usadas en esta revisión:**
 
 - [The submission (discusión #1973)](https://github.com/nasa/spaceapps/discussions/1973)
+- [About hosting and submissions (discusión #1991)](https://github.com/nasa/spaceapps/discussions/1991) — dos enlaces separados, acceso público, envio obligatorio en el portal
 - [About Resources / IA (#1849)](https://github.com/nasa/spaceapps/discussions/1849)
 - [Aclaraciones jurado 2026 (#1947)](https://github.com/nasa/spaceapps/discussions/1947) — respuesta del equipo organizador (*chancyshah*)
 - [Participant Terms & Conditions](https://www.spaceappschallenge.org/legal/)
@@ -64,7 +65,7 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 
 - [ ] **Project Demo:** presentación **≤ 7 diapositivas** (**incluyen portada y cierre**) **o** video **≤ 30 s**, alojado en URL pública (YouTube, Drive, etc.). Probar el enlace en ventana privada sin cuenta ([#1947](https://github.com/nasa/spaceapps/discussions/1947), [#1973](https://github.com/nasa/spaceapps/discussions/1973)).
 - [ ] Si el video no está en inglés, **subtítulos en inglés**. Un enlace a obra más larga puede ir como material complementario, pero **no reemplaza** la demo corta ([#1947](https://github.com/nasa/spaceapps/discussions/1947)).
-- [ ] **Final Project:** según guía interna v5, enlace público del producto final (web o repositorio) **separado** del enlace de la demo. Confirmar nombre del campo y requisitos en **My Team → Project → Edit**, no presumir que está completado. Abrir cada enlace por separado en incógnito ([#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+- [ ] **Final Project:** enlace **distinto** al de la demo; NASA confirma esta obligación en [#1991](https://github.com/nasa/spaceapps/discussions/1991). Puede ser web pública o repositorio accesible; comprobar los campos exactos en **My Team → Project → Edit**, y probar ambos enlaces por separado en incógnito ([#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
 - [ ] La demo debe mostrar: qué resuelve, acción real del juego, al menos una comparación con fuente y un límite principal — ver guion de 7 slides en [#11](https://github.com/federicorv25/turubo-atlas/issues/11) (portada + cierre dentro del máximo de siete).
 
 ### 2.2 Textos, datos NASA e IA
@@ -168,7 +169,7 @@ Erick (#2) revisa esta lista y los enlaces **antes** de que Federico pulse **Sub
 
 **Externas — respuestas oficiales y términos 2026 contrastados (14/11/2026):**
 
-- Discusiones [#1973](https://github.com/nasa/spaceapps/discussions/1973), [#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)
+- Discusiones [#1973](https://github.com/nasa/spaceapps/discussions/1973), [#1991](https://github.com/nasa/spaceapps/discussions/1991), [#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)
 - [Legal 2026](https://www.spaceappschallenge.org/legal/) — términos actualizados el **7/08/2026**, derechos de autor, licencias, privacidad, menores y consentimiento. [Participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/) — el enlace sigue presentando problemas de acceso directo en esta revisión.
 
 **Externas — acceso inestable en esta revisión (confirmar en navegador autenticado):**
