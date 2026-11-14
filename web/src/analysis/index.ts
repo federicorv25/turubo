@@ -193,8 +193,9 @@ function renderDestinationComparison(
       button.onclick = () => {
         selectedRankId[dest] = entry.id
         renderPanel(opts)
+        // Keep keyboard focus on the selected candidate after replacing the panel.
         queueMicrotask(() =>
-          opts.container.querySelector<HTMLElement>(`#compare-heading-${dest}`)?.focus()
+          opts.container.querySelectorAll<HTMLButtonElement>('.candidate-picker button')[index]?.focus()
         )
       }
       picker.append(button)
@@ -262,6 +263,11 @@ function terrainCard(
     map.alt = terrain.name
     map.loading = 'lazy'
     map.decoding = 'async'
+    // Preserve measured values and attribution if an image URL fails to load.
+    map.onerror = () => {
+      frame.classList.add('map-frame--empty')
+      frame.replaceChildren(document.createTextNode(p.noImage))
+    }
     frame.append(map)
   } else {
     frame.classList.add('map-frame--empty')
@@ -275,7 +281,7 @@ function terrainCard(
     [m.slope, `${format.format(terrain.metrics.slopeMedianDeg)}°`],
     [m.p90, `${format.format(terrain.metrics.slopeP90Deg)}°`],
     [m.relief, `${format.format(terrain.metrics.reliefM)} m`],
-    [m.resolution, `${format.format(terrain.resolutionM)} m`],
+    [p.analysisResolution, `${format.format(terrain.resolutionM)} m`],
     [m.coverage, `${format.format(100 * terrain.coverage)} %`]
   ]
   if (typeof opts.distance === 'number') {
