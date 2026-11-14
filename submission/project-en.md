@@ -27,7 +27,19 @@ The planned Mars reference is the USGS/PDS **M20 Jezero Crater CTX DEM**, with a
 
 ## Results and limits
 
-**Status at this draft:** no result, map, ranking, or percentage appears here until Federico publishes reviewed data in the stable release. The final version must include only the actual reference, candidate, units, coverage, resolution, and source visible there. If evidence is insufficient, the form will say **Not assessed**.
+The reviewed technical package from issue #12 compares Jezero with the Valle de
+la Luna window R02 C02. Both 4 × 4 km windows have 100% valid coverage at the
+40 m analysis resolution. Jezero has a median slope of 2.11°, P90 slope of
+4.41°, and relief of 77.56 m. R02 C02 has a median slope of 1.64°, P90 slope
+of 3.41°, and relief of 63.38 m. The result shows similar low median slopes,
+while Jezero has 14.18 m more P95−P5 relief. R02 C02 ranks first in this
+terrestrial grid at a standardized distance of 0.3851, but R05 C02 is nearly
+tied at 0.3905. The ranking does not validate an analogue for a mission.
+
+**Publication status:** issue #9 must still publish the reviewed JSON, maps,
+and stable screenshots before this wording enters the final NASA form or demo.
+If evidence is insufficient for a destination, the public panel and this form
+will say **Not assessed**.
 
 The comparison describes relief. It cannot establish biological, geological, operational, or safety conclusions beyond the measured terrain metrics.
 

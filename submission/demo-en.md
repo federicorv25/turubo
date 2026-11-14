@@ -36,7 +36,17 @@ The analysis uses elevation products and comparable 4 × 4 km windows at 40 m re
 
 ## 5. What the terrain shows
 
-**Pending stable, reviewed result.** Insert one published pair of maps at the same scale, one measured similarity, and one measured difference with units. Do not use a placeholder number.
+Jezero and Valle de la Luna R02 C02 have 100% valid coverage in 4 × 4 km
+windows at 40 m analysis resolution. Their median slopes are 2.11° and 1.64°.
+Jezero has 77.56 m of P95−P5 relief, while R02 C02 has 63.38 m.
+
+R02 C02 ranks first in this grid with a standardized distance of 0.3851. R05
+C02 is nearly tied at 0.3905, so the ranking does not identify a unique or
+mission-ready analogue.
+
+**Visual:** [Stable-release maps of Jezero and R02 C02 at the same scale]
+
+**Source:** [Issue #12 manifest and published project source after #9]
 
 ## 6. What we cannot conclude
 
