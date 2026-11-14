@@ -281,7 +281,7 @@ function terrainCard(
     [m.slope, `${format.format(terrain.metrics.slopeMedianDeg)}°`],
     [m.p90, `${format.format(terrain.metrics.slopeP90Deg)}°`],
     [m.relief, `${format.format(terrain.metrics.reliefM)} m`],
-    [m.resolution, `${format.format(terrain.resolutionM)} m`],
+    [p.analysisResolution, `${format.format(terrain.resolutionM)} m`],
     [m.coverage, `${format.format(100 * terrain.coverage)} %`]
   ]
   if (typeof opts.distance === 'number') {
