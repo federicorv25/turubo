@@ -18,7 +18,9 @@ Comparador Tierra–Luna y Tierra–Marte para TURUBO. Solo edita archivos en es
 
 1. `npm --prefix web run dev` y abrir `http://127.0.0.1:5173/`.
 2. En la historia, **Ver análisis**; probar Tierra / Luna / Marte, ES/EN y **Volver a la historia** (el viaje conserva escena y elección).
-3. Con datos verificados de integración (#9), sustituir temporalmente `web/public/data/analysis.json` (`simulated: false`). **No commitear fixtures ni ejemplos simulados.**
+3. Con datos verificados de integración ([#9](https://github.com/federicorv25/turubo-atlas/issues/9) / pipeline [#12](https://github.com/federicorv25/turubo-atlas/issues/12)), sustituir temporalmente `web/public/data/analysis.json` (`simulated: false`). **No commitear fixtures ni ejemplos simulados.**
+
+El layout `reviewed` (columnas, candidatos, Turubó guiado) solo se puede capturar con ese JSON revisado; hasta entonces el estado «No evaluado» es el esperado en producción.
 
 ## Comprobaciones de entrega
 

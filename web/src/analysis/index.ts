@@ -61,12 +61,17 @@ function renderPanel(opts: RenderOpts) {
   }
   section.append(worlds)
 
+  const live = document.createElement('div')
+  live.className = 'analysis-live'
+  live.setAttribute('aria-live', 'polite')
+  live.setAttribute('aria-atomic', 'true')
   if (world === 'earth') {
-    section.append(renderEarthSites(data, lang))
+    live.append(renderEarthSites(data, lang))
   } else {
     const comparison = data.comparisons[world]
-    section.append(renderDestinationComparison(world, data, comparison, lang, () => renderPanel(opts)))
+    live.append(renderDestinationComparison(world, data, comparison, lang, opts))
   }
+  section.append(live)
 
   const method = document.createElement('p')
   method.className = 'notice limitations'
@@ -113,7 +118,7 @@ function renderDestinationComparison(
   data: Analysis,
   comparison: Comparison,
   lang: Lang,
-  refresh: () => void
+  opts: RenderOpts
 ) {
   const p = panelCopy[lang]
   const block = document.createElement('div')
@@ -144,6 +149,8 @@ function renderDestinationComparison(
   block.append(rankingNote)
 
   const compareTitle = document.createElement('h2')
+  compareTitle.id = `compare-heading-${dest}`
+  compareTitle.tabIndex = -1
   compareTitle.textContent = p.compareHeading
   block.append(compareTitle)
 
@@ -185,7 +192,10 @@ function renderDestinationComparison(
       button.setAttribute('aria-pressed', String(entry.id === active.entry.id))
       button.onclick = () => {
         selectedRankId[dest] = entry.id
-        refresh()
+        renderPanel(opts)
+        queueMicrotask(() =>
+          opts.container.querySelector<HTMLElement>(`#compare-heading-${dest}`)?.focus()
+        )
       }
       picker.append(button)
     })
