@@ -1,0 +1,243 @@
+{
+  "version": 1,
+  "stage": "preflight",
+  "software": {
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2",
+    "proj": "9.8.1",
+    "numpy": "2.5.4"
+  },
+  "method": {
+    "windowM": 4000,
+    "gridPx": [
+      100,
+      100
+    ],
+    "resolutionM": 40,
+    "coverageMinimum": 0.95,
+    "resampling": "GDAL average; mask cells where any part of the sampled footprint is invalid",
+    "slope": "Horn 3x3, degrees, exclude edges and incomplete stencils",
+    "relief": "P95 minus P5 elevation, meters; linear quantiles",
+    "map": "Grid +Y up; N arrow gives geodetic north at the center. Common gray scale around window median; purple = NoData.",
+    "colorRangeRelativeM": [
+      -100,
+      100
+    ],
+    "ranking": "Euclidean distance using population standard deviations of valid Earth candidates only; omit constant metrics; tie by ID.",
+    "limitations": "Relative topography at a common grid size. No absolute elevation, geology, climate, resources or landing safety comparison."
+  },
+  "products": {
+    "earth": {
+      "product": "NASADEM Merged DEM Global 1 arc second V001, tile s18w061",
+      "file": "NASADEM_HGT_s18w061.tif",
+      "sha256": "2167f354026d11e1455bbe4f885a48e0efe737d6ee969ce54a74732619681e73",
+      "productUrl": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "downloadUrl": "https://opentopography.s3.sdsc.edu/raster/NASADEM/NASADEM_be/NASADEM_HGT_s18w061.tif",
+      "metadataUrl": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2",
+      "credit": "NASA EOSDIS LP DAAC, NASADEM Merged DEM Global 1 arc second V001. Distributed by OpenTopography (doi:10.5069/G93T9FD9).",
+      "elevationUnit": "m",
+      "note": "EGM96 elevations. Radar-derived surface can include vegetation or structures and is not a survey of bare rock.",
+      "status": "opened",
+      "bytes": 10132031,
+      "sourceCRS": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+      "targetCRS": "PROJCRS[\"WGS 84 / UTM zone 20S\",BASEGEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]],CONVERSION[\"UTM zone 20S\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-63,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.9996,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",500000,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",10000000,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1]],USAGE[SCOPE[\"Navigation and medium accuracy spatial referencing.\"],AREA[\"Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay.\"],BBOX[-80,-66,0,-60]],ID[\"EPSG\",32720]]",
+      "sourceSizePx": [
+        3601,
+        3601
+      ],
+      "sourceBounds": [
+        -61.00013888888889,
+        -18.00013888888889,
+        -59.999861111111116,
+        -16.999861111111112
+      ],
+      "sourcePixelSize": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "sourcePixelUnit": "degree",
+      "sourceNoData": -32768.0,
+      "bandUnitTag": "m",
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    },
+    "moon": {
+      "product": "LRO/LOLA Site06 LDEM, Nobile Rim 1, 5 m/pix",
+      "file": "Site06_final_adj_5mpp_surf.tif",
+      "sha256": "cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d",
+      "productUrl": "https://pgda.gsfc.nasa.gov/products/78",
+      "downloadUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_surf.tif",
+      "metadataUrl": "https://pgda.gsfc.nasa.gov/products/78",
+      "credit": "NASA GSFC Planetary Geodesy Data Archive, LRO/LOLA: High-Resolution LOLA Topography for Lunar South Pole Sites (Site06).",
+      "elevationUnit": "m",
+      "note": "MOON_ME (DE421), lunar south polar stereographic. NASA describes the high fraction of interpolated pixels in these 5 m products; valid raster cells do not imply direct laser measurements.",
+      "status": "opened",
+      "bytes": 64025603,
+      "sourceCRS": "PROJCS[\"unknown\",GEOGCS[\"unknown\",DATUM[\"unknown\",SPHEROID[\"unknown\",1737400,0]],PRIMEM[\"Reference meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]",
+      "targetCRS": "PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",1737400,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Reference meridian\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Polar Stereographic (variant B)\",ID[\"EPSG\",9829]],PARAMETER[\"Latitude of standard parallel\",-90,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8832]],PARAMETER[\"Longitude of origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8833]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",north,ORDER[1],LENGTHUNIT[\"metre\",1]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1]]]",
+      "sourceSizePx": [
+        4000,
+        4000
+      ],
+      "sourceBounds": [
+        74000.0,
+        100000.0,
+        94000.0,
+        120000.0
+      ],
+      "sourcePixelSize": [
+        5.0,
+        5.0
+      ],
+      "sourcePixelUnit": "metre",
+      "sourceNoData": "NaN",
+      "bandUnitTag": null,
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    },
+    "mars": {
+      "product": "Mars 2020 Science Investigation CTX DEM Mosaic, 20 m/pix, Jezero",
+      "file": "M20_JezeroCrater_CTXDEM_20m.tif",
+      "sha256": "ba7f706ea1b5d63a562f28a7dcf7a7f3c79bce7f048e6974b57e8a33c30d1ba2",
+      "productUrl": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+      "downloadUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif",
+      "metadataUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.xml",
+      "credit": "NASA MRO Context Camera (CTX), Mars 2020 Science Investigation CTX DEM Mosaic. USGS Astrogeology / NASA PDS urn:nasa:pds:mars2020_ctx_basemap_2021:data:m20_ctxdem_mosaic; Mangold et al. (2021), doi:10.1126/science.abl4051.",
+      "elevationUnit": "m",
+      "note": "Stereo DEM mosaic. Planetocentric latitude, east longitude and the product's Mars 2000 spherical equirectangular CRS; no Earth CRS conversion.",
+      "status": "opened",
+      "bytes": 90345300,
+      "sourceCRS": "PROJCS[\"Jezero_Crater_Projection\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",18.4663],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "targetCRS": "PROJCRS[\"Jezero_Crater_Projection\",BASEGEOGCRS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",ELLIPSOID[\"Mars_2000_Sphere\",3396190,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Reference_Meridian\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Equidistant Cylindrical (Spherical)\",ID[\"EPSG\",1029]],PARAMETER[\"Latitude of 1st standard parallel\",18.4663,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+      "sourceSizePx": [
+        4456,
+        5067
+      ],
+      "sourceBounds": [
+        4328999.999999998,
+        1042080.0000000028,
+        4418119.999999998,
+        1143420.0000000028
+      ],
+      "sourcePixelSize": [
+        20.0,
+        20.0
+      ],
+      "sourcePixelUnit": "metre",
+      "sourceNoData": -3.4028234663852886e+38,
+      "bandUnitTag": null,
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    }
+  },
+  "windows": {
+    "bo-r03-c03": {
+      "name": "Valle de la Luna · R03 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        736499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8020292.764986506,
+        738499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 500.08894454519327,
+      "saturatedFraction": 0.3403,
+      "metrics": {
+        "slopeMedianDeg": 4.181679449603328,
+        "slopeP90Deg": 15.397993831150146,
+        "reliefM": 252.8324085270254
+      }
+    },
+    "moon-nobile-rim-1": {
+      "name": "Nobile Rim 1",
+      "body": "moon",
+      "role": "reference",
+      "inputCoordinates": {
+        "kind": "product_easting_northing_m",
+        "values": [
+          84000,
+          110000
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        84000,
+        110000
+      ],
+      "boundsM": [
+        82000.0,
+        108000.0,
+        86000.0,
+        112000.0
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 5892.438179016115,
+      "saturatedFraction": 0.57,
+      "metrics": {
+        "slopeMedianDeg": 14.695189664021298,
+        "slopeP90Deg": 21.67027176803469,
+        "reliefM": 624.6136180877675
+      }
+    },
+    "mars-jezero": {
+      "name": "Jezero",
+      "body": "mars",
+      "role": "reference",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          77.4508,
+          18.4447
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        4354489.266082621,
+        1093304.0134081263
+      ],
+      "boundsM": [
+        4352489.266082621,
+        1091304.0134081263,
+        4356489.266082621,
+        1095304.0134081263
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": -2568.248609196393,
+      "saturatedFraction": 0.0095,
+      "metrics": {
+        "slopeMedianDeg": 2.1101635161982073,
+        "slopeP90Deg": 4.408824966743379,
+        "reliefM": 77.55926551565153
+      }
+    }
+  }
+}
