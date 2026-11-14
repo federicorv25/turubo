@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+*.tif
+*.tiff
+*.zip
+.DS_Store
+Thumbs.db
+science/cache/
