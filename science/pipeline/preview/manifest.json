@@ -1,0 +1,1443 @@
+{
+  "version": 1,
+  "stage": "measured_pending_team_review",
+  "software": {
+    "rasterio": "1.5.2",
+    "gdal": "3.12.2",
+    "proj": "9.8.1",
+    "numpy": "2.5.4"
+  },
+  "method": {
+    "windowM": 4000,
+    "gridPx": [
+      100,
+      100
+    ],
+    "resolutionM": 40,
+    "coverageMinimum": 0.95,
+    "resampling": "GDAL average; mask cells where any part of the sampled footprint is invalid",
+    "slope": "Horn 3x3, degrees, exclude edges and incomplete stencils",
+    "relief": "P95 minus P5 elevation, meters; linear quantiles",
+    "map": "Grid +Y up; N arrow gives geodetic north at the center. Common gray scale around window median; purple = NoData.",
+    "colorRangeRelativeM": [
+      -100,
+      100
+    ],
+    "ranking": "Euclidean distance using population standard deviations of valid Earth candidates only; omit constant metrics; tie by ID.",
+    "limitations": "Relative topography at a common grid size. No absolute elevation, geology, climate, resources or landing safety comparison."
+  },
+  "products": {
+    "earth": {
+      "product": "NASADEM Merged DEM Global 1 arc second V001, tile s18w061",
+      "file": "NASADEM_HGT_s18w061.tif",
+      "sha256": "2167f354026d11e1455bbe4f885a48e0efe737d6ee969ce54a74732619681e73",
+      "productUrl": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "downloadUrl": "https://opentopography.s3.sdsc.edu/raster/NASADEM/NASADEM_be/NASADEM_HGT_s18w061.tif",
+      "metadataUrl": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2",
+      "credit": "NASA EOSDIS LP DAAC, NASADEM Merged DEM Global 1 arc second V001. Distributed by OpenTopography (doi:10.5069/G93T9FD9).",
+      "elevationUnit": "m",
+      "note": "EGM96 elevations. Radar-derived surface can include vegetation or structures and is not a survey of bare rock.",
+      "status": "opened",
+      "bytes": 10132031,
+      "sourceCRS": "GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AXIS[\"Latitude\",NORTH],AXIS[\"Longitude\",EAST],AUTHORITY[\"EPSG\",\"4326\"]]",
+      "targetCRS": "PROJCRS[\"WGS 84 / UTM zone 20S\",BASEGEOGCRS[\"WGS 84\",ENSEMBLE[\"World Geodetic System 1984 ensemble\",MEMBER[\"World Geodetic System 1984 (Transit)\"],MEMBER[\"World Geodetic System 1984 (G730)\"],MEMBER[\"World Geodetic System 1984 (G873)\"],MEMBER[\"World Geodetic System 1984 (G1150)\"],MEMBER[\"World Geodetic System 1984 (G1674)\"],MEMBER[\"World Geodetic System 1984 (G1762)\"],MEMBER[\"World Geodetic System 1984 (G2139)\"],MEMBER[\"World Geodetic System 1984 (G2296)\"],ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]],ENSEMBLEACCURACY[2.0]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]],CONVERSION[\"UTM zone 20S\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-63,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.9996,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",500000,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",10000000,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"(E)\",east,ORDER[1],LENGTHUNIT[\"metre\",1]],AXIS[\"(N)\",north,ORDER[2],LENGTHUNIT[\"metre\",1]],USAGE[SCOPE[\"Navigation and medium accuracy spatial referencing.\"],AREA[\"Between 66°W and 60°W, southern hemisphere between 80°S and equator, onshore and offshore. Argentina. Bolivia. Brazil. Falkland Islands (Malvinas). Paraguay.\"],BBOX[-80,-66,0,-60]],ID[\"EPSG\",32720]]",
+      "sourceSizePx": [
+        3601,
+        3601
+      ],
+      "sourceBounds": [
+        -61.00013888888889,
+        -18.00013888888889,
+        -59.999861111111116,
+        -16.999861111111112
+      ],
+      "sourcePixelSize": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "sourcePixelUnit": "degree",
+      "sourceNoData": -32768.0,
+      "bandUnitTag": "m",
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    },
+    "moon": {
+      "product": "LRO/LOLA Site06 LDEM, Nobile Rim 1, 5 m/pix",
+      "file": "Site06_final_adj_5mpp_surf.tif",
+      "sha256": "cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d",
+      "productUrl": "https://pgda.gsfc.nasa.gov/products/78",
+      "downloadUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_surf.tif",
+      "metadataUrl": "https://pgda.gsfc.nasa.gov/products/78",
+      "credit": "NASA GSFC Planetary Geodesy Data Archive, LRO/LOLA: High-Resolution LOLA Topography for Lunar South Pole Sites (Site06).",
+      "elevationUnit": "m",
+      "note": "MOON_ME (DE421), lunar south polar stereographic. NASA describes the high fraction of interpolated pixels in these 5 m products; valid raster cells do not imply direct laser measurements.",
+      "status": "opened",
+      "bytes": 64025603,
+      "sourceCRS": "PROJCS[\"unknown\",GEOGCS[\"unknown\",DATUM[\"unknown\",SPHEROID[\"unknown\",1737400,0]],PRIMEM[\"Reference meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Polar_Stereographic\"],PARAMETER[\"latitude_of_origin\",-90],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1],AXIS[\"Easting\",NORTH],AXIS[\"Northing\",NORTH]]",
+      "targetCRS": "PROJCRS[\"unknown\",BASEGEOGCRS[\"unknown\",DATUM[\"unknown\",ELLIPSOID[\"unknown\",1737400,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Reference meridian\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Polar Stereographic (variant B)\",ID[\"EPSG\",9829]],PARAMETER[\"Latitude of standard parallel\",-90,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8832]],PARAMETER[\"Longitude of origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8833]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",north,ORDER[1],LENGTHUNIT[\"metre\",1]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1]]]",
+      "sourceSizePx": [
+        4000,
+        4000
+      ],
+      "sourceBounds": [
+        74000.0,
+        100000.0,
+        94000.0,
+        120000.0
+      ],
+      "sourcePixelSize": [
+        5.0,
+        5.0
+      ],
+      "sourcePixelUnit": "metre",
+      "sourceNoData": "NaN",
+      "bandUnitTag": null,
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    },
+    "mars": {
+      "product": "Mars 2020 Science Investigation CTX DEM Mosaic, 20 m/pix, Jezero",
+      "file": "M20_JezeroCrater_CTXDEM_20m.tif",
+      "sha256": "ba7f706ea1b5d63a562f28a7dcf7a7f3c79bce7f048e6974b57e8a33c30d1ba2",
+      "productUrl": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+      "downloadUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif",
+      "metadataUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.xml",
+      "credit": "NASA MRO Context Camera (CTX), Mars 2020 Science Investigation CTX DEM Mosaic. USGS Astrogeology / NASA PDS urn:nasa:pds:mars2020_ctx_basemap_2021:data:m20_ctxdem_mosaic; Mangold et al. (2021), doi:10.1126/science.abl4051.",
+      "elevationUnit": "m",
+      "note": "Stereo DEM mosaic. Planetocentric latitude, east longitude and the product's Mars 2000 spherical equirectangular CRS; no Earth CRS conversion.",
+      "status": "opened",
+      "bytes": 90345300,
+      "sourceCRS": "PROJCS[\"Jezero_Crater_Projection\",GEOGCS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",SPHEROID[\"Mars_2000_Sphere\",3396190,0]],PRIMEM[\"Reference_Meridian\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Equirectangular\"],PARAMETER[\"standard_parallel_1\",18.4663],PARAMETER[\"central_meridian\",0],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "targetCRS": "PROJCRS[\"Jezero_Crater_Projection\",BASEGEOGCRS[\"GCS_Mars_2000_Sphere\",DATUM[\"Mars_2000_(Sphere)\",ELLIPSOID[\"Mars_2000_Sphere\",3396190,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Reference_Meridian\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CONVERSION[\"unnamed\",METHOD[\"Equidistant Cylindrical (Spherical)\",ID[\"EPSG\",1029]],PARAMETER[\"Latitude of 1st standard parallel\",18.4663,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8823]],PARAMETER[\"Longitude of natural origin\",0,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"False easting\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",0,LENGTHUNIT[\"metre\",1],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"easting\",east,ORDER[1],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]],AXIS[\"northing\",north,ORDER[2],LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]]",
+      "sourceSizePx": [
+        4456,
+        5067
+      ],
+      "sourceBounds": [
+        4328999.999999998,
+        1042080.0000000028,
+        4418119.999999998,
+        1143420.0000000028
+      ],
+      "sourcePixelSize": [
+        20.0,
+        20.0
+      ],
+      "sourcePixelUnit": "metre",
+      "sourceNoData": -3.4028234663852886e+38,
+      "bandUnitTag": null,
+      "bandScale": 1.0,
+      "bandOffset": 0.0
+    }
+  },
+  "windows": {
+    "bo-r01-c01": {
+      "name": "Valle de la Luna · R01 C01",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -8000,
+        8000
+      ],
+      "centerM": [
+        728499.9282005827,
+        8030292.764986506
+      ],
+      "boundsM": [
+        726499.9282005827,
+        8028292.764986506,
+        730499.9282005827,
+        8032292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 285.1936395335889,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.7362901702488336,
+        "slopeP90Deg": 3.696304112267917,
+        "reliefM": 43.356183163258606
+      },
+      "map": "maps/bo-r01-c01.png",
+      "mapSha256": "c914d4ea2ca22b22ffdd1368b585f81016e990cbe5057200297014195bbc63e7"
+    },
+    "bo-r01-c02": {
+      "name": "Valle de la Luna · R01 C02",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -4000,
+        8000
+      ],
+      "centerM": [
+        732499.9282005827,
+        8030292.764986506
+      ],
+      "boundsM": [
+        730499.9282005827,
+        8028292.764986506,
+        734499.9282005827,
+        8032292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 279.51527348404704,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4798300650928176,
+        "slopeP90Deg": 3.2043608006884523,
+        "reliefM": 19.855635579716647
+      },
+      "map": "maps/bo-r01-c02.png",
+      "mapSha256": "d01c031cfc4786bef421dc75b331d17e6e7543a097afc308217540c58266f72a"
+    },
+    "bo-r01-c03": {
+      "name": "Valle de la Luna · R01 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        8000
+      ],
+      "centerM": [
+        736499.9282005827,
+        8030292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8028292.764986506,
+        738499.9282005827,
+        8032292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 275.65659285142334,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4922106706899867,
+        "slopeP90Deg": 2.908908421913113,
+        "reliefM": 11.978229338242045
+      },
+      "map": "maps/bo-r01-c03.png",
+      "mapSha256": "7baf43da3fb00b80ad17a8796b7a9b517d68a27d02fe9aaa47623bc83396e54b"
+    },
+    "bo-r01-c04": {
+      "name": "Valle de la Luna · R01 C04",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        4000,
+        8000
+      ],
+      "centerM": [
+        740499.9282005827,
+        8030292.764986506
+      ],
+      "boundsM": [
+        738499.9282005827,
+        8028292.764986506,
+        742499.9282005827,
+        8032292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 277.24425110478944,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6625672477138826,
+        "slopeP90Deg": 3.1809521942897487,
+        "reliefM": 10.325210925887745
+      },
+      "map": "maps/bo-r01-c04.png",
+      "mapSha256": "caadc92d6149b7ec32c4e6d742b152558055c8ccad52807295f12edbc651d1ac"
+    },
+    "bo-r01-c05": {
+      "name": "Valle de la Luna · R01 C05",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        8000,
+        8000
+      ],
+      "centerM": [
+        744499.9282005827,
+        8030292.764986506
+      ],
+      "boundsM": [
+        742499.9282005827,
+        8028292.764986506,
+        746499.9282005827,
+        8032292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 282.4465677066837,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.5627259345220716,
+        "slopeP90Deg": 3.0623982470785687,
+        "reliefM": 11.432787039987602
+      },
+      "map": "maps/bo-r01-c05.png",
+      "mapSha256": "3a497dd92aa19c6027574a80fd82c4ea36f3f2b0957e1df4e5639f5e2c03fe99"
+    },
+    "bo-r02-c01": {
+      "name": "Valle de la Luna · R02 C01",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -8000,
+        4000
+      ],
+      "centerM": [
+        728499.9282005827,
+        8026292.764986506
+      ],
+      "boundsM": [
+        726499.9282005827,
+        8024292.764986506,
+        730499.9282005827,
+        8028292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 334.43261286013035,
+      "saturatedFraction": 0.0574,
+      "metrics": {
+        "slopeMedianDeg": 2.931704448941657,
+        "slopeP90Deg": 7.195653866821333,
+        "reliefM": 136.02933882714967
+      },
+      "map": "maps/bo-r02-c01.png",
+      "mapSha256": "e9342e7b203ebab5bcb230baccfdd5dd2c27931e6555a02ca5af7e77fbbc6288"
+    },
+    "bo-r02-c02": {
+      "name": "Valle de la Luna · R02 C02",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -4000,
+        4000
+      ],
+      "centerM": [
+        732499.9282005827,
+        8026292.764986506
+      ],
+      "boundsM": [
+        730499.9282005827,
+        8024292.764986506,
+        734499.9282005827,
+        8028292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 305.70833483612,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6404633610448378,
+        "slopeP90Deg": 3.412745943311468,
+        "reliefM": 63.384648524234194
+      },
+      "map": "maps/bo-r02-c02.png",
+      "mapSha256": "94d538978554c7288137fa913a4b66a09c7154fdbd90eff96cb8e8a5b5e2ed3f"
+    },
+    "bo-r02-c03": {
+      "name": "Valle de la Luna · R02 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        4000
+      ],
+      "centerM": [
+        736499.9282005827,
+        8026292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8024292.764986506,
+        738499.9282005827,
+        8028292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 288.55136423650964,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6219441116431885,
+        "slopeP90Deg": 2.9951797342759248,
+        "reliefM": 38.71128976528257
+      },
+      "map": "maps/bo-r02-c03.png",
+      "mapSha256": "485ddbb1769c41c892f0707856e2559576352f0abcc65929605f4f8d933fdcdc"
+    },
+    "bo-r02-c04": {
+      "name": "Valle de la Luna · R02 C04",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        4000,
+        4000
+      ],
+      "centerM": [
+        740499.9282005827,
+        8026292.764986506
+      ],
+      "boundsM": [
+        738499.9282005827,
+        8024292.764986506,
+        742499.9282005827,
+        8028292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 289.1358568846728,
+      "saturatedFraction": 0.006,
+      "metrics": {
+        "slopeMedianDeg": 1.4929653662838693,
+        "slopeP90Deg": 3.0937071796947,
+        "reliefM": 38.82362343653256
+      },
+      "map": "maps/bo-r02-c04.png",
+      "mapSha256": "05778252f83fbbc97ca4661cbb3c2970817f374cf73fe6e1857f8d53ac392fe9"
+    },
+    "bo-r02-c05": {
+      "name": "Valle de la Luna · R02 C05",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        8000,
+        4000
+      ],
+      "centerM": [
+        744499.9282005827,
+        8026292.764986506
+      ],
+      "boundsM": [
+        742499.9282005827,
+        8024292.764986506,
+        746499.9282005827,
+        8028292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 292.9146469174993,
+      "saturatedFraction": 0.0041,
+      "metrics": {
+        "slopeMedianDeg": 1.4570928828662768,
+        "slopeP90Deg": 2.973562000988771,
+        "reliefM": 28.37264914170879
+      },
+      "map": "maps/bo-r02-c05.png",
+      "mapSha256": "a04266732225dac2652af14ea98abfece1434b5f1ffea6f253eb1ae9992f6eea"
+    },
+    "bo-r03-c01": {
+      "name": "Valle de la Luna · R03 C01",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -8000,
+        0
+      ],
+      "centerM": [
+        728499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        726499.9282005827,
+        8020292.764986506,
+        730499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 526.850514042032,
+      "saturatedFraction": 0.1878,
+      "metrics": {
+        "slopeMedianDeg": 7.164971824983873,
+        "slopeP90Deg": 14.542802302925303,
+        "reliefM": 229.60652071263593
+      },
+      "map": "maps/bo-r03-c01.png",
+      "mapSha256": "4ba5cd623ccf5ae8ac700f120c3a18009bec33dea141ad87872efffbb92032fa"
+    },
+    "bo-r03-c02": {
+      "name": "Valle de la Luna · R03 C02",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -4000,
+        0
+      ],
+      "centerM": [
+        732499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        730499.9282005827,
+        8020292.764986506,
+        734499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 563.5433427618584,
+      "saturatedFraction": 0.148,
+      "metrics": {
+        "slopeMedianDeg": 4.450930762689857,
+        "slopeP90Deg": 17.58468438158216,
+        "reliefM": 228.3486844522094
+      },
+      "map": "maps/bo-r03-c02.png",
+      "mapSha256": "edb8d178a1d7504957261813796adc636e4181af75d1b84644705252b297aba2"
+    },
+    "bo-r03-c03": {
+      "name": "Valle de la Luna · R03 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        736499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8020292.764986506,
+        738499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 500.08894454519327,
+      "saturatedFraction": 0.3403,
+      "metrics": {
+        "slopeMedianDeg": 4.181679449603328,
+        "slopeP90Deg": 15.397993831150146,
+        "reliefM": 252.8324085270254
+      },
+      "map": "maps/bo-r03-c03.png",
+      "mapSha256": "c880783aa269665b3bfef60d9eeb1a96fcb385dc6a5b93490e6054125167e82e"
+    },
+    "bo-r03-c04": {
+      "name": "Valle de la Luna · R03 C04",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        4000,
+        0
+      ],
+      "centerM": [
+        740499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        738499.9282005827,
+        8020292.764986506,
+        742499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 333.6519670771777,
+      "saturatedFraction": 0.2483,
+      "metrics": {
+        "slopeMedianDeg": 3.301588790818923,
+        "slopeP90Deg": 17.70832147552757,
+        "reliefM": 249.86176270559815
+      },
+      "map": "maps/bo-r03-c04.png",
+      "mapSha256": "d39ae28da389682eb4faa7070b463c645d6f9a3377b6698c3f9e4e045453ee79"
+    },
+    "bo-r03-c05": {
+      "name": "Valle de la Luna · R03 C05",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        8000,
+        0
+      ],
+      "centerM": [
+        744499.9282005827,
+        8022292.764986506
+      ],
+      "boundsM": [
+        742499.9282005827,
+        8020292.764986506,
+        746499.9282005827,
+        8024292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 320.85418044023754,
+      "saturatedFraction": 0.0606,
+      "metrics": {
+        "slopeMedianDeg": 2.1847819082603097,
+        "slopeP90Deg": 10.640448240500769,
+        "reliefM": 135.87261145194367
+      },
+      "map": "maps/bo-r03-c05.png",
+      "mapSha256": "bf53196a71cb56cc63d4f17e94ece26545c89b0adf01430fa2fb153500a2481f"
+    },
+    "bo-r04-c01": {
+      "name": "Valle de la Luna · R04 C01",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -8000,
+        -4000
+      ],
+      "centerM": [
+        728499.9282005827,
+        8018292.764986506
+      ],
+      "boundsM": [
+        726499.9282005827,
+        8016292.764986506,
+        730499.9282005827,
+        8020292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 344.7666560571985,
+      "saturatedFraction": 0.0003,
+      "metrics": {
+        "slopeMedianDeg": 4.354583991954756,
+        "slopeP90Deg": 9.789769136708944,
+        "reliefM": 102.19857656670462
+      },
+      "map": "maps/bo-r04-c01.png",
+      "mapSha256": "468c43ccdcb4e8ae5e3d9c09b13d7f7c70064e7beba96cb11f93618fe6c3dd6e"
+    },
+    "bo-r04-c02": {
+      "name": "Valle de la Luna · R04 C02",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -4000,
+        -4000
+      ],
+      "centerM": [
+        732499.9282005827,
+        8018292.764986506
+      ],
+      "boundsM": [
+        730499.9282005827,
+        8016292.764986506,
+        734499.9282005827,
+        8020292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 405.4061169156725,
+      "saturatedFraction": 0.0421,
+      "metrics": {
+        "slopeMedianDeg": 6.0271742100826575,
+        "slopeP90Deg": 12.100659685670049,
+        "reliefM": 170.154369350926
+      },
+      "map": "maps/bo-r04-c02.png",
+      "mapSha256": "9c9ddec9b2322a9f9f643e386a1c70df4c76fb4450bf12dc7d17a59d1126589e"
+    },
+    "bo-r04-c03": {
+      "name": "Valle de la Luna · R04 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        -4000
+      ],
+      "centerM": [
+        736499.9282005827,
+        8018292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8016292.764986506,
+        738499.9282005827,
+        8020292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 478.62268581496585,
+      "saturatedFraction": 0.0319,
+      "metrics": {
+        "slopeMedianDeg": 5.373942587358493,
+        "slopeP90Deg": 10.35418133296316,
+        "reliefM": 174.53007491446562
+      },
+      "map": "maps/bo-r04-c03.png",
+      "mapSha256": "adfedbc8c5def4f1b85aef8e503d8edfcf5d794ee81acd90e7cd7f6a195437ca"
+    },
+    "bo-r04-c04": {
+      "name": "Valle de la Luna · R04 C04",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        4000,
+        -4000
+      ],
+      "centerM": [
+        740499.9282005827,
+        8018292.764986506
+      ],
+      "boundsM": [
+        738499.9282005827,
+        8016292.764986506,
+        742499.9282005827,
+        8020292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 525.5141723071084,
+      "saturatedFraction": 0.0123,
+      "metrics": {
+        "slopeMedianDeg": 4.466218677923152,
+        "slopeP90Deg": 9.329008767875857,
+        "reliefM": 129.6102183776846
+      },
+      "map": "maps/bo-r04-c04.png",
+      "mapSha256": "cd43b227c5045c97957bf79243296b83e501c69f00a39281027ef6f4d09eefee"
+    },
+    "bo-r04-c05": {
+      "name": "Valle de la Luna · R04 C05",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        8000,
+        -4000
+      ],
+      "centerM": [
+        744499.9282005827,
+        8018292.764986506
+      ],
+      "boundsM": [
+        742499.9282005827,
+        8016292.764986506,
+        746499.9282005827,
+        8020292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 491.5075963661019,
+      "saturatedFraction": 0.0776,
+      "metrics": {
+        "slopeMedianDeg": 5.527040749976594,
+        "slopeP90Deg": 18.307062125241256,
+        "reliefM": 186.65670349311432
+      },
+      "map": "maps/bo-r04-c05.png",
+      "mapSha256": "93a1879be7062c57f3aa04fb67a80f9e951a8458671fe813ae257d5025ef44cd"
+    },
+    "bo-r05-c01": {
+      "name": "Valle de la Luna · R05 C01",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -8000,
+        -8000
+      ],
+      "centerM": [
+        728499.9282005827,
+        8014292.764986506
+      ],
+      "boundsM": [
+        726499.9282005827,
+        8012292.764986506,
+        730499.9282005827,
+        8016292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 309.35533205426646,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.5819462442331997,
+        "slopeP90Deg": 3.2995970559095493,
+        "reliefM": 17.95433615181389
+      },
+      "map": "maps/bo-r05-c01.png",
+      "mapSha256": "af9e37037746e342544e3251f928184790437b1941190b25f875892df76c1543"
+    },
+    "bo-r05-c02": {
+      "name": "Valle de la Luna · R05 C02",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        -4000,
+        -8000
+      ],
+      "centerM": [
+        732499.9282005827,
+        8014292.764986506
+      ],
+      "boundsM": [
+        730499.9282005827,
+        8012292.764986506,
+        734499.9282005827,
+        8016292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 327.84378679307133,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 1.7856041656280164,
+        "slopeP90Deg": 4.398311279259037,
+        "reliefM": 50.703366705724136
+      },
+      "map": "maps/bo-r05-c02.png",
+      "mapSha256": "d050adb11e9b27b4c878223775f54b90a5dbbc8b4cf8a5ad0901c4d1bb86ebb9"
+    },
+    "bo-r05-c03": {
+      "name": "Valle de la Luna · R05 C03",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        -8000
+      ],
+      "centerM": [
+        736499.9282005827,
+        8014292.764986506
+      ],
+      "boundsM": [
+        734499.9282005827,
+        8012292.764986506,
+        738499.9282005827,
+        8016292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 347.00151389989844,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 2.892607636939025,
+        "slopeP90Deg": 5.935967905279606,
+        "reliefM": 65.29859010384178
+      },
+      "map": "maps/bo-r05-c03.png",
+      "mapSha256": "a19caefae2b4f0800f1339cb83bdf54c82650dee2e11cf33502d44057e130a05"
+    },
+    "bo-r05-c04": {
+      "name": "Valle de la Luna · R05 C04",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        4000,
+        -8000
+      ],
+      "centerM": [
+        740499.9282005827,
+        8014292.764986506
+      ],
+      "boundsM": [
+        738499.9282005827,
+        8012292.764986506,
+        742499.9282005827,
+        8016292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 384.01483285022226,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 3.4812504808989893,
+        "slopeP90Deg": 6.20194286071257,
+        "reliefM": 99.02589523437024
+      },
+      "map": "maps/bo-r05-c04.png",
+      "mapSha256": "36612dd9f7bea0376e8a0447cadc015fa5765eb0f29dc2d38df94fc4f3514b7a"
+    },
+    "bo-r05-c05": {
+      "name": "Valle de la Luna · R05 C05",
+      "body": "earth",
+      "role": "candidate",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7680094,
+          -17.8744281
+        ]
+      },
+      "gridOffsetM": [
+        8000,
+        -8000
+      ],
+      "centerM": [
+        744499.9282005827,
+        8014292.764986506
+      ],
+      "boundsM": [
+        742499.9282005827,
+        8012292.764986506,
+        746499.9282005827,
+        8016292.764986506
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 418.28595874708185,
+      "saturatedFraction": 0.0,
+      "metrics": {
+        "slopeMedianDeg": 2.9947557150595845,
+        "slopeP90Deg": 5.70965354320865,
+        "reliefM": 91.79485232943784
+      },
+      "map": "maps/bo-r05-c05.png",
+      "mapSha256": "1fea6363ddf546f96640f7f660d533f6940acebbbc3b9c26f557058f83c2964f"
+    },
+    "bo-cerro-turubo": {
+      "name": "Cerro Turubó",
+      "body": "earth",
+      "role": "guided",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          -60.7095623,
+          -17.858344
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        742717.4480760043,
+        8023998.296039517
+      ],
+      "boundsM": [
+        740717.4480760043,
+        8021998.296039517,
+        744717.4480760043,
+        8025998.296039517
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 315.0582022719025,
+      "saturatedFraction": 0.0493,
+      "metrics": {
+        "slopeMedianDeg": 2.148356756456221,
+        "slopeP90Deg": 13.563536467546298,
+        "reliefM": 119.11531654835926
+      },
+      "map": "maps/bo-cerro-turubo.png",
+      "mapSha256": "52b00f795508c5b2d2feeec2cbd704bf8ded5151ec44358f3a768dde8c700d1d"
+    },
+    "moon-nobile-rim-1": {
+      "name": "Nobile Rim 1",
+      "body": "moon",
+      "role": "reference",
+      "inputCoordinates": {
+        "kind": "product_easting_northing_m",
+        "values": [
+          84000,
+          110000
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        84000,
+        110000
+      ],
+      "boundsM": [
+        82000.0,
+        108000.0,
+        86000.0,
+        112000.0
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": 5892.438179016115,
+      "saturatedFraction": 0.57,
+      "metrics": {
+        "slopeMedianDeg": 14.695189664021298,
+        "slopeP90Deg": 21.67027176803469,
+        "reliefM": 624.6136180877675
+      },
+      "map": "maps/moon-nobile-rim-1.png",
+      "mapSha256": "e05eac08e690e39d767bdf258b2de3cea2695f412e9adca4c1f527d1c64b6f29"
+    },
+    "mars-jezero": {
+      "name": "Jezero",
+      "body": "mars",
+      "role": "reference",
+      "inputCoordinates": {
+        "kind": "longitude_east_latitude",
+        "values": [
+          77.4508,
+          18.4447
+        ]
+      },
+      "gridOffsetM": [
+        0,
+        0
+      ],
+      "centerM": [
+        4354489.266082621,
+        1093304.0134081263
+      ],
+      "boundsM": [
+        4352489.266082621,
+        1091304.0134081263,
+        4356489.266082621,
+        1095304.0134081263
+      ],
+      "validCells": 10000,
+      "coverage": 1.0,
+      "slopeCells": 9604,
+      "elevationMedianM": -2568.248609196393,
+      "saturatedFraction": 0.0095,
+      "metrics": {
+        "slopeMedianDeg": 2.1101635161982073,
+        "slopeP90Deg": 4.408824966743379,
+        "reliefM": 77.55926551565153
+      },
+      "map": "maps/mars-jezero.png",
+      "mapSha256": "70bb6d0d2abe3a1ca51b31cf326820f67bfad838dd64ac77f2a17f8cc277e95a"
+    }
+  },
+  "ranking": {
+    "moon": {
+      "usedMetrics": [
+        "slopeMedianDeg",
+        "slopeP90Deg",
+        "reliefM"
+      ],
+      "earthMean": {
+        "slopeMedianDeg": 3.0738748582183266,
+        "slopeP90Deg": 7.880967057033783,
+        "reliefM": 103.46874267277984
+      },
+      "earthPopulationStd": {
+        "slopeMedianDeg": 1.658987859572569,
+        "slopeP90Deg": 5.225930382538018,
+        "reliefM": 79.47536741094355
+      },
+      "validCandidates": 25,
+      "referenceId": "moon-nobile-rim-1",
+      "allDistances": [
+        {
+          "id": "bo-r03-c01",
+          "distance": 6.8677333767069335
+        },
+        {
+          "id": "bo-r04-c05",
+          "distance": 7.83080017484273
+        },
+        {
+          "id": "bo-r04-c02",
+          "distance": 7.959326417820477
+        },
+        {
+          "id": "bo-r03-c03",
+          "distance": 7.967753844427969
+        },
+        {
+          "id": "bo-r03-c02",
+          "distance": 7.975097436441853
+        },
+        {
+          "id": "bo-r04-c03",
+          "distance": 8.26616843731142
+        },
+        {
+          "id": "bo-r03-c04",
+          "distance": 8.365149523867705
+        },
+        {
+          "id": "bo-r04-c04",
+          "distance": 9.076710300673925
+        },
+        {
+          "id": "bo-r04-c01",
+          "distance": 9.339579397377594
+        },
+        {
+          "id": "bo-r02-c01",
+          "distance": 9.784871939971733
+        },
+        {
+          "id": "bo-r05-c04",
+          "distance": 9.908918414393002
+        },
+        {
+          "id": "bo-r03-c05",
+          "distance": 9.956836037300912
+        },
+        {
+          "id": "bo-r05-c05",
+          "distance": 10.198788770699247
+        },
+        {
+          "id": "bo-r05-c03",
+          "distance": 10.45018263776446
+        },
+        {
+          "id": "bo-r05-c02",
+          "distance": 11.118584920122737
+        },
+        {
+          "id": "bo-r02-c02",
+          "distance": 11.135319083298455
+        },
+        {
+          "id": "bo-r01-c01",
+          "distance": 11.239934212235442
+        },
+        {
+          "id": "bo-r02-c03",
+          "distance": 11.367358637232453
+        },
+        {
+          "id": "bo-r02-c04",
+          "distance": 11.414594325346615
+        },
+        {
+          "id": "bo-r02-c05",
+          "distance": 11.522037219969802
+        },
+        {
+          "id": "bo-r05-c01",
+          "distance": 11.537049414924038
+        },
+        {
+          "id": "bo-r01-c02",
+          "distance": 11.569104584546649
+        },
+        {
+          "id": "bo-r01-c04",
+          "distance": 11.574647461800092
+        },
+        {
+          "id": "bo-r01-c05",
+          "distance": 11.61324411062815
+        },
+        {
+          "id": "bo-r01-c03",
+          "distance": 11.646731239858237
+        }
+      ]
+    },
+    "mars": {
+      "usedMetrics": [
+        "slopeMedianDeg",
+        "slopeP90Deg",
+        "reliefM"
+      ],
+      "earthMean": {
+        "slopeMedianDeg": 3.0738748582183266,
+        "slopeP90Deg": 7.880967057033783,
+        "reliefM": 103.46874267277984
+      },
+      "earthPopulationStd": {
+        "slopeMedianDeg": 1.658987859572569,
+        "slopeP90Deg": 5.225930382538018,
+        "reliefM": 79.47536741094355
+      },
+      "validCandidates": 25,
+      "referenceId": "mars-jezero",
+      "allDistances": [
+        {
+          "id": "bo-r02-c02",
+          "distance": 0.38509561139682974
+        },
+        {
+          "id": "bo-r05-c02",
+          "distance": 0.3904667042562282
+        },
+        {
+          "id": "bo-r01-c01",
+          "distance": 0.5045672372059815
+        },
+        {
+          "id": "bo-r05-c03",
+          "distance": 0.5758801817087181
+        },
+        {
+          "id": "bo-r05-c05",
+          "distance": 0.6151089464402448
+        },
+        {
+          "id": "bo-r02-c03",
+          "distance": 0.6314342110139108
+        },
+        {
+          "id": "bo-r02-c04",
+          "distance": 0.6627881994886606
+        },
+        {
+          "id": "bo-r02-c05",
+          "distance": 0.7832114192953173
+        },
+        {
+          "id": "bo-r05-c01",
+          "distance": 0.8419612511871417
+        },
+        {
+          "id": "bo-r01-c02",
+          "distance": 0.8512586131287101
+        },
+        {
+          "id": "bo-r01-c04",
+          "distance": 0.9185144389857948
+        },
+        {
+          "id": "bo-r01-c05",
+          "distance": 0.9314263721128686
+        },
+        {
+          "id": "bo-r05-c04",
+          "distance": 0.9347315976619054
+        },
+        {
+          "id": "bo-r01-c03",
+          "distance": 0.9497563555693895
+        },
+        {
+          "id": "bo-r02-c01",
+          "distance": 1.0348239997668196
+        },
+        {
+          "id": "bo-r03-c05",
+          "distance": 1.4008213862267958
+        },
+        {
+          "id": "bo-r04-c01",
+          "distance": 1.7281836849093568
+        },
+        {
+          "id": "bo-r04-c04",
+          "distance": 1.8254445866729139
+        },
+        {
+          "id": "bo-r04-c03",
+          "distance": 2.579420011663812
+        },
+        {
+          "id": "bo-r04-c02",
+          "distance": 3.016372044151351
+        },
+        {
+          "id": "bo-r03-c03",
+          "distance": 3.293126131057496
+        },
+        {
+          "id": "bo-r03-c04",
+          "distance": 3.419432649210365
+        },
+        {
+          "id": "bo-r03-c02",
+          "distance": 3.456483962896111
+        },
+        {
+          "id": "bo-r04-c05",
+          "distance": 3.633068985231743
+        },
+        {
+          "id": "bo-r03-c01",
+          "distance": 4.0870796706837975
+        }
+      ]
+    }
+  }
+}
