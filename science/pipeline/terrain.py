@@ -201,11 +201,13 @@ def rank(candidates: list[dict], reference: dict) -> tuple[list[dict], dict]:
     return [{"id": id_, "distance": float(distance)} for distance, id_ in ordered], params
 
 
-def run(inputs: Path, output: Path, preflight: bool) -> None:
+def run(inputs: Path, output: Path, preflight: bool, export_grids: bool = False) -> None:
     output.mkdir(parents=True, exist_ok=True)
     specs = (CATALOG[12], NOBILE, JEZERO) if preflight else (*CATALOG, CERRO, NOBILE, JEZERO)
     if not preflight:
         (output / "maps").mkdir(exist_ok=True)
+    if export_grids:
+        (output / "grids").mkdir(exist_ok=True)
     terrains, windows, products = {}, {}, {}
     with ExitStack() as stack:
         datasets = {}
@@ -252,6 +254,9 @@ def run(inputs: Path, output: Path, preflight: bool) -> None:
             metrics, measurements = measure(height)
             info.update(measurements)
             windows[spec.id] = info
+            if export_grids:
+                # Float64, pixel centers from boundsM and resolutionM; NaN is NoData.
+                np.save(output / "grids" / f"{spec.id}.npy", height, allow_pickle=False)
             if metrics is None:
                 continue
             info["metrics"] = metrics
@@ -315,5 +320,6 @@ if __name__ == "__main__":
     parser.add_argument("--inputs", type=Path, default=HERE.parent / "cache" / "inputs")
     parser.add_argument("--output", type=Path, default=HERE.parent / "cache" / "results")
     parser.add_argument("--preflight", action="store_true", help="Only measure the center Earth, Moon and Mars windows")
+    parser.add_argument("--export-grids", action="store_true", help="Also save harmonized elevation arrays for inspection")
     opts = parser.parse_args()
-    run(opts.inputs, opts.output, opts.preflight)
+    run(opts.inputs, opts.output, opts.preflight, opts.export_grids)
