@@ -1,8 +1,9 @@
 # Ficha Tierra–Marte: Jezero
 
-**Estado de la comparación:** `not_assessed` (14 de noviembre de 2026). Esta
-ficha documenta el insumo y el método previsto; no publica una semejanza,
-distancia de ranking ni una conclusión sobre habitabilidad o aterrizaje.
+**Estado de la comparación:** revisión de Belinda sobre el paquete técnico de
+la [issue #12](https://github.com/federicorv25/turubo-atlas/pull/19), 14 de
+noviembre de 2026. La publicación web permanece a cargo de #9; hasta entonces,
+el JSON público conserva `not_assessed`.
 
 ## Referencia marciana
 
@@ -24,30 +25,54 @@ cabecera GeoTIFF pública inspeccionada el 14 de noviembre de 2026. La URL del
 producto redirige a un objeto PDS/USGS; no se versiona el GeoTIFF original en
 este repositorio.
 
-## Método acordado y evidencia pendiente
+## Método y evidencia revisada
 
-La corrida reproducible de la issue #12 debe:
+La corrida reproducible de #12 ya:
 
-1. Transformar el centro de Jezero al CRS del raster y extraer una ventana de
+1. Transformó el centro de Jezero al CRS del raster y extrajo una ventana de
    **4 × 4 km**.
-2. Reproyectar a unidades métricas y remuestrear a la resolución común de
+2. Remuestreó a la resolución común de
    **40 m**.
-3. Comprobar al menos **95 %** de cobertura válida, excluyendo NoData.
-4. Calcular pendiente mediana y P90 en grados, y relieve `P95 − P5` en metros.
-5. Guardar el recorte, mapa derivado, manifiesto de procedencia y comando de
-   reproducción antes de comparar contra las ventanas de Tierra.
+3. Comprobó **100 %** de cobertura válida: 10 000 de 10 000 celdas en la
+   ventana de Jezero y en R02 C02.
+4. Calculó pendiente mediana y P90 en grados, y relieve `P95 − P5` en metros.
+5. Exportó mapas derivados, manifiesto de procedencia, hashes y un comando de
+   reproducción. El PR #19 informa controles de NoData, remuestreo, cuadrícula
+   y ranking, además de una segunda corrida que reprodujo los derivados.
 
-Hasta que esa salida exista y sea revisada, esta ficha no afirma cobertura de
-la ventana, pendientes, desnivel, candidato más cercano ni distancia. El JSON
-público debe conservar `comparisons.mars.status` como `not_assessed`.
+El método ordena las 25 ventanas válidas del Valle por distancia euclidiana de
+pendiente mediana, P90 y relieve, normalizadas por la desviación estándar de la
+cuadrícula terrestre. Esa distancia no es un porcentaje ni certifica un análogo
+para una misión. El Cerro no entra al ranking.
+
+## Resultado revisado: Jezero y Valle de la Luna R02 C02
+
+| Medida a 40 m | Jezero | Valle de la Luna · R02 C02 |
+| --- | ---: | ---: |
+| Cobertura válida | 100 % | 100 % |
+| Pendiente mediana | 2.11° | 1.64° |
+| Pendiente P90 | 4.41° | 3.41° |
+| Relieve P95−P5 | 77.56 m | 63.38 m |
+| Distancia estandarizada | Referencia | 0.3851 |
+
+R02 C02 ocupa el primer lugar de esta cuadrícula por el método documentado.
+R05 C02 queda casi empatada, con distancia 0.3905; por ello la presentación no
+debe describir R02 C02 como un análogo validado ni como un resultado único.
+
+**Semejanza medible:** las pendientes medianas son bajas y cercanas en la
+ventana comparada: 2.11° en Jezero y 1.64° en R02 C02.
+
+**Diferencia medible:** Jezero tiene mayor pendiente P90 (4.41° frente a
+3.41°) y 14.18 m más de relieve P95−P5 (77.56 m frente a 63.38 m).
 
 ## Qué se puede comunicar en la escena de Marte
 
-- **Hecho medido/documentado:** el panel puede identificar Jezero y enlazar el
-  producto CTX DEM de USGS, indicando que se evaluará el relieve en ventanas
-  comparables de 4 × 4 km.
-- **No evaluado todavía:** no mostrar números de pendiente, desnivel, mapas
-  derivados, ranking ni porcentaje de analogía hasta recibir la salida de #12.
+- **Hecho medido/documentado:** al publicar #9 el panel puede mostrar Jezero y
+  R02 C02 con sus mapas derivados a la misma escala, fuente, cobertura, 40 m
+  de resolución de análisis, las métricas de la tabla y la distancia 0.3851.
+- **Caso guiado:** el Cerro Turubó se muestra separado. Tiene pendiente mediana
+  de 2.15° y P90 de 13.56°, frente a 4.41° P90 en Jezero; no recibe puesto ni
+  distancia de ranking.
 - **Límite:** la comparación prevista es solo de relieve. No evalúa seguridad
   de aterrizaje, clima, composición, agua, hielo ni habitabilidad.
 - **Separación narrativa:** el templo de Turubó en Marte es ficción de la
@@ -55,15 +80,15 @@ público debe conservar `comparisons.mars.status` como `not_assessed`.
 
 ## Sitios terrestres y revisión posterior
 
-La comparación debe mantener separados el **Valle de la Luna de San José de
-Chiquitos** (catálogo de ventanas y posible ranking) y el **Cerro Turubó**
-(caso guiado fuera del ranking). Tras recibir la exportación de #12, Belinda
-revisará una semejanza y una diferencia con sus unidades y límites antes de
-autorizar su presentación en «Ver análisis» o en la demo.
+La comparación mantiene separados el **Valle de la Luna de San José de
+Chiquitos** (catálogo de ventanas y ranking) y el **Cerro Turubó** (caso guiado
+fuera del ranking). Esta revisión autoriza las frases y cifras anteriores para
+la integración de #9, siempre con sus fuentes, unidades y límites.
 
-## Próximo traspaso a Federico (#12)
+## Traspaso a Federico (#9)
 
-Esta ficha entrega el enlace directo, el centro objetivo, el CRS declarado por
-el archivo y la resolución nativa. Federico debe responder con el recorte
-reproducible, la cobertura válida y las métricas derivadas; si alguno no puede
-obtenerse, debe quedar documentado y la comparación permanece `not_assessed`.
+Usar el paquete de #12 para publicar `analysis.preview.json` como datos públicos
+solo después de la integración y comprobación de #9. Deben incluirse los mapas
+de Jezero y R02 C02, el manifiesto o enlaces a sus fuentes, y una explicación
+de que el resultado compara solo relieve. Belinda usará capturas de esa versión
+estable en la demo de #11.
