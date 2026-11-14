@@ -36,4 +36,4 @@ Guía de producción para siluetas y poses preliminares. Las descripciones visua
 
 ## Uso y créditos
 
-Esta guía se comparte primero con Asael como base de siluetas para la issue #7; requiere interpretación y revisión del equipo antes de convertirse en arte final. Fuente narrativa: Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191, consultado mediante el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). ChatGPT apoyó la redacción y traducción de materiales de esta issue; no se generó arte. Revisión humana de la ficha: pendiente.
+Esta guía se compartió primero con Asael como base de siluetas para la issue #7; requiere interpretación del equipo antes de convertirse en arte final. La revisión cultural del arte final corresponde a la issue #7. Fuente narrativa: Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191, consultado mediante el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). ChatGPT apoyó la redacción y traducción de materiales de esta issue; no se generó arte.

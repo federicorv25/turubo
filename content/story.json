@@ -23,7 +23,7 @@
     "moon": {
       "world": "moon",
       "title": { "es": "Figuras entre sombras", "en": "Figures among shadows" },
-      "text": { "es": "En esta parada ficticia en la Luna, sombras mueven las figuras que Turubó trajo de la Tierra. Aquí las llaman lémures: son formas parecidas a sombras, no animales. Turubó observa el terreno inspirado en Nobile Rim 1 antes de seguir hacia Marte.", "en": "At this fictional stop on the Moon, shadows move the figures Turubó brought from Earth. Here they are called lemures: shadowlike forms, not animals. Turubó studies terrain inspired by Nobile Rim 1 before continuing to Mars." },
+      "text": { "es": "En esta historia, Turubó hace una escala ficticia en la Luna para revisar la nave y preparar el siguiente trayecto. Durante la parada, sombras mueven las figuras que trajo de la Tierra. Aquí las llaman lémures: son formas parecidas a sombras, no animales. Turubó observa el terreno inspirado en Nobile Rim 1 antes de seguir hacia Marte.", "en": "In this story, Turubó makes a fictional stopover on the Moon to check the ship and prepare for the next leg. During the stop, shadows move the figures he brought from Earth. Here they are called lemures: shadowlike forms, not animals. Turubó studies terrain inspired by Nobile Rim 1 before continuing to Mars." },
       "poison": { "es": "El veneno avanza", "en": "The venom spreads" },
       "choices": [
         { "label": { "es": "Observar el relieve", "en": "Study the relief" }, "feedback": { "es": "Una forma parecida plantea una pregunta. Las medidas dicen qué se parece y qué cambia.", "en": "A similar shape raises a question. Measurements show what matches and what differs." }, "next": "mars" },
