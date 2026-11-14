@@ -13,11 +13,13 @@ This inventory reflects the repository contents reviewed on 2026-11-14. It is a 
 | Jezero CTX DEM | USGS, [CTX DEM file](https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif) | Named in the processing plan; no raster, measurement, or derived map is present in the public data file. | Planned analysis; no current terrain entry in the web data. | **Pending** confirmation from the Mars data owner. |
 | NASADEM HGT | NASA, [NASADEM HGT product](https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001) | Named as the planned Earth elevation product. No downloaded tile, crop, or derived measurement is present in the repository. | Planned Earth comparison; no current terrain entry in the web data. | **Pending** confirmation from the Earth data owner, including which area and tiles were actually used. |
 
+The organizers clarified that Global Awards eligibility requires meaningful use of at least one NASA data source listed in this specific challenge's Resources; citing NASA facts, photographs, or mission records alone does not meet that requirement ([NASA Space Apps clarification #1947](https://github.com/nasa/spaceapps/discussions/1947)). The repository and the latest handoff comment on issue #12 do not yet show such a source incorporated into the project. Eligibility is therefore **not demonstrated** by the current evidence. Federico must identify the qualifying source and where the project uses it before this inventory can be finalized.
+
 ## Cultural source and story
 
 | Work | Source and credit | Use and transformation | Where it appears |
 |---|---|---|---|
-| Turubó legend | Archivo de Folklore Boliviano, [“Motivo Turubó”](https://archivodefolkloreboliviano.org/motivo/turubo/); Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191; [page 190](https://archivodefolkloreboliviano.org/texto/leyendas-de-bolivia-1986/227/). | The project script describes an adaptation: it retains the mountain, figures, cup, and snakebite, and adds imagined travel to other worlds and a fictional final encounter. This is narrative source material, not measured terrain data. | `content/GUION.md` and the bilingual story in `content/story.json`. |
+| Turubó legend | Archivo de Folklore Boliviano, [“Motivo Turubó”](https://archivodefolkloreboliviano.org/motivo/turubo/); Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191; [page 190](https://archivodefolkloreboliviano.org/texto/leyendas-de-bolivia-1986/227/). | The project script describes an adaptation: it retains the mountain, figures, cup, and snakebite, and adds imagined travel to other worlds and a fictional final encounter. This is narrative source material, not measured terrain data. No source images or direct quotations are present in the current web files. Reuse/adaptation terms have not been independently verified. | `content/GUION.md` and the bilingual story in `content/story.json`. **Pending:** verify applicable reuse terms before final submission. |
 
 ## Artwork, media, fonts, and software
 
@@ -29,10 +31,13 @@ This inventory reflects the repository contents reviewed on 2026-11-14. It is a 
 
 | Tool | File or aspect | Purpose | Review |
 |---|---|---|---|
-| OpenAI Codex | This working inventory, `submission/credits-en.md` | Drafted a repository-based inventory and marked unverified sources as pending instead of claiming they were used. | Human review by Luciana and confirmation by the relevant data/art owners are pending. |
+| OpenAI Codex | This working inventory, `submission/credits-en.md` | Drafted and updated this repository-based inventory, including its source-status descriptions and AI-use record; unverified resources remain marked pending. | Human review by Luciana and confirmation by the relevant data/art owners are pending. The organizers require AI use to be identified in project descriptions/metadata; see [clarification #1849](https://github.com/nasa/spaceapps/discussions/1849) and [clarification #1947](https://github.com/nasa/spaceapps/discussions/1947). |
 
 ## Open confirmations
 
 - Confirm with Federico which NASA challenge-listed data product was actually used, with the direct product link and provenance, as required by issue #15.
+- Demonstrate meaningful use of at least one qualifying NASA data source from this challenge's Resources; the current repository evidence does not demonstrate Global Awards eligibility.
 - Confirm exact data products, source versions, spatial crops or transformations, and where each appears after the science reviews are complete. Until then, keep the analysis status `not_assessed` and do not claim these planned products as used.
-- Ask each contributor for actual AI-tool use and review, and for credits/terms for any art, media, font, model, or library distributed in the final demo. Coordinate the submission-form summary with Belinda (#11).
+- Verify the applicable reuse terms for the cultural source and gather credits/terms for any art, media, font, model, or library distributed in the final demo.
+- Ask each contributor for actual AI-tool use, affected file/aspect, purpose, and human reviewer. Confirm any AI-generated image/video has a visible AI label where shown and that no generated content uses or modifies NASA branding; do not use media or other identifying traits of people under 18.
+- Coordinate the submission-form summary with Belinda (#11).
