@@ -82,4 +82,6 @@ uv run --locked python -c "import rasterio, pyproj, numpy, PIL; print('Dependenc
 
 TypeScript/Vite se instalan con `npm ci`. El 3D puede añadir Three.js más adelante, con revisión de Federico. Contenido puede empezar con Markdown desde GitHub sin Node ni Python; coordina una comprobación web al cambiar el guion.
 
+Si PowerShell encuentra `npm.ps1` pero restringe los scripts, usa `npm.cmd` en las líneas de arriba. No hace falta cambiar la política.
+
 Mientras el PR de arranque no esté en `main`, puedes **probar el ZIP** o revisar ese PR. No copies el ZIP entero encima de tu clon. Abre las ramas de tareas desde `main` actualizada cuando Federico integre la base.
