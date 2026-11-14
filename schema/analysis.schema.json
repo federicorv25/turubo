@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TURUBO terrain analysis",
+  "type": "object",
+  "required": ["version", "simulated", "terrains", "comparisons"],
+  "properties": {
+    "version": { "const": 1 },
+    "simulated": { "type": "boolean" },
+    "terrains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "body", "source", "resolutionM", "coverage", "metrics"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "name": { "type": "string", "minLength": 1 },
+          "body": { "enum": ["earth", "moon", "mars"] },
+          "source": { "type": "string", "pattern": "^https://" },
+          "resolutionM": { "type": "number", "exclusiveMinimum": 0 },
+          "coverage": { "type": "number", "minimum": 0.95, "maximum": 1 },
+          "image": { "type": "string", "pattern": "^maps/[A-Za-z0-9_-]+[.](png|webp)$" },
+          "metrics": {
+            "type": "object",
+            "required": ["slopeMedianDeg", "slopeP90Deg", "reliefM"],
+            "properties": {
+              "slopeMedianDeg": { "type": "number", "minimum": 0, "maximum": 90 },
+              "slopeP90Deg": { "type": "number", "minimum": 0, "maximum": 90 },
+              "reliefM": { "type": "number", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "comparisons": {
+      "type": "object",
+      "required": ["moon", "mars"],
+      "properties": {
+        "moon": { "$ref": "#/definitions/comparison" },
+        "mars": { "$ref": "#/definitions/comparison" }
+      }
+    }
+  },
+  "definitions": {
+    "comparison": {
+      "type": "object",
+      "required": ["status", "ranked"],
+      "properties": {
+        "status": { "enum": ["not_assessed", "reviewed"] },
+        "referenceId": { "type": "string" },
+        "guidedId": { "type": "string" },
+        "ranked": {
+          "type": "array",
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["id", "distance"],
+            "properties": {
+              "id": { "type": "string" },
+              "distance": { "type": "number", "minimum": 0 }
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "status": { "const": "not_assessed" } } },
+          "then": { "properties": { "ranked": { "maxItems": 0 } } },
+          "else": { "required": ["referenceId"], "properties": { "ranked": { "minItems": 1 } } }
+        }
+      ]
+    }
+  }
+}
