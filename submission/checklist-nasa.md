@@ -9,14 +9,14 @@
 | Tema | Verificado (fuente) | Pendiente en TURUBO / sede |
 |------|---------------------|----------------------------|
 | Demo | **≤ 7 diapositivas** contando **portada y cierre**, **o** video **≤ 30 s** | Belinda arma materiales en #11; confirmar si se usan slides o video |
-| Enlaces | **Dos enlaces públicos distintos** (demo vs producto final); probar en incógnito sin cuenta | URLs reales: Federico #16 + Belinda #11 |
+| Enlaces | El Navigator exige una **demo pública accesible** ([#1973](https://github.com/nasa/spaceapps/discussions/1973)); la guía interna v5 distingue **Project Demo** y **Final Project** | **Confirmar ambos campos en el formulario NASA**; cargar enlaces diferentes si así lo solicita, y probar ambos sin cuenta (Federico #16 + Belinda #11) |
 | Idioma | Texto del proyecto en **inglés**; video en otro idioma solo con **subtítulos en inglés** | Belinda redacta; Erick revisa checklist |
-| Envío al jurado | **`Save Progress`** guarda borrador; **`Submit for Judging`** envía al jurado; leer casillas de **términos y originalidad**; guardar **banner de confirmación** | Federico #16 en sesión autenticada |
+| Envío al jurado | La [issue #16](https://github.com/federicorv25/turubo-atlas/issues/16) describe **`Save Progress`** (borrador) y **`Submit for Judging`** (envío), además de casillas y banner; **no se pudo contrastar la pantalla oficial 2026 sin la sesión del equipo** | Federico debe verificar controles reales, aceptar términos/originalidad y guardar banner y URL del proyecto en sesión autenticada |
 | Plazo global | Antes de las **23:59 del 15/11/2026, hora local de la sede** | Confirmar zona horaria en la cuenta del equipo |
 | Dataset NASA | Para premios globales: **≥ 1 fuente de datos NASA del apartado Resources del reto**, con **uso demostrable** (no basta citar hechos o fotos) | Luciana #15 + pipeline Federico #12 |
 | IA | Permitida con **declaración**; **marca visible** en imágenes/video generados; código, datos, texto y audio reconocidos en descripción/metadatos; **no** usar ni alterar **branding NASA** en contenido generado | Luciana #15; Asael #7 y Belinda #11 en assets visibles |
-| Menores | Quienes participan &lt; 18 con tutor; **no** incluir en el envío nombres, voces, fotos, video ni rasgos reconocibles de menores | Revisar demo, web y página de equipo NASA |
-| Equipo global | **2 a 6** integrantes registrados en el **mismo** evento universal/local | Federico verifica panel NASA |
+| Menores | Las [condiciones 2026](https://www.spaceappschallenge.org/legal/) exigen registro y acompañamiento de tutor para participantes menores de 18 años; **no** incluir nombres, voces ni imágenes/rasgos reconocibles de menores en entrega o video | Revisar demo, web, vídeo, avatar y página de equipo; si aparece una persona adulta, obtener consentimiento pertinente |
+| Equipo global | La respuesta de [#1947](https://github.com/nasa/spaceapps/discussions/1947) indica **2 a 6 integrantes para Global Judging del Universal Event**; no extrapolar sin verificar a todos los eventos locales | TURUBO participa en Santa Cruz: Federico confirma seis integrantes, reglas de su sede y elegibilidad global |
 | Material largo | Enlace a documental largo **puede ser complementario**; **no sustituye** la demo de 30 s o 7 slides | Opcional en página del proyecto |
 
 **Fuentes oficiales usadas en esta revisión:**
@@ -45,12 +45,15 @@
 
 ## 1. Elegibilidad y equipo (verificación obligatoria)
 
-- [ ] Entre **2 y 6** integrantes registrados en el **mismo** equipo, reto 2026 y sede/universal event; los seis de TURUBO confirmados en NASA, no solo en canales locales ([#1947](https://github.com/nasa/spaceapps/discussions/1947), FAQs).
+- [ ] Los **seis integrantes TURUBO** figuran efectivamente en el mismo equipo, reto 2026 y sede **Santa Cruz**, y no solo en WhatsApp o formulario logístico. La regla **2–6 participantes** de [#1947](https://github.com/nasa/spaceapps/discussions/1947) está expresamente referida a Global Judging del **Universal Event**; Federico comprueba la elegibilidad concreta de la sede local en la plataforma y las FAQs.
 - [ ] Reto: **Identify Earth Locations that Analog the Permanent Moon Base Locations and Mars** — https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/
 - [ ] El entregable **responde científicamente**: análogos terrestres medibles frente a referencias Luna/Marte; no basta temática espacial sin datos.
 - [ ] **Al menos un dataset NASA listado en Resources del reto**, con uso **significativo** en el producto (mapas, mediciones o procesamiento trazable). Citar sin usar no alcanza ([#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)). Luciana #15 documenta cuál quedó publicado.
 - [ ] Originalidad: declarar qué se creó en el hackatón, qué existía antes y qué pasó por IA; alinear con casillas del formulario.
 - [ ] Licencias y atribución de mapas, código, fuentes, ilustraciones, audio y bibliotecas en material público ([#15](https://github.com/federicorv25/turubo-atlas/issues/15)).
+- [ ] **Licencia del contenido propio:** los [términos NASA 2026](https://www.spaceappschallenge.org/legal/) exigen que el contenido original sea libre de restricciones o publicado con licencia reconocida por la Open Source Initiative (OSI). Si no se especifica una licencia OSI, NASA indica que distribuirá el contenido original bajo **Apache 2.0**; **no equivale** a que GitHub añada automáticamente un archivo LICENSE.
+- [ ] **Materiales externos:** documentar las licencias aplicables y los permisos efectivos de recursos ajenos, incluso si son gratis o abiertos. La atribución por sí sola **no** sustituye derechos de reproducción; NASA advierte que puede retirar proyectos o nominaciones sin documentación de fuentes/licencias. Revisar los permisos de uso/redistribución de arte, música, fotos, fuentes y datos antes de incluirlos.
+- [ ] **Privacidad y consentimiento:** no publicar datos identificables (direcciones, cumpleaños, teléfonos privados u otros) ni imagen/voz/identidad reconocible de menores. Si se muestran personas **adultas**, verificar su consentimiento; para vídeos, los términos prevén consentimiento escrito y evidencia disponible cuando se solicite.
 - [ ] **Menores de 18:** no avatar con foto del menor; **no** fotos, video, voz ni rasgos reconocibles de menores en demo ni envío ([legal](https://www.spaceappschallenge.org/legal/), [FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/)).
 
 ## 2. Formulario NASA — campos y texto final
@@ -61,7 +64,7 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 
 - [ ] **Project Demo:** presentación **≤ 7 diapositivas** (**incluyen portada y cierre**) **o** video **≤ 30 s**, alojado en URL pública (YouTube, Drive, etc.). Probar el enlace en ventana privada sin cuenta ([#1947](https://github.com/nasa/spaceapps/discussions/1947), [#1973](https://github.com/nasa/spaceapps/discussions/1973)).
 - [ ] Si el video no está en inglés, **subtítulos en inglés**. Un enlace a obra más larga puede ir como material complementario, pero **no reemplaza** la demo corta ([#1947](https://github.com/nasa/spaceapps/discussions/1947)).
-- [ ] **Final Project:** URL distinta al demo (web o repositorio con el producto que funciona de verdad). Abrir ambos enlaces por separado en incógnito ([#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+- [ ] **Final Project:** según guía interna v5, enlace público del producto final (web o repositorio) **separado** del enlace de la demo. Confirmar nombre del campo y requisitos en **My Team → Project → Edit**, no presumir que está completado. Abrir cada enlace por separado en incógnito ([#11](https://github.com/federicorv25/turubo-atlas/issues/11), [#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
 - [ ] La demo debe mostrar: qué resuelve, acción real del juego, al menos una comparación con fuente y un límite principal — ver guion de 7 slides en [#11](https://github.com/federicorv25/turubo-atlas/issues/11) (portada + cierre dentro del máximo de siete).
 
 ### 2.2 Textos, datos NASA e IA
@@ -73,8 +76,8 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 
 ### 2.3 Guardar vs enviar al jurado
 
-- [ ] Completar borrador con **Save Progress** mientras #9 y #11 avanzan; **no** confundirlo con envío al jurado.
-- [ ] Revisar casillas de **términos y originalidad**; pulsar **`Submit for Judging`**; archivar **banner de confirmación** y enlace público del proyecto ([#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
+- [ ] En la sesión de TURUBO, comprobar **Save Progress** según procedimiento de #16 y confirmar que únicamente guarda un borrador; nunca considerarlo prueba de envío al jurado.
+- [ ] Federico verifica las casillas reales de **términos y originalidad**, pulsa **`Submit for Judging`** en el proyecto correcto y archiva **banner/captura de confirmación**, hora y URL pública; comprobar que el sistema confirma el envío y no solo guarda cambios ([#16](https://github.com/federicorv25/turubo-atlas/issues/16)).
 
 **URLs por completar (no inventar):**
 
@@ -100,7 +103,7 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 - Resources: https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/?tab=resources
 - LRO/LOLA Site 06: https://pgda.gsfc.nasa.gov/products/78
 - USGS CTX Jezero DEM: https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif
-- NASADEM (Santa Cruz): producto y metadatos exactos **PENDIENTE** — Federico #12
+- NASADEM HGT (fuente candidata): https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001 — **PENDIENTE comprobar que este producto está listado en Resources del desafío y que realmente se usó**; registrar archivo/granulo, resolución, transformación y fuente en #12/#15. Nunca presentar una URL por sí sola como integración de datos.
 - Folklore Turubó: https://archivodefolkloreboliviano.org/motivo/turubo/
 
 ## 4. Auditoría de enlaces, funcionamiento y presentación
@@ -124,9 +127,22 @@ Cinco criterios (comprobar guía vigente; referencia sede Ajmer 2026): Impact, C
 | Relevance | Respuesta al reto de ubicaciones análogas |
 | Presentation | Demo clara, fuentes accesibles, texto EN completo |
 
-**Diez categorías globales:** referencia **2025** si no se publica listado 2026 — https://www.spaceappschallenge.org/2025/awards/
+**Diez categorías globales de referencia 2025** (no verificadas como lista definitiva 2026). Fuente: https://www.spaceappschallenge.org/2025/awards/
 
-Prioridad estratégica interna (no casilla del formulario): Best Use of Data, Best Use of Storytelling, Art & Technology.
+| Categoría 2025 | Qué reconoce |
+|---|---|
+| Best Use of Science | Uso válido de ciencia y método científico |
+| Best Use of Data | Acceso novedoso a datos espaciales o aplicación distintiva |
+| Best Use of Technology | Uso innovador de tecnología |
+| Galactic Impact | Potencial de impacto amplio |
+| Best Mission Concept | Concepto y diseño de misión plausible |
+| Most Inspirational | Capacidad de inspirar |
+| Best Use of Storytelling | Comunicación creativa del potencial de datos abiertos |
+| Global Connection | Conectar personas del mundo mediante tecnología |
+| Art & Technology | Integración eficaz de competencias técnicas y creativas |
+| Local Impact | Potencial de impacto en la comunidad local |
+
+**Prioridad estratégica interna:** **Best Use of Data**, **Best Use of Storytelling** y **Art & Technology**. No son casillas del formulario ni garantizan nominación, premiación o importe en efectivo. Revisar la guía de premios 2026 en cuanto sea accesible.
 
 **Premios monetarios Santa Cruz:** sin bases publicadas verificadas en esta revisión — no prometer dinero ni viajes.
 
@@ -150,10 +166,10 @@ Erick (#2) revisa esta lista y los enlaces **antes** de que Federico pulse **Sub
 
 - Guía TURUBO v5 (13/11/2026), [AGENTS.md](../AGENTS.md), [GUION.md](../content/GUION.md), [submission/README.md](README.md)
 
-**Externas — autoridad alta (consultadas 14/11/2026):**
+**Externas — respuestas oficiales y términos 2026 contrastados (14/11/2026):**
 
 - Discusiones [#1973](https://github.com/nasa/spaceapps/discussions/1973), [#1849](https://github.com/nasa/spaceapps/discussions/1849), [#1947](https://github.com/nasa/spaceapps/discussions/1947)
-- [Legal](https://www.spaceappschallenge.org/legal/), [Participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/)
+- [Legal 2026](https://www.spaceappschallenge.org/legal/) — términos actualizados el **7/08/2026**, derechos de autor, licencias, privacidad, menores y consentimiento. [Participant FAQs](https://www.spaceappschallenge.org/resources/participant-faqs/) — el enlace sigue presentando problemas de acceso directo en esta revisión.
 
 **Externas — acceso inestable en esta revisión (confirmar en navegador autenticado):**
 
