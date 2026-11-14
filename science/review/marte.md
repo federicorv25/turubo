@@ -71,8 +71,10 @@ ventana comparada: 2.11° en Jezero y 1.64° en R02 C02.
   R02 C02 con sus mapas derivados a la misma escala, fuente, cobertura, 40 m
   de resolución de análisis, las métricas de la tabla y la distancia 0.3851.
 - **Caso guiado:** el Cerro Turubó se muestra separado. Tiene pendiente mediana
-  de 2.15° y P90 de 13.56°, frente a 4.41° P90 en Jezero; no recibe puesto ni
-  distancia de ranking.
+  de 2.15°, P90 de 13.56° y relieve P95−P5 de 119.12 m, frente a 4.41° P90 y
+  77.56 m de relieve en Jezero; no recibe puesto ni distancia de ranking. El
+  [manifiesto integrado de #12](https://github.com/federicorv25/turubo-atlas/blob/6d6111179c1580c3932b383ce8a1da3dc21c0781/science/pipeline/preview/manifest.json)
+  conserva la procedencia y los mapas de ambas ventanas.
 - **Límite:** la comparación prevista es solo de relieve. No evalúa seguridad
   de aterrizaje, clima, composición, agua, hielo ni habitabilidad.
 - **Separación narrativa:** el templo de Turubó en Marte es ficción de la
@@ -87,8 +89,9 @@ la integración de #9, siempre con sus fuentes, unidades y límites.
 
 ## Traspaso a Federico (#9)
 
-Usar el paquete de #12 para publicar `analysis.preview.json` como datos públicos
-solo después de la integración y comprobación de #9. Deben incluirse los mapas
-de Jezero y R02 C02, el manifiesto o enlaces a sus fuentes, y una explicación
-de que el resultado compara solo relieve. Belinda usará capturas de esa versión
-estable en la demo de #11.
+#9 debe construir `web/public/data/analysis.json` con los resultados aprobados
+de Marte, los mapas de Jezero y R02 C02 y enlaces al manifiesto o a sus fuentes.
+Debe conservar `comparisons.moon.status` como `not_assessed`, con ranking vacío,
+hasta que #3 complete su revisión, y no publicar el marcador técnico
+`analysis.preview.json`. La interfaz debe explicar que el resultado compara solo
+relieve. Belinda usará capturas de esa versión estable en la demo de #11.
