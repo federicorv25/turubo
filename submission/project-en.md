@@ -23,7 +23,18 @@ The challenge asks teams to identify Earth locations that analog permanent Moon-
 
 The planned Mars reference is the USGS/PDS **M20 Jezero Crater CTX DEM**, with a native pixel scale of 20 m. The documented pipeline uses 4 × 4 km windows, a common 40 m resolution, and at least 95% valid coverage. It derives median slope and P90 slope in degrees, plus relief as P95 minus P5 in metres. Cerro Turubó remains a guided comparison outside the order.
 
-**Pending verification before submission:** confirm which NASA challenge resource was actually incorporated in the published experience, with its product identifier, license, processing, coverage, and location. Do not describe a planned or merely cited dataset as used.
+The reproducible pipeline in issue #12 processed **NASA LRO/LOLA Site06** for
+Nobile Rim 1. It is derived from the LOLA instrument on NASA's Lunar
+Reconnaissance Orbiter, a mission linked in the challenge resources. The same
+pipeline processed NASADEM HGT v001 for Bolivia and the USGS/NASA CTX Jezero
+DEM for Mars. The manifest records product URLs, input hashes, CRS, native
+resolution, 4 × 4 km recrops, 40 m analysis grids, coverage, maps, and
+metrics.
+
+**Pending verification before submission:** confirm in the final credits
+inventory which of these processed products appears in the published experience
+and demo, with its license and public location. Do not describe a processed
+product as visible to jurors until #9 publishes it.
 
 ## Results and limits
 

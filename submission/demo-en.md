@@ -32,7 +32,9 @@ The analysis uses elevation products and comparable 4 × 4 km windows at 40 m re
 
 **Visual:** [Verified data map and source label]
 
-**Citation:** [Insert the NASA challenge resource actually used, confirmed by #15]
+**Citation:** NASA LRO/LOLA Site06, derived from the LOLA instrument on the
+Lunar Reconnaissance Orbiter. Add the verified public credits URL and identify
+the product actually visible in the stable release.
 
 ## 5. What the terrain shows
 
