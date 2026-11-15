@@ -8,3 +8,5 @@ La historia, sus decisiones y el acceso al análisis funcionan con HTML en `inde
 4. Three.js 0.187.0 y sus tipos ya están fijados. Chrome de escritorio es la referencia de fluidez; mide 30 s a 1080p y declara el equipo. Prueba Edge, Brave, Safari real cuando esté disponible, y los controles móviles. Comprueba pérdida de contexto, ambas lenguas y regreso al capítulo y a la decisión.
 
 La entrega vive en un PR con `Closes #7`, crédito por recurso, rótulos de IA visibles y evidencia de ejecución. Federico revisa y hace squash si cumple. La portada y los mapas se pueden publicar antes.
+
+El encuentro 3D de Tierra está en `graphics/`. El anfitrión conserva el lienzo al cambiar la decisión o el idioma y lo libera al abrir los mapas o avanzar a otro capítulo. Si se vuelve desde la comparación, monta directamente la pose ya elegida. Las sombras de la Luna y Uaituparr se muestran en las ilustraciones de los otros capítulos. Consulta las [pruebas, tamaño y procedimiento de medición](../../../docs/evidence/encuentro-tierra-3d.md).

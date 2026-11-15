@@ -67,6 +67,8 @@ footer a { display:flex; align-items:center; min-height:44px; text-decoration:no
 .scene-art { display:block; width:100%; min-height:17rem; height:100%; flex:1 1 auto; object-fit:cover }
 .scene-figure figcaption { display:flex; justify-content:space-between; flex-wrap:wrap; padding:.65rem .9rem; font-size:.77rem; color:#e2e9ee; gap:.35rem .55rem }
 .scene-figure figcaption span:first-child { color:var(--world); font-weight:700 }
+.scene-art .lemures { animation: shadow-glide 1.2s ease-out both }
+@keyframes shadow-glide { from { opacity:.48; transform:translateX(-9px) } to { opacity:.81; transform:translateX(0) } }
 .analysis { background:#121e2a; max-width:1090px; margin:0 auto }
 .analysis h1 { margin-top:0 }
 .analysis .choices { margin-bottom:1.1rem }

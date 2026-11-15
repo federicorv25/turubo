@@ -40,6 +40,10 @@ export function renderExperience(
   if (state.answer) {
     const next = state.answer.next
     choices.append(actionButton(m.next, () => actions.update({ sceneId: next, answer: null })))
+    if (state.sceneId === 'earth') {
+      choices.append(actionButton(lang === 'es' ? 'Volver a elegir' : 'Choose again',
+        () => actions.update({ sceneId: state.sceneId, answer: null }), 'secondary'))
+    }
   } else {
     for (const choice of scene.choices) {
       choices.append(actionButton(choice.label[lang], () => actions.update(

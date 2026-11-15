@@ -1,5 +1,6 @@
 import rawStory from '../../../content/story.json'
 import { renderExperience, type JourneyState } from '../experience'
+import { releaseSceneGraphics, syncSceneGraphics } from '../experience/graphics/host'
 import { renderAnalysis } from '../analysis'
 import type { Analysis, Lang, Story, World } from './contracts'
 import { messages } from './i18n'
@@ -143,6 +144,7 @@ function focusMain(top=true) {
 function render(moveFocus = false) {
   unmountJourney?.()
   unmountJourney=undefined
+  if (route.screen !== 'play') releaseSceneGraphics()
   const c = site[lang]
   document.documentElement.lang = lang
   document.title = route.screen === 'home' ? `TURUBO · ${c.subtitle}` : `${c.nav[route.screen]} · TURUBO`
@@ -183,6 +185,7 @@ function renderPlay() {
     openAnalysis: world => go('compare', world),
     analysisLabel: site[lang].terrainLink[scene.world]
   })
+  syncSceneGraphics(main.querySelector<HTMLElement>('.scene-figure'), { scene, state: journey, language: lang })
 }
 
 function renderCompare(world: World) {
