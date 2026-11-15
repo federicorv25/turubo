@@ -10,7 +10,7 @@
       "es": "Vista real del Cerro Turubó y el bosque de San José de Chiquitos.",
       "en": "A real view of Cerro Turubó and the forest of San José de Chiquitos."
     },
-    "acquiredAt": "2026-11-15T06:26:13.738583+00:00",
+    "acquiredAt": "2026-11-15T13:32:27.771103+00:00",
     "originalSha256": "a37a521301dce9d7904d6188f3d50164ac667ff8997bc82cfdbd4efcb6186d36",
     "originalDimensions": [
       4000,
@@ -18,6 +18,13 @@
     ],
     "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
     "files": [
+      {
+        "path": "media/cerro-224.webp",
+        "width": 224,
+        "height": 126,
+        "bytes": 7392,
+        "sha256": "a1cf95bffdb1a2ac4cd063323d5bd5928791964e23f8ca971ff29d29c69a5450"
+      },
       {
         "path": "media/cerro-640.webp",
         "width": 640,
@@ -38,6 +45,96 @@
         "height": 1080,
         "bytes": 433066,
         "sha256": "e536eaf8b5b4b2fd229e8cbd3360e8ddcdfbe1abba357dbc9b64b436c3f62971"
+      }
+    ]
+  },
+  {
+    "id": "cerro-detail",
+    "page": "https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_y_San_Jos%C3%A9_de_Chiquitos_-_Chiquitos,_Bolivia.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Cerro_Turub%C3%B3_y_San_Jos%C3%A9_de_Chiquitos_-_Chiquitos%2C_Bolivia.jpg",
+    "credit": "Ruditaly / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "crop": [
+      2140,
+      180,
+      4000,
+      1482
+    ],
+    "alt": {
+      "es": "Encuadre de la cumbre y la ladera boscosa del Cerro Turubó.",
+      "en": "A closer view of Cerro Turubó’s summit and forested slope."
+    },
+    "acquiredAt": "2026-11-15T13:32:28.401014+00:00",
+    "originalSha256": "d0c694ffb2560150c2ddeeeb080b5f5dd42667b5dedf95d2091c4cc1ef19a5e0",
+    "originalDimensions": [
+      4000,
+      2250
+    ],
+    "modifications": "EXIF orientation; cropped to frame the hill; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/cerro-detail-224.webp",
+        "width": 224,
+        "height": 157,
+        "bytes": 7376,
+        "sha256": "4279cf4b868038d9b1a59cb55ef855dfee444391b2d86ee3540030daf72a539f"
+      },
+      {
+        "path": "media/cerro-detail-640.webp",
+        "width": 640,
+        "height": 448,
+        "bytes": 52914,
+        "sha256": "6b16d55907a7d93a439d699e5668364551f77be64f2f2a88f7803efeba7c39b5"
+      },
+      {
+        "path": "media/cerro-detail-1280.webp",
+        "width": 1280,
+        "height": 896,
+        "bytes": 206026,
+        "sha256": "e1e30289f0e86f1baa7065349160425564465d22801f58040a1b40af0ea5203c"
+      }
+    ]
+  },
+  {
+    "id": "valle-lookout",
+    "page": "https://commons.wikimedia.org/wiki/File:Valle_de_la_Luna_de_San_Jos%C3%A9_de_Chiquitos.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Valle_de_la_Luna_de_San_Jos%C3%A9_de_Chiquitos.jpg",
+    "credit": "Aldrihe / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "alt": {
+      "es": "Afloramientos de roca y vegetación en el Valle de la Luna de San José de Chiquitos.",
+      "en": "Rock outcrops and vegetation in Valle de la Luna, San José de Chiquitos."
+    },
+    "acquiredAt": "2026-11-15T13:32:28.919514+00:00",
+    "originalSha256": "c4db41acf72039663ffdd1d5c3126febf02061b3f04ba9260b316da859f24b40",
+    "originalDimensions": [
+      1309,
+      1201
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/valle-lookout-224.webp",
+        "width": 224,
+        "height": 206,
+        "bytes": 8438,
+        "sha256": "5dc61ec5a9331508d4dd1214b78ef0425971f63111464833071c76ac5f1c7a1f"
+      },
+      {
+        "path": "media/valle-lookout-640.webp",
+        "width": 640,
+        "height": 587,
+        "bytes": 51460,
+        "sha256": "97334316cbb4af47f190d72e4a22c99174f2939d06070e717ffc2e410be0b88c"
+      },
+      {
+        "path": "media/valle-lookout-1280.webp",
+        "width": 1280,
+        "height": 1174,
+        "bytes": 143240,
+        "sha256": "d6b032a2dcbce00bf3797086c55fc938d07ba8b3496e4683130f24d0c664534e"
       }
     ]
   },

@@ -7,6 +7,7 @@ from pathlib import Path
 from urllib.request import Request, urlopen
 from hashlib import sha256
 from datetime import datetime, timezone
+import argparse
 import json
 from PIL import Image, ImageOps
 
@@ -18,6 +19,15 @@ ITEMS = [
          url='https://upload.wikimedia.org/wikipedia/commons/d/df/Cerro_Turub%C3%B3_-_San_Jos%C3%A9_de_Chiquitos%2C_Bolivia.jpg',
          credit='Ruditaly / Wikimedia Commons', license='CC BY-SA 4.0', licenseUrl='https://creativecommons.org/licenses/by-sa/4.0/',
          alt={'es':'Vista real del Cerro Turubó y el bosque de San José de Chiquitos.', 'en':'A real view of Cerro Turubó and the forest of San José de Chiquitos.'}),
+    dict(id='cerro-detail', page='https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_y_San_Jos%C3%A9_de_Chiquitos_-_Chiquitos,_Bolivia.jpg',
+         url='https://upload.wikimedia.org/wikipedia/commons/c/cd/Cerro_Turub%C3%B3_y_San_Jos%C3%A9_de_Chiquitos_-_Chiquitos%2C_Bolivia.jpg',
+         credit='Ruditaly / Wikimedia Commons', license='CC BY-SA 4.0', licenseUrl='https://creativecommons.org/licenses/by-sa/4.0/',
+         crop=[2140, 180, 4000, 1482],
+         alt={'es':'Encuadre de la cumbre y la ladera boscosa del Cerro Turubó.', 'en':'A closer view of Cerro Turubó’s summit and forested slope.'}),
+    dict(id='valle-lookout', page='https://commons.wikimedia.org/wiki/File:Valle_de_la_Luna_de_San_Jos%C3%A9_de_Chiquitos.jpg',
+         url='https://upload.wikimedia.org/wikipedia/commons/c/cd/Valle_de_la_Luna_de_San_Jos%C3%A9_de_Chiquitos.jpg',
+         credit='Aldrihe / Wikimedia Commons', license='CC BY-SA 4.0', licenseUrl='https://creativecommons.org/licenses/by-sa/4.0/',
+         alt={'es':'Afloramientos de roca y vegetación en el Valle de la Luna de San José de Chiquitos.', 'en':'Rock outcrops and vegetation in Valle de la Luna, San José de Chiquitos.'}),
     dict(id='valle', page='https://commons.wikimedia.org/wiki/File:Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg',
          url='https://upload.wikimedia.org/wikipedia/commons/e/e2/Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg',
          credit='Aldrihe / Wikimedia Commons', license='CC BY-SA 4.0', licenseUrl='https://creativecommons.org/licenses/by-sa/4.0/',
@@ -41,10 +51,16 @@ ITEMS = [
 ]
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--only', nargs='+', choices=[item['id'] for item in ITEMS], help='Regenerate selected items, preserving other manifest entries.')
+    only=parser.parse_args().only
+    manifest=ROOT/'design/media-manifest.json'
     CACHE.mkdir(parents=True, exist_ok=True)
     OUT.mkdir(parents=True, exist_ok=True)
-    records=[]
+    records={r['id']:r for r in json.loads(manifest.read_text(encoding='utf8'))} if only and manifest.exists() else {}
     for item in ITEMS:
+        if only and item['id'] not in only:
+            continue
         original=CACHE / (item['id']+'-viking' if item['id']=='mars-texture' else item['id'])
         if not original.exists():
             with urlopen(Request(item['url'], headers={'User-Agent':'TURUBO-SpaceApps/1.0'}), timeout=40) as response:
@@ -54,8 +70,13 @@ def main():
             original.write_bytes(data)
         data=original.read_bytes()
         image=ImageOps.exif_transpose(Image.open(original)).convert('RGB')
+        original_size=image.size
+        if 'crop' in item:
+            image=image.crop(item['crop'])
         files=[]
         widths=[min(2048,image.width)] if 'texture' in item['id'] else sorted(set(min(w,image.width) for w in [640,1280,1920]))
+        if item['id'] in {'cerro','cerro-detail','valle-lookout'}:
+            widths=[224,640,1280] + ([1920] if item['id']=='cerro' else [])
         for width in widths:
             size=(width, round(image.height*width/image.width))
             target=OUT / (item['id']+'.webp' if 'texture' in item['id'] else f'{item["id"]}-{width}.webp')
@@ -81,8 +102,12 @@ def main():
             target=OUT / item['id'].replace('-texture','-globe.webp')
             Image.fromarray(rgba).save(target,'WEBP',quality=85,method=6)
             files.append(dict(path='media/'+target.name,width=sz,height=sz,bytes=target.stat().st_size,sha256=sha256(target.read_bytes()).hexdigest(),modification='Static illustrative sphere, lit and projected from this global texture.'))
-        records.append(dict(**item, acquiredAt=datetime.now(timezone.utc).isoformat(), originalSha256=sha256(data).hexdigest(),originalDimensions=list(image.size),modifications='EXIF orientation; resized; WebP encoding. No generative editing.',files=files))
+        modifications='EXIF orientation; '
+        if 'crop' in item:
+            modifications+='cropped to frame the hill; '
+        modifications+='resized; WebP encoding. No generative editing.'
+        records[item['id']]=dict(**item, acquiredAt=datetime.now(timezone.utc).isoformat(), originalSha256=sha256(data).hexdigest(),originalDimensions=list(original_size),modifications=modifications,files=files)
         print(item['id'],image.size, sum(f['bytes'] for f in files),'bytes')
-    (ROOT/'design/media-manifest.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    manifest.write_text(json.dumps([records[item['id']] for item in ITEMS if item['id'] in records],ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 
 if __name__=='__main__':main()

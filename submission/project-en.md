@@ -56,6 +56,8 @@ Enter each resource name as Link Text and its URL in Link.
 | OpenTopography NASADEM distribution | https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2 |
 | Archivo de Folklore Boliviano: Motivo Turubó | https://archivodefolkloreboliviano.org/motivo/turubo/ |
 | Ruditaly: Cerro Turubó (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_-_San_Jos%C3%A9_de_Chiquitos,_Bolivia.jpg |
+| Ruditaly: second Cerro Turubó angle, shown as a crop (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_y_San_Jos%C3%A9_de_Chiquitos_-_Chiquitos,_Bolivia.jpg |
+| Aldrihe: Valle de la Luna of San José de Chiquitos landscape (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Valle_de_la_Luna_de_San_Jos%C3%A9_de_Chiquitos.jpg |
 | Aldrihe: Valle de la Luna de San José de Chiquitos (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg |
 | Three.js | https://threejs.org/ |
 | GSAP / ScrollTrigger | https://gsap.com/docs/v3/Plugins/ScrollTrigger/ |
