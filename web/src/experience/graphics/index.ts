@@ -75,7 +75,8 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
  }
  settle()
  function wake(){dirty=true;lastAction=performance.now();if(!frame&&active()){previous=0;frame=requestAnimationFrame(loop)}}
- function clearInput(){keys.clear();touch.clear();pressFrom.clear();touchStart=undefined;target=undefined;auto=false;pointer=undefined}
+ function releaseManual(){keys.clear();touch.clear();pressFrom.clear();touchStart=undefined;pointer=undefined}
+ function clearInput(){releaseManual();target=undefined;auto=false}
  const movable=()=>!current.exploration.arrived&&outcome==='waiting'
  function nudge(code:string){
   const x=['KeyA','ArrowLeft','left'].includes(code)?-1:['KeyD','ArrowRight','right'].includes(code)?1:0
@@ -104,9 +105,9 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   keys.delete(e.code);pressFrom.delete(e.code)
  },opts)
  function interruptSample(){if(measuring){frames=[];sampleStart=0}}
- window.addEventListener('blur',()=>{clearInput();interruptSample()},opts)
- window.addEventListener('focus',()=>{if(measuring)wake()},opts)
- document.addEventListener('visibilitychange',()=>{clearInput();if(document.hidden){interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()},opts)
+ window.addEventListener('blur',()=>{releaseManual();interruptSample()},opts)
+ window.addEventListener('focus',()=>{if(measuring||auto||target)wake()},opts)
+ document.addEventListener('visibilitychange',()=>{releaseManual();if(document.hidden){interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()},opts)
  let tap:{x:number; y:number; id:number}|undefined
  host.addEventListener('pointerdown',event=>{
   if(!movable())return
@@ -246,7 +247,7 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   camera.aspect=width/height;camera.fov=camera.aspect<1?57:47;camera.updateProjectionMatrix();if(schedule)wake()
  }
  const resizeObserver=new ResizeObserver(()=>resize())
- const visibility=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(!visible){clearInput();interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()})
+ const visibility=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(!visible){releaseManual();interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()})
  if(qa)host.addEventListener('turubo-game-benchmark',()=>{measuring=true;interruptSample();delete host.dataset.graphicsPerformance;wake()},opts)
  resizeObserver.observe(host);visibility.observe(host)
  function teardown(){
