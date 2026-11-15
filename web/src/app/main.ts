@@ -8,7 +8,7 @@ import { site } from './site-copy'
 import { renderAbout, renderStage, renderFinding, renderMethod } from './screens'
 import { renderJourney, refreshJourneyData } from '../journey/content'
 import { mountJourney } from '../journey/mount'
-import mark from './art/turubo.svg'
+import type { OriginPhoto } from '../journey/origin-gallery'
 import '@fontsource/cormorant-garamond/latin-600.css'
 import '@fontsource/manrope/latin-400.css'
 import '@fontsource/manrope/latin-700.css'
@@ -30,6 +30,7 @@ let compareBack: 'play' | 'home' = 'home'
 let analysis: DataState = { status: 'idle' }
 let unmountJourney: (() => void) | undefined
 let landingScroll=0
+let originPhoto: OriginPhoto = 'cerro'
 
 function preferredLanguage(): Lang {
   try {
@@ -65,7 +66,7 @@ header.className = 'site-header'
 const home = document.createElement('a')
 home.className = 'wordmark'
 home.href = routeHash('home')
-home.innerHTML = `<img src="${mark}" alt="" width="36" height="36"><span>TURUBO</span>`
+home.textContent = 'TURUBO'
 home.onclick = event => { if(route.screen==='home'){event.preventDefault(); setMenu(false); focusMain()} }
 const nav = document.createElement('nav')
 nav.className = 'site-nav'
@@ -130,7 +131,7 @@ const footer = document.createElement('footer')
 const credits = document.createElement('a')
 credits.href = routeHash('about')
 const footerTag = document.createElement('span')
-footerTag.innerHTML = `<img src="${mark}" width="30" height="30" alt=""><span>TURUBO <small>· Santa Cruz, Bolivia</small></span>`
+footerTag.innerHTML = '<span>TURUBO <small>· Santa Cruz, Bolivia</small></span>'
 footer.append(footerTag, credits)
 app.append(skip, header, main, footer)
 
@@ -161,13 +162,13 @@ function render(moveFocus = false) {
   setMenu(false)
   main.dataset.screen = route.screen
   if (route.screen === 'home') {
-    main.innerHTML = renderJourney(lang, journeyStarted, analysis.status==='ready'?analysis.value:undefined)
+    main.innerHTML = renderJourney(lang, journeyStarted, analysis.status==='ready'?analysis.value:undefined, originPhoto)
     unmountJourney = mountJourney(main, id => {
       const section = document.getElementById(id)
       const heading = section?.querySelector<HTMLElement>('h2')
       if(heading) { heading.tabIndex=-1; heading.focus({preventScroll:true}) }
       section?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
-    })
+    }, photo => { originPhoto = photo })
     if (analysis.status==='idle') void loadAnalysis()
     if (analysis.status==='failed') refreshJourneyData(main,lang)
   }

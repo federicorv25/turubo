@@ -1,10 +1,14 @@
+import { mountOriginGallery, type OriginPhoto } from './origin-gallery'
+
 /** Motion is decorative. All content is rendered before creating a graphics context. */
-export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void) {
+export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void, onPhoto: (id: OriginPhoto) => void) {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)')
   const connection = (navigator as Navigator & { connection?: EventTarget & { saveData?: boolean } }).connection
   const abort = new AbortController()
   const root = page.querySelector<HTMLElement>('.orbital-journey')!
   const rail = page.querySelector<HTMLElement>('.reading-line i')!
+  const gallery = page.querySelector<HTMLElement>('.origin-gallery')
+  const stopGallery = gallery && mountOriginGallery(gallery, reduced, connection, onPhoto)
   let stopOrbit: (()=>void) | undefined
   let loading = false
   let loaded = false
@@ -49,7 +53,7 @@ export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void) 
     const p=scrollable>0?Math.min(1,scrollY/scrollable):0
     rail.style.transform=`scaleX(${p})`
     const hero=page.querySelector<HTMLElement>('.hero-landscape')
-    if(hero && !reduced.matches && scrollY<innerHeight*1.3) hero.style.transform=`translateY(${scrollY*.14}px) scale(${1+Math.min(.12,p*.4)})`
+    if(hero && !reduced.matches && !connection?.saveData && scrollY<innerHeight*1.3) hero.style.transform=`translateY(${scrollY*.14}px) scale(${1+Math.min(.12,p*.4)})`
   }
   addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(drawScroll)},{ passive:true,signal:abort.signal })
   drawScroll()
@@ -59,6 +63,7 @@ export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void) 
     if(frame) cancelAnimationFrame(frame)
     reveal.disconnect()
     lazy.disconnect()
+    stopGallery?.()
     stopOrbit?.()
   }
 }

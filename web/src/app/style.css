@@ -19,8 +19,7 @@ button,.button { display:inline-flex; align-items:center; justify-content:center
 :is(button,.button).primary:hover { background:#ffe4b4 }
 button[aria-pressed='true'] { background:#3d3628; border-color:var(--gold); color:#ffe7b6 }
 .site-header { position:sticky; inset-block-start:0; z-index:20; min-height:var(--mast-height); display:grid; grid-template-columns:1fr auto 1fr; padding:.6rem var(--gutter); gap:1.1rem; align-items:center; background:#0a111a; border-bottom:1px solid #cbd4da31 }
-.wordmark { display:inline-flex; align-items:center; width:max-content; min-height:44px; gap:.62rem; text-decoration:none; color:#f7e4c3; font:600 1.47rem/1 var(--display); letter-spacing:.11em }
-.wordmark img { flex:none; display:block }
+.wordmark { display:inline-flex; align-items:center; width:max-content; min-height:44px; text-decoration:none; color:#f7e4c3; font:600 1.58rem/1 var(--display); letter-spacing:.16em }
 .site-nav { display:flex; align-items:center; gap:clamp(.75rem,2.3vw,2.4rem) }
 .site-nav a { display:flex; align-items:center; min-height:44px; color:#e0e5e6; text-decoration:none; font-size:.82rem; font-weight:700; position:relative }
 .site-nav a:hover,.site-nav a[aria-current='page'] { color:var(--gold) }
@@ -102,8 +101,7 @@ footer a { display:flex; align-items:center; min-height:44px; text-decoration:no
  .site-header[data-menu='true'] .site-nav { display:grid }
  .site-nav a { padding:.1rem .7rem; font-size:.92rem }
  .site-nav a[aria-current='page']::after { inset-inline:.7rem }
- .wordmark { gap:.4rem; letter-spacing:.075em }
- .wordmark img { width:31px; height:31px }
+ .wordmark { font-size:1.42rem; letter-spacing:.11em }
 }
 @media (max-width:640px) {
  .play-grid,.about-grid { grid-template-columns:1fr }
