@@ -100,7 +100,7 @@
 .pair-heading { font-size:.67rem; margin-bottom:.7rem; color:#f0d4a1 }
 .paired-maps { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem }
 .paired-maps figure { margin:0; min-width:0 }
-.paired-maps img { width:100%; height:auto; display:block; aspect-ratio:1; object-fit:contain; background:#f7f7f5 }
+.paired-maps img { width:100%; height:auto; display:block; object-fit:contain; background:#111b2d }
 .paired-maps figcaption { color:#edf1f2; font-size:.76rem; padding:.4rem 0; font-weight:700 }
 .map-key { font-size:.77rem; color:#c8d5df; margin:.35rem 0 0 }
 .pair-stat { display:flex; align-items:center; flex-wrap:wrap; gap:.2rem .85rem; font-size:.82rem; color:#c7d2d9; margin:.75rem 0 .15rem; font-variant-numeric:tabular-nums }
@@ -119,7 +119,7 @@
 .adventure-content { padding-block:4rem 5rem }
 .adventure-content p { max-width:38ch; color:#e4e8eb; margin:1.25rem 0 1.5rem }
 .adventure-content small { display:block; margin-top:.7rem; font-size:.8rem; color:#d5dce3; max-width:40ch }
-.generated-label { position:absolute; right:var(--gutter); bottom:1.2rem; color:#e4e9eb; font-size:.72rem; background:#0a121bea; padding:.35rem .65rem; border:1px solid #dad8ce63 }
+.generated-label { position:absolute; right:var(--gutter); top:1.2rem; color:#e4e9eb; font-size:.72rem; background:#0a121bea; padding:.35rem .65rem; border:1px solid #dad8ce63 }
 .closing-section { text-align:center; padding-block:clamp(3.7rem,8vw,8.3rem); background:#111c1c; }
 .closing-section h2 { margin:1.05rem 0 0 }
 .closing-bottom { border-top:1px solid #efe1c752; margin:clamp(1.7rem,4vw,3.8rem) auto 0; padding-top:1rem; max-width:48rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; text-align:left }
