@@ -1,0 +1,88 @@
+[
+  {
+    "id": "nocturno",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "6563db726577c890e972f2363d1a4dbc7264053a15cc78fee64d88422c87e205",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and encoded to WebP; hero also cropped for mobile. No scientific or documentary use.",
+    "files": [
+      {
+        "path": "media/nocturno-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 5726,
+        "sha256": "29014ae6cb75283dc06e5ff50ab700361fd6659368852f03d9c44e50a57e95a1"
+      },
+      {
+        "path": "media/nocturno-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 20824,
+        "sha256": "fc8074e6ddc2c487e6549871168940b5a75a91731ba09297219060a4138479c9"
+      },
+      {
+        "path": "media/nocturno-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 50846,
+        "sha256": "8a2bf36838838edcb3c31ade92762ddf9b08de45dc35074050c6eea70606296c"
+      },
+      {
+        "path": "media/nocturno-mobile.webp",
+        "width": 690,
+        "height": 1070,
+        "bytes": 26794,
+        "sha256": "0954822a41c763db3abb3c422ff92570d2c51d8903f31cc176466fbd952e1d4f",
+        "modification": "Portrait crop to frame horizon and hill on mobile."
+      }
+    ]
+  },
+  {
+    "id": "legend",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "df9cef19ed4404f9445a9691456a9d02786c936560c42d49e5f4444529acaa9d",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and encoded to WebP; hero also cropped for mobile. No scientific or documentary use.",
+    "files": [
+      {
+        "path": "media/legend-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 8474,
+        "sha256": "4d8cc40fe9be3bd27c58b8f4e3e63d4ea4bf7fea9347371b4ddee7886d3c555d"
+      },
+      {
+        "path": "media/legend-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 26328,
+        "sha256": "65c38afd8144b49b3ebe4e0a984a90a2c1e0fe989b82f6ba83df4b9ddb7155dc"
+      },
+      {
+        "path": "media/legend-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 66332,
+        "sha256": "f005c5aa82a05283dd63c3dcee85af08fafd0cd1ceb7eca8f2b42f588ef5527d"
+      }
+    ]
+  }
+]

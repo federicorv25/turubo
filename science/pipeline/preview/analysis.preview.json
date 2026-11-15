@@ -1,0 +1,439 @@
+{
+  "version": 1,
+  "simulated": false,
+  "reviewStage": "technical_preview_pending_team_review",
+  "terrains": [
+    {
+      "id": "bo-r01-c01",
+      "name": "Valle de la Luna · R01 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r01-c01.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.7362901702488336,
+        "slopeP90Deg": 3.696304112267917,
+        "reliefM": 43.356183163258606
+      }
+    },
+    {
+      "id": "bo-r01-c02",
+      "name": "Valle de la Luna · R01 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r01-c02.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4798300650928176,
+        "slopeP90Deg": 3.2043608006884523,
+        "reliefM": 19.855635579716647
+      }
+    },
+    {
+      "id": "bo-r01-c03",
+      "name": "Valle de la Luna · R01 C03",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r01-c03.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4922106706899867,
+        "slopeP90Deg": 2.908908421913113,
+        "reliefM": 11.978229338242045
+      }
+    },
+    {
+      "id": "bo-r01-c04",
+      "name": "Valle de la Luna · R01 C04",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r01-c04.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6625672477138826,
+        "slopeP90Deg": 3.1809521942897487,
+        "reliefM": 10.325210925887745
+      }
+    },
+    {
+      "id": "bo-r01-c05",
+      "name": "Valle de la Luna · R01 C05",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r01-c05.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.5627259345220716,
+        "slopeP90Deg": 3.0623982470785687,
+        "reliefM": 11.432787039987602
+      }
+    },
+    {
+      "id": "bo-r02-c01",
+      "name": "Valle de la Luna · R02 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c01.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.931704448941657,
+        "slopeP90Deg": 7.195653866821333,
+        "reliefM": 136.02933882714967
+      }
+    },
+    {
+      "id": "bo-r02-c02",
+      "name": "Valle de la Luna · R02 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c02.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6404633610448378,
+        "slopeP90Deg": 3.412745943311468,
+        "reliefM": 63.384648524234194
+      }
+    },
+    {
+      "id": "bo-r02-c03",
+      "name": "Valle de la Luna · R02 C03",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c03.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.6219441116431885,
+        "slopeP90Deg": 2.9951797342759248,
+        "reliefM": 38.71128976528257
+      }
+    },
+    {
+      "id": "bo-r02-c04",
+      "name": "Valle de la Luna · R02 C04",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c04.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4929653662838693,
+        "slopeP90Deg": 3.0937071796947,
+        "reliefM": 38.82362343653256
+      }
+    },
+    {
+      "id": "bo-r02-c05",
+      "name": "Valle de la Luna · R02 C05",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c05.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.4570928828662768,
+        "slopeP90Deg": 2.973562000988771,
+        "reliefM": 28.37264914170879
+      }
+    },
+    {
+      "id": "bo-r03-c01",
+      "name": "Valle de la Luna · R03 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c01.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 7.164971824983873,
+        "slopeP90Deg": 14.542802302925303,
+        "reliefM": 229.60652071263593
+      }
+    },
+    {
+      "id": "bo-r03-c02",
+      "name": "Valle de la Luna · R03 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c02.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 4.450930762689857,
+        "slopeP90Deg": 17.58468438158216,
+        "reliefM": 228.3486844522094
+      }
+    },
+    {
+      "id": "bo-r03-c03",
+      "name": "Valle de la Luna · R03 C03",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c03.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 4.181679449603328,
+        "slopeP90Deg": 15.397993831150146,
+        "reliefM": 252.8324085270254
+      }
+    },
+    {
+      "id": "bo-r03-c04",
+      "name": "Valle de la Luna · R03 C04",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c04.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 3.301588790818923,
+        "slopeP90Deg": 17.70832147552757,
+        "reliefM": 249.86176270559815
+      }
+    },
+    {
+      "id": "bo-r03-c05",
+      "name": "Valle de la Luna · R03 C05",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c05.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.1847819082603097,
+        "slopeP90Deg": 10.640448240500769,
+        "reliefM": 135.87261145194367
+      }
+    },
+    {
+      "id": "bo-r04-c01",
+      "name": "Valle de la Luna · R04 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r04-c01.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 4.354583991954756,
+        "slopeP90Deg": 9.789769136708944,
+        "reliefM": 102.19857656670462
+      }
+    },
+    {
+      "id": "bo-r04-c02",
+      "name": "Valle de la Luna · R04 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r04-c02.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 6.0271742100826575,
+        "slopeP90Deg": 12.100659685670049,
+        "reliefM": 170.154369350926
+      }
+    },
+    {
+      "id": "bo-r04-c03",
+      "name": "Valle de la Luna · R04 C03",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r04-c03.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 5.373942587358493,
+        "slopeP90Deg": 10.35418133296316,
+        "reliefM": 174.53007491446562
+      }
+    },
+    {
+      "id": "bo-r04-c04",
+      "name": "Valle de la Luna · R04 C04",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r04-c04.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 4.466218677923152,
+        "slopeP90Deg": 9.329008767875857,
+        "reliefM": 129.6102183776846
+      }
+    },
+    {
+      "id": "bo-r04-c05",
+      "name": "Valle de la Luna · R04 C05",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r04-c05.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 5.527040749976594,
+        "slopeP90Deg": 18.307062125241256,
+        "reliefM": 186.65670349311432
+      }
+    },
+    {
+      "id": "bo-r05-c01",
+      "name": "Valle de la Luna · R05 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r05-c01.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.5819462442331997,
+        "slopeP90Deg": 3.2995970559095493,
+        "reliefM": 17.95433615181389
+      }
+    },
+    {
+      "id": "bo-r05-c02",
+      "name": "Valle de la Luna · R05 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r05-c02.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 1.7856041656280164,
+        "slopeP90Deg": 4.398311279259037,
+        "reliefM": 50.703366705724136
+      }
+    },
+    {
+      "id": "bo-r05-c03",
+      "name": "Valle de la Luna · R05 C03",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r05-c03.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.892607636939025,
+        "slopeP90Deg": 5.935967905279606,
+        "reliefM": 65.29859010384178
+      }
+    },
+    {
+      "id": "bo-r05-c04",
+      "name": "Valle de la Luna · R05 C04",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r05-c04.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 3.4812504808989893,
+        "slopeP90Deg": 6.20194286071257,
+        "reliefM": 99.02589523437024
+      }
+    },
+    {
+      "id": "bo-r05-c05",
+      "name": "Valle de la Luna · R05 C05",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r05-c05.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.9947557150595845,
+        "slopeP90Deg": 5.70965354320865,
+        "reliefM": 91.79485232943784
+      }
+    },
+    {
+      "id": "bo-cerro-turubo",
+      "name": "Cerro Turubó",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-cerro-turubo.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.148356756456221,
+        "slopeP90Deg": 13.563536467546298,
+        "reliefM": 119.11531654835926
+      }
+    },
+    {
+      "id": "moon-nobile-rim-1",
+      "name": "Nobile Rim 1",
+      "body": "moon",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "image": "maps/moon-nobile-rim-1.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 14.695189664021298,
+        "slopeP90Deg": 21.67027176803469,
+        "reliefM": 624.6136180877675
+      }
+    },
+    {
+      "id": "mars-jezero",
+      "name": "Jezero",
+      "body": "mars",
+      "source": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+      "image": "maps/mars-jezero.png",
+      "resolutionM": 40,
+      "coverage": 1.0,
+      "metrics": {
+        "slopeMedianDeg": 2.1101635161982073,
+        "slopeP90Deg": 4.408824966743379,
+        "reliefM": 77.55926551565153
+      }
+    }
+  ],
+  "comparisons": {
+    "moon": {
+      "status": "reviewed",
+      "referenceId": "moon-nobile-rim-1",
+      "ranked": [
+        {
+          "id": "bo-r03-c01",
+          "distance": 6.8677333767069335
+        },
+        {
+          "id": "bo-r04-c05",
+          "distance": 7.83080017484273
+        },
+        {
+          "id": "bo-r04-c02",
+          "distance": 7.959326417820477
+        }
+      ],
+      "guidedId": "bo-cerro-turubo"
+    },
+    "mars": {
+      "status": "reviewed",
+      "referenceId": "mars-jezero",
+      "ranked": [
+        {
+          "id": "bo-r02-c02",
+          "distance": 0.38509561139682974
+        },
+        {
+          "id": "bo-r05-c02",
+          "distance": 0.3904667042562282
+        },
+        {
+          "id": "bo-r01-c01",
+          "distance": 0.5045672372059815
+        }
+      ],
+      "guidedId": "bo-cerro-turubo"
+    }
+  }
+}
