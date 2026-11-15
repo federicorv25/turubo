@@ -1,9 +1,65 @@
 {
   "version": 1,
   "simulated": false,
-  "terrains": [],
+  "terrains": [
+    {
+      "id": "bo-r02-c02",
+      "name": "Valle de la Luna · R02 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c02.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 1.6404633610448378,
+        "slopeP90Deg": 3.412745943311468,
+        "reliefM": 63.384648524234194
+      }
+    },
+    {
+      "id": "bo-cerro-turubo",
+      "name": "Cerro Turubó",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-cerro-turubo.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 2.148356756456221,
+        "slopeP90Deg": 13.563536467546298,
+        "reliefM": 119.11531654835926
+      }
+    },
+    {
+      "id": "mars-jezero",
+      "name": "Jezero",
+      "body": "mars",
+      "source": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+      "image": "maps/mars-jezero.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 2.1101635161982073,
+        "slopeP90Deg": 4.408824966743379,
+        "reliefM": 77.55926551565153
+      }
+    }
+  ],
   "comparisons": {
-    "moon": { "status": "not_assessed", "ranked": [] },
-    "mars": { "status": "not_assessed", "ranked": [] }
+    "moon": {
+      "status": "not_assessed",
+      "ranked": []
+    },
+    "mars": {
+      "status": "reviewed",
+      "referenceId": "mars-jezero",
+      "ranked": [
+        {
+          "id": "bo-r02-c02",
+          "distance": 0.38509561139682974
+        }
+      ],
+      "guidedId": "bo-cerro-turubo"
+    }
   }
 }
