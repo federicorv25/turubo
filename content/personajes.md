@@ -37,9 +37,9 @@ Guía de producción para siluetas y poses preliminares. Las descripciones visua
 ## Diseño que se publica
 
 - **Turubó:** viajero de geometría sencilla, túnica de tonos ocres y una figura de madera. Asael lo muestra protegiendo la figura al inicio y la lanza si se elige la distracción.
-- **Serpiente:** cuerpo verde en espiral y cabeza elevada. En 3D cambia de dirección para seguir la figura lanzada o reacciona al salto. El SVG de respaldo conserva su silueta.
-- **Lémures:** sombras azules que se separan suavemente de dos figuras talladas. Son formas de la adaptación, sin rasgos animales.
-- **Uaituparr:** silueta marfil y azul en el umbral del templo ficticio. Aparece en la ilustración de Marte, fuera del mapa medido de Jezero.
+- **Serpiente:** cuerpo verde en espiral y cabeza elevada. En 3D cambia de dirección para seguir la figura lanzada o reacciona al salto. La ilustración de respaldo muestra a Turubó frente a la serpiente.
+- **Lémures:** sombras azules que se separan suavemente de dos figuras talladas. Son formas de la adaptación, sin rasgos animales. La escena lunar muestra tres figuras talladas con esas presencias; pueden separarse o aquietarse según la decisión.
+- **Uaituparr:** silueta marfil y azul en el umbral del templo ficticio. Aparece como figura luminosa en el umbral de la escena 3D de Marte y en la ilustración de respaldo, siempre fuera del mapa medido de Jezero.
 
 ## Uso y créditos
 

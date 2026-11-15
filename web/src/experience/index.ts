@@ -28,19 +28,25 @@ export function renderExperience(
   const copy = document.createElement('p')
   copy.className = 'story-copy'
   copy.textContent = state.answer?.feedback?.[lang] ?? scene.text[lang]
-  section.append(tag, heading, disclosure, copy)
+  const narrative=document.createElement('div')
+  narrative.className='chapter-narrative'
+  const actionsPane=document.createElement('div')
+  actionsPane.className='chapter-actions'
+  narrative.append(tag,heading,copy)
+  section.append(narrative,actionsPane)
   if (scene.poison) {
     const poison = document.createElement('p')
     poison.className = 'poison'
     poison.textContent = scene.poison[lang]
-    section.append(poison)
+    narrative.append(poison)
   }
   const choices = document.createElement('div')
-  choices.className = 'choices'
+  choices.className = 'choices decision-choices'
   if (state.answer) {
     const next = state.answer.next
-    choices.append(actionButton(m.next, () => actions.update({ sceneId: next, answer: null })))
-    if (state.sceneId === 'earth') {
+    const nextLabel=next==='moon'?(lang==='es'?'Partir hacia la Luna':'Travel to the Moon'):next==='mars'?(lang==='es'?'Partir hacia Marte':'Travel to Mars'):next==='epilogue'?(lang==='es'?'Descubrir el final':'Discover the ending'):m.next
+    choices.append(actionButton(nextLabel, () => actions.update({ sceneId: next, answer: null })))
+    if (['earth','moon','mars'].includes(state.sceneId)) {
       choices.append(actionButton(lang === 'es' ? 'Volver a elegir' : 'Choose again',
         () => actions.update({ sceneId: state.sceneId, answer: null }), 'secondary'))
     }
@@ -51,8 +57,17 @@ export function renderExperience(
       )))
     }
   }
-  choices.append(actionButton(actions.analysisLabel ?? m.analysis, () => actions.openAnalysis(scene.world), 'secondary'))
-  section.append(choices)
+  const prompt=document.createElement('p')
+  prompt.className='decision-prompt'
+  prompt.textContent=lang==='es'?(state.answer?'TU DECISIÓN CAMBIA LA ESCENA':'¿CÓMO VAS A SEGUIR?'):(state.answer?'YOUR CHOICE CHANGES THE SCENE':'HOW WILL YOU CONTINUE?')
+  if(state.sceneId==='prologue')prompt.textContent=lang==='es'?'CAMINA · DECIDE · DESCUBRE':'WALK · CHOOSE · DISCOVER'
+  const note=document.createElement('p')
+  note.className='approach-note'
+  note.textContent=lang==='es'?'Acércate a la luz para tomar tu decisión. También puedes usar «Guíame al encuentro».':'Reach the light to make your choice. You can also use “Guide me to the encounter”.'
+  if(['earth','moon','mars'].includes(state.sceneId)&&!state.answer)actionsPane.append(note)
+  actionsPane.append(prompt,choices)
+  const dataLink=actionButton(actions.analysisLabel??m.analysis,()=>actions.openAnalysis(scene.world),'story-data-link')
+  actionsPane.append(dataLink,disclosure)
   container.replaceChildren(section)
 }
 

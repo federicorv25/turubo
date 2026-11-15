@@ -1,7 +1,7 @@
 export const messages = {
   en: {
-    analysis: 'Compare terrain', story: 'Back to the story', start: 'Begin the journey',
-    next: 'Continue', chapter: 'Chapter', fiction: 'Story', evidence: 'Compare terrain',
+    analysis: 'Discoveries', story: 'Back to the story', start: 'Begin the journey',
+    next: 'Continue', chapter: 'Chapter', fiction: 'Story', evidence: 'Discoveries',
     earth: 'Earth', moon: 'Moon', mars: 'Mars',
     earthIntro: 'Two separate sites in Bolivia: Valle de la Luna de San José de Chiquitos and Cerro Turubó.',
     moonIntro: 'Nobile Rim 1 is our reference near the Moon’s south pole. The source map interpolates many elevations, so valid coverage does not mean every point was measured directly.',
@@ -13,8 +13,8 @@ export const messages = {
     reference: 'Reference', ranked: 'Closest candidates by measured terrain'
   },
   es: {
-    analysis: 'Comparar terrenos', story: 'Volver a la historia', start: 'Comenzar el viaje',
-    next: 'Continuar', chapter: 'Capítulo', fiction: 'Historia', evidence: 'Comparar terrenos',
+    analysis: 'Los descubrimientos', story: 'Volver a la historia', start: 'Comenzar el viaje',
+    next: 'Continuar', chapter: 'Capítulo', fiction: 'Historia', evidence: 'Los descubrimientos',
     earth: 'Tierra', moon: 'Luna', mars: 'Marte',
     earthIntro: 'Dos lugares distintos de Bolivia: el Valle de la Luna de San José de Chiquitos y el Cerro Turubó.',
     moonIntro: 'Nobile Rim 1 es nuestra referencia cerca del polo sur lunar. El mapa de origen tiene muchas alturas interpoladas; la cobertura válida no significa que se haya medido cada punto.',

@@ -9,7 +9,7 @@
   "packageManager": "npm@12.2.2",
   "scripts": {
     "dev": "vite",
-    "check": "tsc --noEmit && node scripts/check-content.mjs",
+    "check": "tsc --noEmit && node scripts/check-content.mjs && node scripts/check-exploration.mjs",
     "build": "vite build",
     "preview": "vite preview"
   },

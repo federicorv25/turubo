@@ -1,25 +1,87 @@
-.analysis-header{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
-.analysis-intro{color:var(--muted);font-size:clamp(.95rem,2.2vw,1.05rem);max-width:62ch;margin:0}
-.analysis-worlds{margin:.85rem 0 1.1rem}
-.compare-panel{display:flex;flex-direction:column;gap:1.35rem;margin:1.25rem 0}
-.compare-panel h2{font-size:1.15rem;margin:0 0 .35rem;color:var(--gold)}
-.ranking-note,.limitations{margin:0;color:var(--muted);font-size:.92rem;max-width:65ch}
-.compare-columns{display:grid;gap:1rem;grid-template-columns:1fr}
-@media(min-width:720px){.compare-columns{grid-template-columns:1fr 1fr;align-items:start}}
-.terrain-card{padding:1rem 1.05rem;background:#192d40;border:1px solid #2f4559;border-radius:.65rem;display:flex;flex-direction:column;gap:.75rem;min-width:0}
-.terrain-card h3{font-family:Georgia,serif;font-size:1.05rem;margin:0;line-height:1.25}
-.terrain-card .role-tag{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-.map-frame{background:#0a1520;border:1px solid #2a3f52;border-radius:.45rem;padding:.35rem;display:flex;align-items:center;justify-content:center;min-height:11rem}
-.map-frame img{display:block;width:100%;max-height:14rem;object-fit:contain}
-.map-frame--empty{padding:1rem;color:var(--muted);font-size:.88rem;text-align:center;min-height:6rem}
-.metrics{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:.35rem .65rem;margin:0;font-size:.92rem}
-.metrics dt{color:var(--muted)}
-.metrics dd{margin:0;font-variant-numeric:tabular-nums}
-.card-source{font-size:.9rem}
-.candidate-picker{display:flex;flex-wrap:wrap;gap:.5rem;margin:.35rem 0 .65rem}
-.candidate-picker button{flex:1 1 auto;min-width:min(100%,12rem)}
-.guided-panel{padding:1rem 1.05rem;border:1px dashed #5a6f82;border-radius:.65rem;background:#142436}
-.guided-panel h2{font-size:1.05rem;margin:0 0 .5rem}
-.earth-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
-.analysis-actions{margin-top:1.35rem;display:flex;flex-wrap:wrap;gap:.65rem;align-items:center}
+main#main-content[data-screen='compare'] {max-width:none;padding:clamp(1.6rem,3vw,3.5rem) clamp(1rem,4vw,6rem) 4rem;background:#0e1821}
+.discovery {max-width:1800px;margin:0 auto}
+.discovery-intro {display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(2rem,5vw,6rem);align-items:end;margin-bottom:2.3rem}
+.discovery-heading h1 {white-space:pre-line;font-size:clamp(3.4rem,5.3vw,6.4rem);line-height:.98;margin:.65rem 0 0;max-width:none;text-wrap:initial}
+.discovery-lead p {font-size:clamp(1rem,1.35vw,1.35rem);max-width:52ch;color:#d8e2e5}
+.analysis-facts {font-size:.75rem;color:#c9b88f;display:block;margin-top:1rem}
+.discovery-worlds {display:flex;gap:.2rem;border-bottom:1px solid #9fb0b640;margin-bottom:2.1rem}
+.discovery-worlds button {background:none;border:0;border-radius:0;border-bottom:2px solid transparent;min-height:54px;padding:.7rem 1.4rem;color:#c6d0d7;font-size:.88rem}
+.discovery-worlds button[aria-pressed='true'] {background:#24302d;border-color:#eacb90;color:#f8dda9}
+.discovery-result {display:grid;grid-template-columns:1fr 1fr;gap:.3rem 3rem;margin:0 0 2rem}
+.discovery-result .chapter-number {grid-column:1/-1}
+.discovery-result h2 {font-size:clamp(2.2rem,3.4vw,4rem);max-width:24ch;letter-spacing:-.03em}
+.discovery-result>p {align-self:center;color:#cbd8df;font-size:clamp(.95rem,1.15vw,1.1rem);max-width:68ch}
+.discovery-maps {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,3vw,4rem)}
+.discovery-map {min-width:0;border-block:1px solid #cfbe925c;background:#111e2b}
+.map-heading {display:flex;flex-direction:column;gap:.38rem;padding:.9rem 1.2rem;border-bottom:1px solid #8296aa35}
+.map-role {font-size:.63rem;color:#b6c7d5;letter-spacing:.12em;font-weight:700}
+.map-heading h3 {font-size:clamp(1.6rem,2.5vw,2.7rem);margin:0;color:#f7e3bd}
+.discovery-map figure {margin:0;padding:1rem 1.1rem .8rem;text-align:center;background:radial-gradient(ellipse,#1e2c3e,#0e1724 73%)}
+.discovery-map img {width:100%;height:clamp(275px,40svh,460px);object-fit:contain;display:block}
+.discovery-map figcaption {font-size:.7rem;color:#b2c0cf;margin-top:.6rem}
+.map-legend {display:flex;align-items:center;gap:.6rem;margin:1rem 0 2.1rem;flex-wrap:wrap;font-size:.7rem;color:#c9d3db}
+.map-legend i {width:110px;height:8px;background:linear-gradient(90deg,#111,#fff);border:1px solid #8395a1}
+.map-legend p {margin-left:auto;max-width:75ch;text-align:right}
+.metric-explorer {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.4rem 4rem;padding:1.8rem 0 2rem;border-block:1px solid #96aab438}
+.metric-explorer h2 {font-size:clamp(2rem,3vw,3.3rem);margin-bottom:1rem}
+.metric-tabs {display:flex;gap:.35rem;flex-wrap:wrap}
+.metric-tabs button {font-size:.76rem;padding:.55rem .8rem;min-height:44px;background:#101d28;border-color:#698397}
+.metric-tabs button[aria-pressed='true'] {background:#e8c98f;color:#0d1822;border-color:#e8c98f}
+.metric-chart {display:grid;gap:1.1rem;align-self:center}
+.metric-row-label {display:flex;align-items:baseline;justify-content:space-between;gap:.5rem;margin-bottom:.35rem}
+.metric-row-label span {font-size:.8rem;color:#cbd6da}
+.metric-row-label strong {font:600 clamp(1.8rem,3vw,3rem)/1 var(--display);color:#ebd9b5;white-space:nowrap}
+.metric-track {height:7px;background:#2c3943;overflow:hidden}
+.metric-track i {display:block;width:calc(var(--amount)*100%);height:100%;background:#b0c5a2;transform-origin:left;animation:metric-grow .65s ease both}
+.metric-track i[data-planet='true'] {background:#eac586}
+.metric-description {font-size:.85rem;color:#bacbd6;grid-column:1/-1;max-width:95ch}
+.discovery-notes {display:grid;grid-template-columns:1fr 1fr;gap:.8rem 3rem;padding:1.1rem 0;color:#b4c5d0;font-size:.8rem}
+.discovery-details {border-top:1px solid #90a2b13f;padding:.2rem 0 .6rem;margin-top:.7rem}
+.discovery-details>summary {font-size:.96rem;color:#ecd29e;min-height:54px;cursor:pointer;padding:.8rem 0}
+.discovery-details>p {color:#c2d2dc;font-size:.88rem;max-width:95ch;margin:.5rem 0 1rem}
+.metadata-grid,.guided-site {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;padding:.8rem 0}
+.terrain-metadata {min-width:0}
+.terrain-metadata h3 {font:600 1.6rem/1.1 var(--display);margin:.4rem 0 .8rem}
+.terrain-metadata dl {display:grid;grid-template-columns:1fr auto;gap:.4rem .6rem;font-size:.88rem}
+.terrain-metadata dt {color:#c0cdd5}
+.terrain-metadata dd {margin:0;font-variant-numeric:tabular-nums}
+.terrain-metadata a {display:inline-flex;align-items:center;min-height:44px;font-size:.8rem}
+.discovery .method-box div {max-width:110ch}
+.discovery .method-box summary {padding:.9rem 0;min-height:54px}
+.discovery-back {display:flex;justify-content:flex-start;margin-top:2rem}
+.discovery-back button {min-width:180px}
+.earth-places {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3rem}
+.earth-places img {display:block;width:100%;height:clamp(260px,32vw,470px);object-fit:cover;object-position:50% 65%}
+.earth-places h2 {font-size:clamp(2.5rem,4vw,4.5rem);margin:1rem 0 .6rem}
+.earth-places p {max-width:64ch;color:#ccdadc}
+.earth-places a {display:inline-flex;align-items:center;min-height:44px;font-size:.74rem}
+.earth-map-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}
+.earth-map-grid .discovery-map img {height:300px}
+.candidate-picker {display:flex;gap:.5rem;flex-wrap:wrap}
+@keyframes metric-grow {from{transform:scaleX(.02)}to{transform:scaleX(1)}}
+@media(max-width:850px){
+ .discovery-intro,.discovery-result,.metric-explorer {grid-template-columns:1fr;gap:1rem}
+ .discovery-heading h1 {font-size:clamp(3.1rem,9vw,6rem);max-width:18ch}
+ .discovery-intro {margin-bottom:1.4rem}
+ .discovery-result h2 {max-width:25ch}
+ .map-legend p {margin-left:0;text-align:left;width:100%}
+ .discovery-worlds button {flex:1;padding:.7rem .55rem;font-size:.78rem}
+ .earth-map-grid {grid-template-columns:1fr}
+ .metric-description {grid-column:1}
+}
+@media(max-width:550px){
+ .discovery-maps {gap:.5rem}
+ .map-heading {padding:.75rem .55rem}
+ .map-heading h3 {font-size:1.28rem;min-height:2.4rem}
+ .map-role {font-size:.52rem}
+ .discovery-map figure {padding:.5rem .2rem}
+ .discovery-map img {height:210px}
+ .discovery-map figcaption {font-size:.6rem}
+ .discovery-result h2 {font-size:2.5rem}
+ .metadata-grid,.guided-site,.earth-places,.discovery-notes {grid-template-columns:1fr}
+ .earth-places {gap:2rem}
+ .metric-tabs {display:grid;grid-template-columns:1fr 1fr}
+ .metric-tabs button:last-child {grid-column:1/-1}
+ .discovery-back button {width:100%}
+}
 .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

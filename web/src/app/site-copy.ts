@@ -1,11 +1,11 @@
 export const site = {
   es: {
-    nav: { home: 'Inicio', play: 'Jugar', compare: 'Comparar', about: 'Acerca del proyecto' },
+    nav: { home: 'El viaje', play: 'La aventura', compare: 'Los descubrimientos', about: 'El proyecto' },
     navLabel: 'Navegación principal', skip: 'Saltar al contenido',
     subtitle: 'De la Tierra a nuevos mundos',
     lead: 'Juega una aventura inspirada en un relato chiquitano. Compara el relieve de Bolivia con mapas reales de la Luna y Marte.',
     homeTag: 'Una aventura desde la Chiquitania',
-    play: 'Jugar la aventura', resume: 'Continuar la aventura', compare: 'Comparar terrenos',
+    play: 'Jugar la aventura', resume: 'Continuar la aventura', compare: 'Los descubrimientos',
     route: 'Ruta de exploración',
     stops: {
       earth: ['Bolivia', 'Valle de la Luna y Cerro Turubó'],
@@ -17,9 +17,9 @@ export const site = {
     homeDetail: 'Acompaña a Turubó en cinco capítulos o entra directo a los mapas. Descubre qué zonas bolivianas se parecen más según las mediciones y en qué se diferencian.',
     controls: 'Elige una acción para avanzar. Puedes usar el ratón, el tacto o Tab y Enter.',
     terrainLink: {
-      earth: 'Explorar los terrenos de Bolivia',
-      moon: 'Comparar con el terreno de la Luna',
-      mars: 'Comparar con el terreno de Marte'
+      earth: 'Descubrir los dos lugares de Bolivia ↗',
+      moon: '¿Qué tiene la Luna en común con Bolivia? ↗',
+      mars: '¿Qué tiene Marte en común con Bolivia? ↗'
     },
     result: 'Qué encontramos', terrainData: 'Datos reales de elevación',
     earthResult: 'En San José de Chiquitos, el Valle de la Luna aporta las 25 zonas que comparamos. El Cerro Turubó se muestra como un lugar aparte, sin puesto en la clasificación.',
@@ -47,12 +47,12 @@ export const site = {
     code: 'Ver código, fuentes y documentación'
   },
   en: {
-    nav: { home: 'Home', play: 'Play', compare: 'Compare', about: 'About' },
+    nav: { home: 'The journey', play: 'The adventure', compare: 'Discoveries', about: 'The project' },
     navLabel: 'Main navigation', skip: 'Skip to content',
     subtitle: 'From Earth to New Worlds',
     lead: 'Play an adventure inspired by a Chiquitano story. Compare Bolivia’s terrain with real elevation maps of the Moon and Mars.',
     homeTag: 'An adventure from the Chiquitania',
-    play: 'Play the adventure', resume: 'Continue the adventure', compare: 'Compare terrain',
+    play: 'Play the adventure', resume: 'Continue the adventure', compare: 'Discoveries',
     route: 'Exploration route',
     stops: {
       earth: ['Bolivia', 'Valle de la Luna and Cerro Turubó'],
@@ -64,9 +64,9 @@ export const site = {
     homeDetail: 'Follow Turubó through five chapters or go straight to the maps. See which Bolivian areas were most similar in our sample and where the comparison breaks down.',
     controls: 'Choose an action to continue. Use your mouse, tap, or press Tab and Enter.',
     terrainLink: {
-      earth: 'Explore the sites in Bolivia',
-      moon: 'Compare with lunar terrain',
-      mars: 'Compare with Martian terrain'
+      earth: 'Discover the two places in Bolivia ↗',
+      moon: 'What does the Moon share with Bolivia? ↗',
+      mars: 'What does Mars share with Bolivia? ↗'
     },
     result: 'What we found', terrainData: 'Real elevation data',
     earthResult: 'The Valle de la Luna in San José de Chiquitos supplies the 25 areas we compared. Cerro Turubó is a separate site outside the ranking.',

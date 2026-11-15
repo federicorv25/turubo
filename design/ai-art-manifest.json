@@ -84,5 +84,161 @@
         "sha256": "f005c5aa82a05283dd63c3dcee85af08fafd0cd1ceb7eca8f2b42f588ef5527d"
       }
     ]
+  },
+  {
+    "id": "tallador",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "1007e3f993478ad85fb3e1f223255f9a603a65577eeec7ff8f9b66c054e8b460",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and WebP encoding. Fictional artwork, not documentary or scientific evidence.",
+    "files": [
+      {
+        "path": "media/tallador-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 26054,
+        "sha256": "64e668d01a96147c79609cb3800fd14e783d8b8cd36f677bb3531dcebadb9d03"
+      },
+      {
+        "path": "media/tallador-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 82366,
+        "sha256": "c6c81e6d3daf3edcf63489a39474e7c5fb2d8a6ba1168f3666aa0ec02d037427"
+      },
+      {
+        "path": "media/tallador-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 175710,
+        "sha256": "abb0122f7854d665af027e75261f801547731290d364e8d17031752c2a2d9f54"
+      }
+    ]
+  },
+  {
+    "id": "sombras",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "7a9bc59bc12e1caee6a793964d38fb92d7436eb7a29d6b022d8be53b4ca3f79f",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and WebP encoding. Fictional artwork, not documentary or scientific evidence.",
+    "files": [
+      {
+        "path": "media/sombras-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 12408,
+        "sha256": "89aa5dd4e0795d2850a36e556cf9458511c3da4ee5daa3c3ffc1ecdf936e5086"
+      },
+      {
+        "path": "media/sombras-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 39874,
+        "sha256": "45dabed389f209e3532819c94b47ca0c652268cf7d6010dd02b99c21cce2203b"
+      },
+      {
+        "path": "media/sombras-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 81736,
+        "sha256": "295ab983aabd32ded9f7a91b8e28780333eb3133faf233c83bdb766d836cf384"
+      }
+    ]
+  },
+  {
+    "id": "umbral",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "5220b66f004d3c785a09b4983cb3f64c9e98c919546d2bfbd3aa3eaa36c963bf",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and WebP encoding. Fictional artwork, not documentary or scientific evidence.",
+    "files": [
+      {
+        "path": "media/umbral-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 15246,
+        "sha256": "024e75a514dd1f0c046be02acd73dd86e9d7b2078180ad3e7c2e7848e02aba38"
+      },
+      {
+        "path": "media/umbral-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 47154,
+        "sha256": "7db14dc42fcc6a00f8baac0957916d128ab142eaa9fc3765b05079823fe89377"
+      },
+      {
+        "path": "media/umbral-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 93304,
+        "sha256": "8c9492fd72962d93bdb31becae23465352db8c0a012bd2ee7d277b1df048651c"
+      }
+    ]
+  },
+  {
+    "id": "serpiente",
+    "kind": "AI-generated fantasy illustration",
+    "model": "Seedream 5.0 Pro",
+    "provider": "Kie.ai",
+    "source": "https://kie.ai/seedream-5-0-pro",
+    "generated": "2026-11-15",
+    "creditsCharged": 14,
+    "estimatedUsd": 0.07,
+    "originalSha256": "e1bc06776885d23adcbb4058d782ca375ff6cdc9e49b1c03cadbe90a4441e0d7",
+    "originalDimensions": [
+      2720,
+      1530
+    ],
+    "modifications": "Resized and WebP encoded. Fictional serpent encounter, not documentary or scientific evidence.",
+    "files": [
+      {
+        "path": "media/serpiente-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 24104,
+        "sha256": "b68cfc6a4be167de8bb7be7cfe2dafd0a8bb8f065af2ee53e9a33d3bbe486a5c"
+      },
+      {
+        "path": "media/serpiente-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 80028,
+        "sha256": "c0a0c8763f9ba30871502c4bf469754667d8e4f708c5684b984625bbefc6c28a"
+      },
+      {
+        "path": "media/serpiente-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 165180,
+        "sha256": "363494704135d0ff07ac0387316c63f4e0de11827b3249b9182cfd6bcf318ad5"
+      }
+    ]
   }
 ]

@@ -1,11 +1,12 @@
 import rawStory from '../../../content/story.json'
 import { renderExperience, type JourneyState } from '../experience'
 import { releaseSceneGraphics, syncSceneGraphics } from '../experience/graphics/host'
+import {restoreAdventure,saveAdventure} from '../experience/save'
 import { renderAnalysis } from '../analysis'
 import type { Analysis, Lang, Story, World } from './contracts'
 import { messages } from './i18n'
 import { site } from './site-copy'
-import { renderAbout, renderStage, renderFinding, renderMethod } from './screens'
+import { renderAbout, renderStage, renderMethod } from './screens'
 import { renderJourney, refreshJourneyData } from '../journey/content'
 import { mountJourney } from '../journey/mount'
 import type { OriginPhoto } from '../journey/origin-gallery'
@@ -14,6 +15,7 @@ import '@fontsource/manrope/latin-400.css'
 import '@fontsource/manrope/latin-700.css'
 import './style.css'
 import '../journey/journey.css'
+import '../experience/experience.css'
 
 type Screen = 'home' | 'play' | 'compare' | 'about'
 type Route = { screen: Exclude<Screen, 'compare'> } | { screen: 'compare'; world: World }
@@ -24,13 +26,16 @@ const kinds = ['home', 'play', 'compare', 'about'] as const
 const story = rawStory as Story
 let lang = preferredLanguage()
 let route = readRoute()
-let journey: JourneyState = { sceneId: story.order[0], answer: null }
-let journeyStarted = false
+const restored=restoreAdventure(story)
+let journey: JourneyState = restored.journey
+let journeyStarted = restored.started
+const explorations = restored.positions
 let compareBack: 'play' | 'home' = 'home'
 let analysis: DataState = { status: 'idle' }
 let unmountJourney: (() => void) | undefined
 let landingScroll=0
 let originPhoto: OriginPhoto = 'cerro'
+let theatre=false
 
 function preferredLanguage(): Lang {
   try {
@@ -181,12 +186,56 @@ function render(moveFocus = false) {
 function renderPlay() {
   const scene = story.scenes[journey.sceneId]
   main.innerHTML = renderStage(lang, story, journey.sceneId)
+  const restart=main.querySelector<HTMLButtonElement>('[data-restart]')
+  if(restart)restart.onclick=()=>{
+    explorations.clear();journeyStarted=false;journey={sceneId:story.order[0],answer:null}
+    saveAdventure(story,journey,explorations);render(true)
+  }
   renderExperience(main.querySelector<HTMLDivElement>('.chapter-host')!, story, journey, lang, {
-    update: next => { journeyStarted = true; journey = next; render(true) },
+    update: next => {
+      journeyStarted = true
+      if (next.sceneId === 'prologue') explorations.clear()
+      journey = next
+      saveAdventure(story,journey,explorations)
+      render(true)
+    },
     openAnalysis: world => go('compare', world),
     analysisLabel: site[lang].terrainLink[scene.world]
   })
-  syncSceneGraphics(main.querySelector<HTMLElement>('.scene-figure'), { scene, state: journey, language: lang })
+  if (!explorations.has(journey.sceneId)) explorations.set(journey.sceneId, { x: 2.1, z: 6, arrived: false })
+  const expedition = main.querySelector<HTMLElement>('.expedition')
+  const toggle=expedition?.querySelector<HTMLButtonElement>('[data-theatre-toggle]')
+  if(toggle&&expedition){
+    const sync=()=>{
+      expedition.dataset.theatre=String(theatre)
+      toggle.setAttribute('aria-pressed',String(theatre))
+      const label=lang==='es'?(theatre?'Reducir escenario':'Ampliar escenario'):(theatre?'Reduce scene':'Expand scene')
+      toggle.setAttribute('aria-label',label);toggle.querySelector('span')!.textContent=label
+    }
+    toggle.onclick=()=>{theatre=!theatre;sync();window.scrollTo(0,0)}
+    expedition.onkeydown=e=>{if(e.key==='Escape'&&theatre){theatre=false;sync();toggle.focus()}}
+    sync()
+  }else theatre=false
+  const showChoices=expedition?.querySelector<HTMLButtonElement>('[data-show-choices]')
+  if(showChoices)showChoices.onclick=()=>{
+    const first=expedition?.querySelector<HTMLButtonElement>('.decision-choices button')
+    first?.focus({preventScroll:true})
+    first?.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})
+  }
+  syncSceneGraphics(main.querySelector<HTMLElement>('.scene-figure'), {
+    scene, state: journey, language: lang, exploration: explorations.get(journey.sceneId)!,
+    onStatus: (status, arrived) => {
+      if (!expedition) return
+      expedition.dataset.graphics = status
+      expedition.dataset.arrived = String(arrived)
+      const instruction = expedition.querySelector<HTMLElement>('.walk-objective')
+      if (instruction) instruction.textContent = status === 'loading'
+        ? (lang === 'es' ? 'Preparando el paisaje…' : 'Preparing the landscape…')
+        : journey.answer ? (lang==='es'?'Tu decisión está tomada.':'Your choice is made.')
+          : arrived ? (lang === 'es' ? 'Llegaste. Elige cómo seguir.' : 'You arrived. Choose how to continue.')
+          : (lang === 'es' ? 'Sigue la luz hasta el encuentro.' : 'Follow the light to the encounter.')
+    }
+  })
 }
 
 function renderCompare(world: World) {
@@ -208,7 +257,6 @@ function renderCompare(world: World) {
 
   const data = analysis.value
   renderAnalysis(main, data, world, lang, target => go('compare', target), () => go(compareBack), {
-    finding: () => renderFinding(world, data, lang),
     method: () => renderMethod(lang),
     backLabel: compareBack === 'play' ? messages[lang].story : c.nav.home
   })
@@ -233,6 +281,7 @@ async function loadAnalysis() {
 }
 
 window.addEventListener('hashchange', () => {
+  saveAdventure(story,journey,explorations)
   const previous = route.screen
   if(previous==='home') landingScroll = window.scrollY
   route = readRoute()
@@ -240,4 +289,5 @@ window.addEventListener('hashchange', () => {
   render(true)
   if(route.screen==='home' && previous==='compare' && landingScroll) window.scrollTo(0,landingScroll)
 })
+window.addEventListener('pagehide',()=>saveAdventure(story,journey,explorations))
 render()

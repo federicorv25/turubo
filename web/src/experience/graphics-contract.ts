@@ -5,6 +5,8 @@ export interface GraphicsScene {
   scene: Scene
   state: JourneyState
   language: Lang
+  exploration: { x: number; z: number; arrived: boolean }
+  onStatus: (status: 'loading' | 'ready' | 'fallback', arrived: boolean) => void
 }
 
 /** The shell owns story state and actions. A graphic observes that state. */

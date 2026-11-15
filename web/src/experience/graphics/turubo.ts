@@ -217,7 +217,7 @@ export class Turubo {
   }
 
   /** @param groundY ground under the character (the contact shadow stays on it while airborne). */
-  update(x: number, y: number, z: number, facingYaw: number, grounded: boolean, elapsed: number, dt: number, groundY = y) {
+  update(x: number, y: number, z: number, facingYaw: number, grounded: boolean, elapsed: number, dt: number, groundY = y, walking = 0) {
     this.group.position.set(x, y, z)
     let diff = facingYaw - this.group.rotation.y
     while (diff > Math.PI) diff -= Math.PI * 2
@@ -225,8 +225,9 @@ export class Turubo {
     this.group.rotation.y += diff * (1 - Math.exp(-14 * dt))
 
     // Idle stance from the prototype walk cycle at zero speed; airborne pose while jumping.
-    this.leftLegPivot.rotation.x = 0
-    this.rightLegPivot.rotation.x = 0
+    const stride = Math.sin(elapsed * 10) * .46 * walking
+    this.leftLegPivot.rotation.x = stride
+    this.rightLegPivot.rotation.x = -stride
     this.leftKneePivot.rotation.x = grounded ? 0 : -0.38
     this.rightKneePivot.rotation.x = grounded ? 0 : -0.25
     this.leftArmPivot.rotation.set(0, 0, 0.08)
@@ -251,7 +252,7 @@ export class Turubo {
       hip.rotation.x += crouch * 0.42
       knee.rotation.x -= crouch * 0.8
     }
-    this.leftArmPivot.rotation.x = guard * 0.5
+    this.leftArmPivot.rotation.x = guard * 0.5 - stride * .6
     this.leftForearmPivot.rotation.x = 0.18 + guard * 1.25
     const back = Math.max(0, -this.throwArm)
     const forward = Math.max(0, this.throwArm)

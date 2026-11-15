@@ -1,8 +1,6 @@
 /* 3D layer of the play figure (#7). The canvas overlays the SVG in the same grid cell, so the layout does not move
    and the illustration shows again whenever the 3D is not ready, paused for another scene or unavailable. */
-.scene-figure:has(> .scene-graphics) { display:grid; grid-template-rows:minmax(0,1fr) auto }
-.scene-figure:has(> .scene-graphics) > .scene-art, .scene-figure > .scene-graphics { grid-area:1 / 1 }
-.scene-graphics { position:relative; min-width:0; min-height:0; overflow:hidden; pointer-events:none }
+.scene-graphics { position:absolute; inset:0 0 32px; min-width:0; min-height:0; overflow:hidden; cursor:crosshair; touch-action:pan-y; outline-offset:-4px; z-index:1 }
 .scene-graphics canvas { position:absolute; inset:0; display:block; width:100%; height:100%; opacity:0; transition:opacity .35s ease }
 .scene-graphics[data-state='ready'] canvas { opacity:1 }
 .scene-figure .scene-credit-3d { display:none }
