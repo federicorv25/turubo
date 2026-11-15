@@ -1,34 +1,41 @@
 # Turubó: de la Tierra a nuevos mundos
 
-Guion inicial para revisar en [la issue de historia](https://github.com/federicorv25/turubo-atlas/issues/4). Los textos jugables están en `story.json` en español e inglés; las cifras y mapas se cargan por separado.
+Guion de una aventura breve en cinco escenas. Los textos jugables están en `story.json`, con las mismas claves `es` y `en` y los identificadores `prologue`, `earth`, `moon`, `mars` y `epilogue`. Las tres escenas de encuentro ofrecen dos respuestas cada una; todas conducen al mismo final y no cambian datos, comparaciones ni conclusiones científicas.
 
-## Lo que contamos
+## Relato y límites entre fuente y adaptación
 
-En la versión de Antonio Paredes Candia, Turubó talla figuras de madera y barro, intenta darles vida, levanta una montaña para alcanzar la morada de Uaituparr y muere tras la mordedura de una serpiente enviada por esa deidad. Queda su nombre en la montaña de San José de Chiquitos. Nuestra adaptación conserva la montaña, las figuras, el vaso y la mordedura. Inventa la visión de otros mundos, la máquina de viaje, la parada lunar y el duelo final en Marte.
-
-| Escena | Acción breve | Evidencia que puede abrirse |
+| Escena | Relato | Procedencia y función |
 |---|---|---|
-| Prólogo | Turubó quiere dar vida a sus figuras; bebe del vaso y decide continuar su obra. | Contexto de la leyenda y entrada a «Ver análisis». |
-| Tierra | Termina la plataforma. La serpiente lo muerde mientras duerme; el jugador elige cómo responder. Parte con el veneno. | Valle de la Luna de San José de Chiquitos y Cerro Turubó, dos sitios distintos. |
-| Luna | Las figuras que llevaba son animadas por sombras. Puede observar el terreno o apartarlas para continuar. El veneno avanza. | Nobile Rim 1 frente a las ventanas terrestres y el caso guiado del Cerro. |
-| Marte | Se enfrenta a Uaituparr en una escena fantástica. Parece a punto de vencer, pero el veneno lo alcanza. | Jezero frente a las ventanas terrestres y el Cerro. |
-| Epílogo | Turubó deja su nombre y un camino de preguntas. | Acceso libre a los dos destinos. |
+| Prólogo · La montaña | Turubó talla figuras de madera y barro, bebe de un vaso misterioso, ve otros mundos y sueña con una advertencia de Uaituparr. Vuelve a terminar la plataforma. | Las figuras, el vaso, el desafío y la plataforma proceden de la versión chiquitana de Antonio Paredes Candia (1986). La visión espacial y la advertencia en sueños se presentan como recursos narrativos de esta adaptación. |
+| Tierra · La serpiente | Al descansar sobre la plataforma, Turubó recibe la mordedura de la serpiente enviada por Uaituparr. Supera el encuentro y parte con sus figuras, pero el veneno continúa. | El descanso, la serpiente venenosa, la intervención de Uaituparr y la montaña que conserva el nombre pertenecen al relato citado. La nave, el combate, el viaje y el veneno que acompaña al personaje entre mundos son adaptaciones. «Ver análisis» permite consultar el Cerro Turubó y el Valle de la Luna de San José de Chiquitos como sitios distintos; el Cerro es un caso guiado, fuera del ranking. |
+| Luna · Las sombras | En esta historia, Turubó hace una escala ficticia en la Luna para revisar la nave y preparar el siguiente trayecto. Durante la parada, formas como sombras llamadas lémures animan sus figuras. Observa el paisaje y sigue a Marte; el veneno empeora. | Paredes Candia describe como lémures las figuras fallidas que parecían sombras: no son animales. La escala lunar, revisar la nave, preparar el viaje, las sombras que mueven las figuras y el paisaje inspirado en Nobile Rim 1 son adaptación. La Luna no es un requisito para llegar a Marte. |
+| Marte · Uaituparr | En un templo imaginario, Turubó se enfrenta a Uaituparr. Parece estar cerca de vencer, pero el veneno lo alcanza. | Uaituparr y la muerte de Turubó tras la mordedura tienen base en el relato. El viaje a Marte, el combate y el templo son ficción; el templo no forma parte del Jezero real. El paisaje narrativo se inspira en Jezero. |
+| Epílogo · Lo que queda | Turubó muere y su nombre permanece en la montaña. El jugador puede salir de la historia y volver a las comparaciones. | El nombre de la montaña procede del cierre de la versión de 1986. La navegación de regreso es parte de la experiencia interactiva. |
 
-La Luna es una parada de la historia, no un paso obligatorio de un viaje real a Marte. El veneno avanza por escenas, sin reloj. Las acciones del jugador cambian una línea y, si hay tiempo, un efecto visual; todas llegan al mismo final. No hay cifras que dependan del éxito del jugador.
+Las decisiones solo cambian la respuesta inmediata del encuentro. No hay ruta alternativa, variable narrativa que cambie el desenlace ni resultado científico asociado a una elección. El veneno avanza por escenas, sin reloj. El recorrido está pensado para durar pocos minutos.
 
-## Arte mínimo
+## Guía breve de arte
 
-- **Turubó:** titán artesano, reconocible por una silueta y una figura tallada. Tres poses bastan: tallar, avanzar, descansar.
-- **Serpiente:** silueta reconocible y un breve cambio de postura; sin sangre.
-- **Sombras o lémures:** sombras que animan las figuras; no son animales lémures. Una capa oscura sobre la figura basta.
-- **Uaituparr:** presencia celestial en el último encuentro. Diseño propio y rotulado como adaptación; el templo, si lo dibujan, es ficticio y no aparece sobre el mapa de Jezero.
-- **Fondos:** uno por mundo. Primero texto y escenas estáticas. Añade poses o movimiento después de probar el recorrido. Si usan arte generado, registrar origen, créditos y declaración antes de publicar.
+La ficha para el primer traspaso a Asael está en [`personajes.md`](personajes.md). Es una guía de silueta, color, pose y gesto, no arte final ni descripción documental. El diseño de Uaituparr es una propuesta visual propia, no una representación tradicional. No añadas símbolos, vestimenta ceremonial ni motivos culturales sin una fuente y revisión apropiadas. Los fondos lunares y marcianos son paisajes de ficción inspirados en referencias, no mapas medidos.
 
-## Cómo entregarlo a web
+## Experiencia y traspaso
 
-Mantén los identificadores de escenas y las claves `es`/`en` en `story.json`. Erick trabaja en `web/src/experience/`. El panel de Ana Raquel recibe solo el destino `earth`, `moon` o `mars`, nunca las elecciones narrativas. Federico coordina cambios al contrato. Al modificar escenas, ejecuta el chequeo y revisa los dos idiomas.
+- `story.json` conserva los cinco identificadores existentes y las claves bilingües `es`/`en`.
+- «Ver análisis» está disponible en cada escena. El panel recibe únicamente el destino `earth`, `moon` o `mars`, nunca la respuesta del jugador. Volver a la historia conserva la escena y la respuesta actual.
+- En `earth`, el análisis debe mantener separados el Cerro Turubó y el Valle de la Luna de San José de Chiquitos. Cerro Turubó es el caso guiado y queda fuera del ranking. Las comparaciones de Luna y Marte usan Nobile Rim 1 y Jezero, respectivamente.
+- Asael (#7) puede usar primero la ficha de `personajes.md` para avanzar con las siluetas; el arte final y los controles siguen en esa issue. Las fichas de terrenos lunares y marcianos corresponden a #3 y #8. Federico coordina cualquier cambio de contrato de datos o integración para #9.
+- Para cambios a estas escenas, ejecutar `npm --prefix web run check` y `npm --prefix web run build`, y comprobar «Ver análisis» y «Volver a la historia» en los cinco capítulos.
 
-## Referencias
+## Créditos, uso de IA y revisión
 
-- [Motivo Turubó, Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/); Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191. [Página impresa 190](https://archivodefolkloreboliviano.org/texto/leyendas-de-bolivia-1986/227/).
-- [NASA: el relieve natural de Cydonia conocido como D&M Pyramid](https://science.nasa.gov/photojournal/the-cydonia-dandm-pyramid-landform/). Cydonia queda fuera de la comparación del proyecto; el templo de la historia es un recurso narrativo.
+- Relato de referencia: Antonio Paredes Candia, *Leyendas de Bolivia*, Librería Editorial Popular, 1986, pp. 189–191; ficha y páginas digitalizadas por el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). La fuente se identifica como versión chiquitana; no se presenta como una única versión de toda tradición chiquitana.
+- Herramienta de IA: ChatGPT se usó para apoyar la edición bilingüe y la preparación de esta guía. El contenido se contrastó con la ficha y el texto digitalizado de la fuente citada.
+- Revisión humana del texto bilingüe: Federico revisó el guion en español e inglés y señaló que faltaba explicar la escala lunar; este ajuste añade ese motivo. Esa revisión editorial no significa que Federico haya ejecutado personalmente la prueba del recorrido.
+- Prueba manual del recorrido: Codex recorrió las cinco escenas y las decisiones en español e inglés en el navegador integrado, abrió «Ver análisis» y volvió conservando la escena y la respuesta, por encargo de Federico.
+- Revisión cultural del arte final: corresponde a la issue #7 y queda pendiente allí; no es una revisión lingüística pendiente de este guion.
+- No se usó arte generado por IA en estos archivos.
+
+## Referencias de contexto
+
+- [Motivo Turubó, Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/) y [página impresa 190](https://archivodefolkloreboliviano.org/texto/leyendas-de-bolivia-1986/227/).
+- [NASA: el relieve natural de Cydonia conocido como D&M Pyramid](https://science.nasa.gov/photojournal/the-cydonia-dandm-pyramid-landform/). Cydonia queda fuera de las comparaciones del proyecto; cualquier templo de la historia es imaginario.
