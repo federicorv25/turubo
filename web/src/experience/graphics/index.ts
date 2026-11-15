@@ -19,9 +19,8 @@ const SHOT = { position: new Vector3(7.2, 2.6, -3.4), target: new Vector3(-0.2, 
 const INTRO_OFFSET = new Vector3(1.6, 0.9, 3.4)
 const INTRO_SECONDS = 2.4
 const REACTION_SECONDS = { dodge: 2.4, distract: 2.7 }
-/** Full display rate while something reacts; idle ambience drops to 30 fps after a quiet spell. */
-const IDLE_AFTER_MS = 8000
-const IDLE_FPS = 30
+/** Keep a short moment of ambience, then leave a still frame until something changes. */
+const IDLE_AFTER_MS = 4200
 
 const smooth = (t: number, a: number, b: number) => {
   const x = MathUtils.clamp((t - a) / (b - a), 0, 1)
@@ -75,7 +74,10 @@ export const mountSceneGraphics: MountSceneGraphics = async (host, initial) => {
     const turubo = new Turubo(shading, track)
     turubo.group.scale.setScalar(TURUBO_SCALE)
     scene.add(environment.group, serpent.group, turubo.group)
-    await renderer.compileAsync(scene, camera)
+    camera.position.copy(SHOT.position)
+    camera.lookAt(SHOT.target)
+    // Compile on the same task as setup so a route change cannot strand a second WebGL context.
+    renderer.compile(scene, camera)
     return start(host, initial, { renderer, scene, camera, shading, environment, lighting, serpent, turubo, track })
   } catch {
     track.dispose()
@@ -103,7 +105,8 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
   const abort = new AbortController()
   const reduced = matchMedia('(prefers-reduced-motion: reduce)')
   const connection = (navigator as Navigator & { connection?: EventTarget & { saveData?: boolean } }).connection
-  const qa = import.meta.env.DEV && new URLSearchParams(location.search).has('graphics-qa')
+  const qa = (import.meta.env.DEV || import.meta.env.MODE === 'graphics-qa') &&
+    ['127.0.0.1', 'localhost'].includes(location.hostname) && new URLSearchParams(location.search).has('graphics-qa')
   const groundY = groundHeightAt(TURUBO_SPOT.x, TURUBO_SPOT.z)
   const figureWorld = new Vector3()
   const figureFrom = new Vector3()
@@ -120,10 +123,11 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
   let frame = 0
   let last = 0
   let quietSince = performance.now()
-  let onScreen = true
+  let onScreen = false
   let ready = false
   let qaFrames: number[] = []
   let qaStart = 0
+  let needsFrame = true
 
   host.append(canvas)
 
@@ -139,6 +143,7 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
     // Keep the encounter framed horizontally on tall layouts.
     camera.fov = aspect < 1.05 ? MathUtils.radToDeg(2 * Math.atan(Math.tan(MathUtils.degToRad(SHOT.fov / 2)) * 1.05 / aspect)) : SHOT.fov
     camera.updateProjectionMatrix()
+    needsFrame = true
     wake()
   }
 
@@ -171,6 +176,7 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
     encounter = nextEncounter
     outcome = nextOutcome
     host.dataset.state = encounter ? (ready ? 'ready' : 'loading') : 'idle'
+    needsFrame = true
     quietSince = performance.now()
     wake()
   }
@@ -262,19 +268,19 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
     frame = 0
     if (!running()) { last = 0; return }
     const busy = reactionTime !== Infinity || introTime < INTRO_SECONDS || now - quietSince < IDLE_AFTER_MS
-    if (!qa && !busy && last && now - last < 1000 / IDLE_FPS - 4) {
-      frame = requestAnimationFrame(loop)
-      return
-    }
+    if (!qa && !busy && !needsFrame) { last = 0; return }
     const dt = last ? Math.min(0.05, (now - last) / 1000) : 1 / 60
     last = now
     step(dt)
     renderer.render(scene, camera)
+    needsFrame = false
     if (!ready) {
       ready = true
       host.dataset.state = 'ready'
     }
     if (qa) sample(now)
+    host.dataset.reaction = outcome
+    host.dataset.pose = reactionTime !== Infinity ? 'reacting' : 'settled'
     frame = requestAnimationFrame(loop)
   }
 
@@ -327,6 +333,7 @@ function start(host: HTMLElement, initial: GraphicsScene, parts: Parts): SceneGr
   resizeObserver.observe(host)
   const visibility = new IntersectionObserver(([entry]) => {
     onScreen = entry?.isIntersecting ?? true
+    if (!onScreen && frame) { cancelAnimationFrame(frame); frame = 0; last = 0 }
     wake()
   })
   visibility.observe(host)

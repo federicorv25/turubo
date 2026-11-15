@@ -31,7 +31,8 @@ The [pipeline](../science/pipeline/README.md), [input inventory](../science/pipe
 | ChatGPT | Bilingual editing and the narrative guide. | [Story notes](../content/GUION.md) record Federico's earlier editorial revision and distinguish the adaptation from the source. |
 | Cursor Composer | Comparison UI, text and verification, reported in [PR #17](https://github.com/federicorv25/turubo/pull/17). | The integrated panel renders the published analysis JSON. |
 | Kie.ai (Seedream 5.0 Pro) | Two illustrations decorating the hero and adventure entry. | Neither was applied to documentary photos or data. Both are labeled in the product; any demo image showing them carries the disclosure. |
+| Google AI Studio and Claude Code | Prototyping, reviewing and porting Asael Rojas Mansilla's Earth encounter. | The fictional encounter is labeled as AI-assisted 3D art. It has no role in the terrain analysis. [Gameplay and verification](../docs/evidence/encuentro-tierra-3d.md). |
 
-Luciana and Belinda contributed the documented terrain investigations and initial credits/demo drafts. The final verification report distinguishes the team's prior scientific review from Codex's tests on the release. The future 3D gameplay in #7 is not included in this inventory while undelivered.
+Luciana and Belinda contributed the documented terrain investigations and initial credits/demo drafts. The verification reports distinguish the team's prior scientific review from Codex's browser and build checks. The adventure uses 3D for the serpent encounter on Earth; the Moon and Mars chapters use illustrated scenes.
 
 This inventory documents the product and the attribution available for the submission. Confirm the team's originality and rights against the active form before accepting its statement. The preparation does not sign or submit anything.

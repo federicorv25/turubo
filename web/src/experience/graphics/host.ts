@@ -24,9 +24,12 @@ function supported() {
 
 /** Call after drawing the play stage (SVG first). */
 export function syncSceneGraphics(figure: HTMLElement | null, next: GraphicsScene) {
+  if (!figure || !usesGraphics(next) || !supported()) {
+    releaseSceneGraphics()
+    return
+  }
   latest = next
-  if (!figure || unavailable || (!graphics && !loading && !usesGraphics(next))) return
-  if (!supported()) { unavailable = true; return }
+  if (unavailable) return
   if (!element) {
     element = document.createElement('div')
     element.className = 'scene-graphics'
@@ -42,9 +45,9 @@ async function load(host: HTMLDivElement, id: number) {
   const initial = latest
   try {
     const { mountSceneGraphics } = await import('./index')
-    if (id !== session || !initial) return
+    if (id !== session || !initial || !host.isConnected) return
     const mounted = await mountSceneGraphics(host, initial)
-    if (id !== session) { mounted?.dispose(); return }
+    if (id !== session || !host.isConnected) { mounted?.dispose(); return }
     if (!mounted) { unavailable = true; host.remove(); return }
     graphics = mounted
     if (latest && latest !== initial) mounted.update(latest)

@@ -22,7 +22,7 @@ https://turubo.tech/
 
 ## Project Information
 
-TURUBO connects a story from the Chiquitania in Bolivia with NASA Space Apps' challenge to identify and characterize terrestrial terrain analogs. Visitors scroll from the Chiquitanian forest to interactive views of the Moon and Mars, play a short fantasy adventure or open the measured terrain directly. A visitor can return from a comparison to the same choice in the story. Cerro Turubó is a separate guided example outside the ranking.
+TURUBO connects a story from the Chiquitania in Bolivia with NASA Space Apps' challenge to identify and characterize terrestrial terrain analogs. Visitors scroll from the Chiquitanian forest to interactive views of the Moon and Mars, play a short fantasy adventure or open the measured terrain directly. The serpent encounter on Earth reacts in 3D to the player's choice and works with an illustration when 3D is unavailable. A visitor can return from a comparison to the same choice in the story. Cerro Turubó is a separate guided example outside the ranking.
 
 We fixed 25 tiles of 4 × 4 km around the Valle de la Luna of San José de Chiquitos. We averaged all elevation crops onto a 40 m grid and kept tiles with at least 95% valid coverage. We ranked the Bolivian sample by standardized distance over median slope, P90 slope and P95 minus P5 relief. The same-scale maps display elevations relative to each tile's median.
 
@@ -32,7 +32,7 @@ Python, Rasterio, PyProj, NumPy and Pillow prepare the evidence. The site uses T
 
 ## Use of Super Intelligence (SI)
 
-OpenAI Codex assisted with software, tests, vector art, scientific communication and the demo. ChatGPT supported bilingual story editing. Cursor Composer supported the terrain comparison interface. Kie.ai Seedream 5.0 Pro generated the cover and adventure illustrations, which are labeled visibly. Documentary photos are sourced separately. The maps, measurements and sample rankings come from the cited elevation products and reproducible calculations. The site makes no model API calls. Choose only form options corresponding to these uses.
+OpenAI Codex assisted with software, tests, vector art, scientific communication and the demo. ChatGPT supported bilingual story editing. Cursor Composer supported the terrain comparison interface. Google AI Studio and Claude Code assisted with Asael Rojas Mansilla's Earth encounter, labeled as AI-assisted 3D art. Kie.ai Seedream 5.0 Pro generated the cover and adventure illustrations, which are labeled visibly. Documentary photos are sourced separately. The maps, measurements and sample rankings come from the cited elevation products and reproducible calculations. The site makes no model API calls. Choose only form options corresponding to these uses.
 
 ## NASA Data
 

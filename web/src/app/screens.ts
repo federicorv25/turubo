@@ -24,8 +24,8 @@ export function renderStage(lang: Lang, story: Story, sceneId: string) {
     <div class="play-grid">
       <div class="chapter-host"></div>
       <figure class="scene-figure" data-world="${world}">
-        ${sceneArt(world)}
-        <figcaption><span>${c.fiction} · ${m[world]}</span><span>${c.art}</span></figcaption>
+        ${sceneArt(world, sceneId)}
+        <figcaption><span>${c.fiction} · ${m[world]}</span><span class="scene-credit-illustration">${c.art}</span><span class="scene-credit-3d">${lang==='es'?'Arte 3D asistido por IA':'AI-assisted 3D art'} · Asael</span></figcaption>
       </figure>
     </div>`
 }
@@ -99,7 +99,7 @@ export function renderAbout(lang: Lang) {
         <article><h2>${c.aboutStoryTitle}</h2><p>${c.aboutStory}</p><a href="${culturalUrl}">${c.cultural} ↗</a></article>
         <article><h2>${c.aboutScienceTitle}</h2><p>${c.aboutScience}</p><a href="${challengeUrl}">${c.challenge} ↗</a></article>
         <article><h2>${c.team}</h2><p>${c.teamText}</p></article>
-        <article><h2>${c.credits}</h2><p>${t('Codex asistió con la web, el guion y el procesamiento reproducible. Las ilustraciones de portada y aventura se generaron con Seedream 5.0 Pro en Kie.ai. Las mediciones vienen de modelos de elevación, sin IA en la clasificación.','Codex assisted with the website, story and reproducible processing. The cover and adventure illustrations were generated with Seedream 5.0 Pro via Kie.ai. Elevation models provide the measurements; AI did not rank the terrain.')}</p><a href="${repository}">${c.code} ↗</a></article>
+        <article><h2>${c.credits}</h2><p>${t('Asael hizo el encuentro 3D de Tierra con apoyo de Google AI Studio y Claude Code. Codex apoyó la web, el arte vectorial y la integración. Las ilustraciones de portada y aventura se generaron con Seedream 5.0 Pro en Kie.ai. El ranking proviene de mediciones de elevación.','Asael built the 3D Earth encounter with help from Google AI Studio and Claude Code. Codex assisted with the site, vector art and integration. The cover and adventure illustrations were generated with Seedream 5.0 Pro via Kie.ai. The ranking comes from elevation measurements.')}</p><a href="${repository}">${c.code} ↗</a></article>
       </div>
       <details class="science-detail"><summary>${t('Fuentes de imágenes, datos y licencias','Image, data and license sources')} <span aria-hidden="true">+</span></summary><div>
         <ul><li><a href="${repository}/blob/main/design/FUENTES_VISUALES.md">${t('Créditos de fotografías, mosaicos y texturas','Photograph, mosaic and texture credits')}</a></li>

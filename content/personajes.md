@@ -1,4 +1,4 @@
-# Fichas de personajes · guía inicial para Asael (#7)
+# Fichas de personajes · TURUBO (#7)
 
 Guía de producción para siluetas y poses preliminares. Las descripciones visuales son propuestas de adaptación, no rasgos documentados por la fuente. La versión de 1986 describe a Turubó como una especie de titán; el *Diccionario mitológico de Bolivia* lo caracteriza de otra manera. Este juego sigue la primera versión y no afirma que sea la única tradición.
 
@@ -34,6 +34,13 @@ Guía de producción para siluetas y poses preliminares. Las descripciones visua
 - **Gesto distintivo:** inclina una mano hacia abajo al ordenar a la serpiente; en Marte, mantiene la mano abierta mientras Turubó parece acercarse.
 - **Nota de relato:** es la deidad chiquitana nombrada en la fuente y quien manda la serpiente. Su forma visual, el templo y el duelo en Marte son invenciones de esta adaptación. No colocar templo ni elemento ficticio sobre el mapa real de Jezero.
 
+## Diseño que se publica
+
+- **Turubó:** viajero de geometría sencilla, túnica de tonos ocres y una figura de madera. Asael lo muestra protegiendo la figura al inicio y la lanza si se elige la distracción.
+- **Serpiente:** cuerpo verde en espiral y cabeza elevada. En 3D cambia de dirección para seguir la figura lanzada o reacciona al salto. El SVG de respaldo conserva su silueta.
+- **Lémures:** sombras azules que se separan suavemente de dos figuras talladas. Son formas de la adaptación, sin rasgos animales.
+- **Uaituparr:** silueta marfil y azul en el umbral del templo ficticio. Aparece en la ilustración de Marte, fuera del mapa medido de Jezero.
+
 ## Uso y créditos
 
-Esta guía se compartió primero con Asael como base de siluetas para la issue #7; requiere interpretación del equipo antes de convertirse en arte final. La revisión cultural del arte final corresponde a la issue #7. Fuente narrativa: Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191, consultado mediante el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). ChatGPT apoyó la redacción y traducción de materiales de esta issue; no se generó arte.
+Las fichas iniciales de Ana Raquel sirvieron de referencia al equipo. Fuente narrativa: Antonio Paredes Candia, *Leyendas de Bolivia* (1986), pp. 189–191, consultado mediante el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). ChatGPT apoyó la redacción de la guía. El 3D de Tierra es obra de Asael Rojas Mansilla con ayuda de Google AI Studio y Claude Code; Codex apoyó la integración y las siluetas SVG. La edición conserva la distinción entre relato, ficción y mediciones.
