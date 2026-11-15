@@ -1,0 +1,35 @@
+{
+  "earth": {
+    "product": "NASADEM Merged DEM Global 1 arc second V001, tile s18w061",
+    "file": "NASADEM_HGT_s18w061.tif",
+    "sha256": "2167f354026d11e1455bbe4f885a48e0efe737d6ee969ce54a74732619681e73",
+    "productUrl": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+    "downloadUrl": "https://opentopography.s3.sdsc.edu/raster/NASADEM/NASADEM_be/NASADEM_HGT_s18w061.tif",
+    "metadataUrl": "https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2",
+    "credit": "NASA EOSDIS LP DAAC, NASADEM Merged DEM Global 1 arc second V001. Distributed by OpenTopography (doi:10.5069/G93T9FD9).",
+    "elevationUnit": "m",
+    "note": "EGM96 elevations. Radar-derived surface can include vegetation or structures and is not a survey of bare rock."
+  },
+  "moon": {
+    "product": "LRO/LOLA Site06 LDEM, Nobile Rim 1, 5 m/pix",
+    "file": "Site06_final_adj_5mpp_surf.tif",
+    "sha256": "cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d",
+    "productUrl": "https://pgda.gsfc.nasa.gov/products/78",
+    "downloadUrl": "https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_surf.tif",
+    "metadataUrl": "https://pgda.gsfc.nasa.gov/products/78",
+    "credit": "NASA GSFC Planetary Geodesy Data Archive, LRO/LOLA: High-Resolution LOLA Topography for Lunar South Pole Sites (Site06).",
+    "elevationUnit": "m",
+    "note": "MOON_ME (DE421), lunar south polar stereographic. NASA describes the high fraction of interpolated pixels in these 5 m products; valid raster cells do not imply direct laser measurements."
+  },
+  "mars": {
+    "product": "Mars 2020 Science Investigation CTX DEM Mosaic, 20 m/pix, Jezero",
+    "file": "M20_JezeroCrater_CTXDEM_20m.tif",
+    "sha256": "ba7f706ea1b5d63a562f28a7dcf7a7f3c79bce7f048e6974b57e8a33c30d1ba2",
+    "productUrl": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+    "downloadUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.tif",
+    "metadataUrl": "https://planetarymaps.usgs.gov/mosaic/mars2020_trn/CTX/ScienceInvestigationMaps_JPL/M20_JezeroCrater_CTXDEM_20m.xml",
+    "credit": "NASA MRO Context Camera (CTX), Mars 2020 Science Investigation CTX DEM Mosaic. USGS Astrogeology / NASA PDS urn:nasa:pds:mars2020_ctx_basemap_2021:data:m20_ctxdem_mosaic; Mangold et al. (2021), doi:10.1126/science.abl4051.",
+    "elevationUnit": "m",
+    "note": "Stereo DEM mosaic. Planetocentric latitude, east longitude and the product's Mars 2000 spherical equirectangular CRS; no Earth CRS conversion."
+  }
+}

@@ -13,4 +13,4 @@ Si solo usas el chat de ChatGPT o Claude, adjunta la guía y el texto o enlace d
 - [Preparar herramientas, Git y GitHub CLI](docs/ENTORNO.md)
 - [Issue, Draft y Ready](docs/FLUJO_GITHUB.md)
 - [Guion jugable ES/EN](content/GUION.md)
-- [Issues del equipo](https://github.com/federicorv25/turubo-atlas/issues)
+- [Issues del equipo](https://github.com/federicorv25/turubo/issues)
