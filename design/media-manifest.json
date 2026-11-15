@@ -1,0 +1,221 @@
+[
+  {
+    "id": "cerro",
+    "page": "https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_-_San_Jos%C3%A9_de_Chiquitos,_Bolivia.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Cerro_Turub%C3%B3_-_San_Jos%C3%A9_de_Chiquitos%2C_Bolivia.jpg",
+    "credit": "Ruditaly / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "alt": {
+      "es": "Vista real del Cerro Turubó y el bosque de San José de Chiquitos.",
+      "en": "A real view of Cerro Turubó and the forest of San José de Chiquitos."
+    },
+    "acquiredAt": "2026-11-15T06:26:13.738583+00:00",
+    "originalSha256": "a37a521301dce9d7904d6188f3d50164ac667ff8997bc82cfdbd4efcb6186d36",
+    "originalDimensions": [
+      4000,
+      2250
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/cerro-640.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 53052,
+        "sha256": "10bcb1dfd4de88325d25bc41c892892f65f5e3e3932cc19734f67b521334a92d"
+      },
+      {
+        "path": "media/cerro-1280.webp",
+        "width": 1280,
+        "height": 720,
+        "bytes": 195142,
+        "sha256": "3d369cded1881bdf25e30089afa8abedcb1b48cf588cc9a8b61b2c725acf3df9"
+      },
+      {
+        "path": "media/cerro-1920.webp",
+        "width": 1920,
+        "height": 1080,
+        "bytes": 433066,
+        "sha256": "e536eaf8b5b4b2fd229e8cbd3360e8ddcdfbe1abba357dbc9b64b436c3f62971"
+      }
+    ]
+  },
+  {
+    "id": "valle",
+    "page": "https://commons.wikimedia.org/wiki/File:Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg",
+    "credit": "Aldrihe / Wikimedia Commons",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "alt": {
+      "es": "Figura del Niño Jesús y paisaje del Valle de la Luna de San José de Chiquitos.",
+      "en": "A Child Jesus statue and the landscape of Valle de la Luna in San José de Chiquitos."
+    },
+    "acquiredAt": "2026-11-15T06:26:14.291121+00:00",
+    "originalSha256": "9559c85b54de92a4efbad840b4ff2443a623f065705fd1c32fb9c0ba2aec40b1",
+    "originalDimensions": [
+      1200,
+      1600
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/valle-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 66546,
+        "sha256": "5731d1a675b78836c8a386016800b513b122e35eec24c571c6d0e7f2049a6d04"
+      },
+      {
+        "path": "media/valle-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 209296,
+        "sha256": "146291743cd3a3c1b3754251d4118a781c0bc9b371b83a04cb853db252c80e74"
+      }
+    ]
+  },
+  {
+    "id": "nobile",
+    "page": "https://science.nasa.gov/mission/viper/lunar-operations/",
+    "url": "https://science.nasa.gov/wp-content/uploads/2023/05/max-lit-mosaic2-jpg.webp",
+    "credit": "NASA / LRO",
+    "license": "NASA media usage guidelines",
+    "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "alt": {
+      "es": "Reconstrucción regional de una meseta sobre Nobile a partir de 147 imágenes LRO; no es el recorte medido.",
+      "en": "Regional reconstruction of a plateau above Nobile from 147 LRO images; not our measured tile."
+    },
+    "acquiredAt": "2026-11-15T06:26:14.333090+00:00",
+    "originalSha256": "b2f8341a16970baf7b0078c75d40dab130b6c17e0244923bb0acea552ecc11b0",
+    "originalDimensions": [
+      320,
+      278
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/nobile-320.webp",
+        "width": 320,
+        "height": 278,
+        "bytes": 19920,
+        "sha256": "c800fb1b8ff1590c956990d8a1b186abefc21258ebec1edabc7195265f8d1dfb"
+      }
+    ]
+  },
+  {
+    "id": "jezero",
+    "page": "https://science.nasa.gov/photojournal/detailed-panorama-of-mars-jezero-crater-delta/",
+    "url": "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia24/pia24921/PIA24921.jpg?w=1920&h=539&fit=clip",
+    "credit": "NASA/JPL-Caltech/ASU/MSSS · PIA24921",
+    "license": "JPL image use policy",
+    "licenseUrl": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+    "alt": {
+      "es": "Panorama del delta de Jezero tomado por Perseverance; mosaico en color realzado, contexto regional.",
+      "en": "Perseverance panorama of the Jezero delta; enhanced-color mosaic, regional context."
+    },
+    "acquiredAt": "2026-11-15T06:26:14.740658+00:00",
+    "originalSha256": "4fc5ec178123ca8e0e228c0d6fc1212d15b796b4ab4a0e28a60d170d3707ee7e",
+    "originalDimensions": [
+      1920,
+      539
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/jezero-640.webp",
+        "width": 640,
+        "height": 180,
+        "bytes": 19862,
+        "sha256": "706c65d8d75da5af790e828148d59884a7cbeec3f2a52ebd4860a0da88590248"
+      },
+      {
+        "path": "media/jezero-1280.webp",
+        "width": 1280,
+        "height": 359,
+        "bytes": 68738,
+        "sha256": "a6da3e2ad5244d85b6c9b356f1cd9115f63dddcaecb5ded8f3b292578788eb03"
+      },
+      {
+        "path": "media/jezero-1920.webp",
+        "width": 1920,
+        "height": 539,
+        "bytes": 117786,
+        "sha256": "ca52f0483bb941d7e37d48ba078448da175cbb45e535d39f305e93d4aadb8728"
+      }
+    ]
+  },
+  {
+    "id": "moon-texture",
+    "page": "https://svs.gsfc.nasa.gov/4720/",
+    "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+    "credit": "NASA/GSFC/SVS · Ernie Wright · LROC",
+    "license": "NASA SVS media use",
+    "licenseUrl": "https://svs.gsfc.nasa.gov/help/",
+    "alt": {
+      "es": "Mapa global LROC para el globo lunar artístico, sin escala de análisis.",
+      "en": "Global LROC map for the illustrative lunar globe, without an analysis scale."
+    },
+    "acquiredAt": "2026-11-15T06:26:18.302962+00:00",
+    "originalSha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170",
+    "originalDimensions": [
+      2048,
+      1024
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/moon-texture.webp",
+        "width": 2048,
+        "height": 1024,
+        "bytes": 287618,
+        "sha256": "5459a172f826513c315aca17454566bc4cf77646b18d55a91e7dfbf6c34e8392"
+      },
+      {
+        "path": "media/moon-globe.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 68390,
+        "sha256": "52372829b442a8fe38b3f272c841c44ffe2916104b76a092dd7c1c1054d064b8",
+        "modification": "Static illustrative sphere, lit and projected from this global texture."
+      }
+    ]
+  },
+  {
+    "id": "mars-texture",
+    "page": "https://science.nasa.gov/3d-resources/mars/",
+    "url": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/image/mars/Mars.jpg",
+    "credit": "NASA/JPL-Caltech · USGS · Viking",
+    "license": "JPL image use policy",
+    "licenseUrl": "https://www.jpl.nasa.gov/jpl-image-use-policy/",
+    "alt": {
+      "es": "Mapa global de Marte basado en Viking para el globo artístico.",
+      "en": "Viking-based global Mars map for the illustrative globe."
+    },
+    "acquiredAt": "2026-11-15T06:26:24.092332+00:00",
+    "originalSha256": "12ec6bf02ebd42a246edc778cb2ce8c595b4d9f0892badf0bfff8abb2303c780",
+    "originalDimensions": [
+      1440,
+      720
+    ],
+    "modifications": "EXIF orientation; resized; WebP encoding. No generative editing.",
+    "files": [
+      {
+        "path": "media/mars-texture.webp",
+        "width": 1440,
+        "height": 720,
+        "bytes": 146592,
+        "sha256": "bfa67cb84ae6064d497fe1bcf044682bd80d709b7bd08ee1bd957a8c956bb6f1"
+      },
+      {
+        "path": "media/mars-globe.webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 64160,
+        "sha256": "f8883505db261c54c14f911257a104ff1619d7092e9bc33ee9e60969d321cd4c",
+        "modification": "Static illustrative sphere, lit and projected from this global texture."
+      }
+    ]
+  }
+]

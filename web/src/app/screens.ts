@@ -2,43 +2,10 @@ import type { Analysis, Lang, Story, World } from './contracts'
 import { messages } from './i18n'
 import { site } from './site-copy'
 import { sceneArt } from './scene-art'
-import journeyArt from './art/journey.svg'
 
 export const culturalUrl = 'https://archivodefolkloreboliviano.org/motivo/turubo/'
 export const challengeUrl = 'https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/'
 const repository = 'https://github.com/federicorv25/turubo'
-const worlds = ['earth', 'moon', 'mars'] as const
-
-export function renderHome(lang: Lang, journeyStarted: boolean) {
-  const c = site[lang]
-  return `
-    <section class="hero">
-      <div class="hero-art" aria-hidden="true"><img src="${journeyArt}" alt="" width="800" height="630" fetchpriority="high"></div>
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="marker" aria-hidden="true"></span> ${c.homeTag}</p>
-        <h1>TURUBO</h1>
-        <p class="hero-subtitle">${c.subtitle}</p>
-        <p class="hero-lead">${c.lead}</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#/play">${journeyStarted ? c.resume : c.play} <span aria-hidden="true">→</span></a>
-          <a class="button secondary" href="#/compare/moon">${c.compare}</a>
-        </div>
-      </div>
-      <span class="art-label">${c.art}</span>
-    </section>
-    <ol class="route-list" aria-label="${c.route}">
-      ${worlds.map((world, index) => `
-        <li><a href="#/compare/${world}" data-world="${world}">
-          <span class="orb" aria-hidden="true"></span>
-          <span><small>0${index + 1}</small> <strong>${c.stops[world][0]}</strong><span class="route-site">${c.stops[world][1]}</span></span>
-          <span class="route-arrow" aria-hidden="true">↗</span>
-        </a></li>`).join('')}
-    </ol>
-    <section class="landing-note">
-      <div><h2>${c.homeDetailTitle}</h2><p>${c.homeDetail}</p></div>
-      <a class="text-link" href="#/about">${c.nav.about} <span aria-hidden="true">↗</span></a>
-    </section>`
-}
 
 export function renderStage(lang: Lang, story: Story, sceneId: string) {
   const c = site[lang]
@@ -123,6 +90,7 @@ export function renderMethod(lang: Lang) {
 
 export function renderAbout(lang: Lang) {
   const c = site[lang]
+  const t = (es: string, en: string) => lang === 'es' ? es : en
   return `
     <section class="about">
       <p class="eyebrow"><span class="marker" aria-hidden="true"></span> TURUBO · ${c.nav.about}</p>
@@ -131,7 +99,13 @@ export function renderAbout(lang: Lang) {
         <article><h2>${c.aboutStoryTitle}</h2><p>${c.aboutStory}</p><a href="${culturalUrl}">${c.cultural} ↗</a></article>
         <article><h2>${c.aboutScienceTitle}</h2><p>${c.aboutScience}</p><a href="${challengeUrl}">${c.challenge} ↗</a></article>
         <article><h2>${c.team}</h2><p>${c.teamText}</p></article>
-        <article><h2>${c.credits}</h2><p>${c.creditsText}</p><a href="${repository}">${c.code} ↗</a></article>
+        <article><h2>${c.credits}</h2><p>${t('Codex asistió con la web, el guion y el procesamiento reproducible. Las ilustraciones de portada y aventura se generaron con Seedream 5.0 Pro en Kie.ai. Las mediciones vienen de modelos de elevación, sin IA en la clasificación.','Codex assisted with the website, story and reproducible processing. The cover and adventure illustrations were generated with Seedream 5.0 Pro via Kie.ai. Elevation models provide the measurements; AI did not rank the terrain.')}</p><a href="${repository}">${c.code} ↗</a></article>
       </div>
+      <details class="science-detail"><summary>${t('Fuentes de imágenes, datos y licencias','Image, data and license sources')} <span aria-hidden="true">+</span></summary><div>
+        <ul><li><a href="${repository}/blob/main/design/FUENTES_VISUALES.md">${t('Créditos de fotografías, mosaicos y texturas','Photograph, mosaic and texture credits')}</a></li>
+        <li><a href="${repository}/tree/main/science/pipeline">${t('DATOS · NASADEM, LRO/LOLA y CTX','DATA · NASADEM, LRO/LOLA and CTX')}</a></li>
+        <li><a href="${repository}/blob/main/design/ai-art-manifest.json">${t('Registro de ilustraciones generadas','Record of generated illustrations')}</a></li>
+        <li><a href="${repository}/blob/main/LICENSE">${t('Licencia MIT del código original','MIT license for original code')}</a></li></ul>
+      </div></details>
     </section>`
 }

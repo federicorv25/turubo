@@ -4,9 +4,15 @@ import { renderAnalysis } from '../analysis'
 import type { Analysis, Lang, Story, World } from './contracts'
 import { messages } from './i18n'
 import { site } from './site-copy'
-import { renderHome, renderAbout, renderStage, renderFinding, renderMethod, culturalUrl, challengeUrl } from './screens'
+import { renderAbout, renderStage, renderFinding, renderMethod } from './screens'
+import { renderJourney, refreshJourneyData } from '../journey/content'
+import { mountJourney } from '../journey/mount'
 import mark from './art/turubo.svg'
+import '@fontsource/cormorant-garamond/latin-600.css'
+import '@fontsource/manrope/latin-400.css'
+import '@fontsource/manrope/latin-700.css'
 import './style.css'
+import '../journey/journey.css'
 
 type Screen = 'home' | 'play' | 'compare' | 'about'
 type Route = { screen: Exclude<Screen, 'compare'> } | { screen: 'compare'; world: World }
@@ -21,6 +27,8 @@ let journey: JourneyState = { sceneId: story.order[0], answer: null }
 let journeyStarted = false
 let compareBack: 'play' | 'home' = 'home'
 let analysis: DataState = { status: 'idle' }
+let unmountJourney: (() => void) | undefined
+let landingScroll=0
 
 function preferredLanguage(): Lang {
   try {
@@ -56,9 +64,11 @@ header.className = 'site-header'
 const home = document.createElement('a')
 home.className = 'wordmark'
 home.href = routeHash('home')
-home.innerHTML = `<img src="${mark}" alt="" width="40" height="40"><span>TURUBO</span>`
+home.innerHTML = `<img src="${mark}" alt="" width="36" height="36"><span>TURUBO</span>`
+home.onclick = event => { if(route.screen==='home'){event.preventDefault(); setMenu(false); focusMain()} }
 const nav = document.createElement('nav')
 nav.className = 'site-nav'
+nav.id = 'primary-navigation'
 const navLinks = kinds.map(screen => {
   const link = document.createElement('a')
   link.href = routeHash(screen)
@@ -75,6 +85,7 @@ const buttons = (['es', 'en'] as const).map(code => {
   button.textContent = code.toUpperCase()
   button.setAttribute('aria-label', code === 'en' ? 'English' : 'Español')
   button.onclick = () => {
+    if (lang === code) return
     lang = code
     try { localStorage.setItem(preferenceKey, code) } catch { /* Keep the choice for this visit. */ }
     render()
@@ -82,7 +93,31 @@ const buttons = (['es', 'en'] as const).map(code => {
   languages.append(button)
   return [code, button] as const
 })
-header.append(home, nav, languages)
+const tools = document.createElement('div')
+tools.className = 'header-tools'
+const menu = document.createElement('button')
+menu.type = 'button'
+menu.className = 'menu-toggle'
+menu.setAttribute('aria-controls',nav.id)
+menu.setAttribute('aria-expanded','false')
+menu.innerHTML='<span aria-hidden="true"></span><span aria-hidden="true"></span>'
+const setMenu = (open: boolean) => {
+  menu.setAttribute('aria-expanded',String(open))
+  header.dataset.menu = String(open)
+  menu.setAttribute('aria-label',lang==='es' ? (open?'Cerrar menú':'Abrir menú') : (open?'Close menu':'Open menu'))
+}
+menu.onclick = () => {
+  const open=header.dataset.menu!=='true'
+  setMenu(open)
+  if(open)navLinks[0][1].focus()
+}
+header.onkeydown = event => {
+  if (event.key==='Escape' && header.dataset.menu==='true') { setMenu(false); menu.focus() }
+}
+nav.addEventListener('click',event=>{if((event.target as HTMLElement).closest('a'))setMenu(false)})
+navLinks[0][1].onclick = event => { if(route.screen==='home'){event.preventDefault(); focusMain()} }
+tools.append(languages,menu)
+header.append(home, nav, tools)
 const skip = document.createElement('a')
 skip.className = 'skip-link'
 skip.href = '#main-content'
@@ -93,24 +128,21 @@ main.tabIndex = -1
 const footer = document.createElement('footer')
 const credits = document.createElement('a')
 credits.href = routeHash('about')
-const cultural = document.createElement('a')
-cultural.href = culturalUrl
-const challenge = document.createElement('a')
-challenge.href = challengeUrl
-challenge.textContent = 'NASA Space Apps 2026'
 const footerTag = document.createElement('span')
-footerTag.textContent = 'TURUBO · Santa Cruz, Bolivia'
-footer.append(footerTag, credits, cultural, challenge)
+footerTag.innerHTML = `<img src="${mark}" width="30" height="30" alt=""><span>TURUBO <small>· Santa Cruz, Bolivia</small></span>`
+footer.append(footerTag, credits)
 app.append(skip, header, main, footer)
 
-function focusMain() {
+function focusMain(top=true) {
   const destination = main.querySelector<HTMLElement>('h1') ?? main
   destination.tabIndex = -1
   destination.focus({ preventScroll: true })
-  window.scrollTo(0, 0)
+  if(top) window.scrollTo(0, 0)
 }
 
 function render(moveFocus = false) {
+  unmountJourney?.()
+  unmountJourney=undefined
   const c = site[lang]
   document.documentElement.lang = lang
   document.title = route.screen === 'home' ? `TURUBO · ${c.subtitle}` : `${c.nav[route.screen]} · TURUBO`
@@ -123,10 +155,20 @@ function render(moveFocus = false) {
     else link.removeAttribute('aria-current')
   }
   for (const [code, button] of buttons) button.setAttribute('aria-pressed', String(lang === code))
-  credits.textContent = c.credits
-  cultural.textContent = c.cultural
+  credits.textContent = lang==='es' ? 'Proyecto y fuentes ↗' : 'Project and sources ↗'
+  setMenu(false)
   main.dataset.screen = route.screen
-  if (route.screen === 'home') main.innerHTML = renderHome(lang, journeyStarted)
+  if (route.screen === 'home') {
+    main.innerHTML = renderJourney(lang, journeyStarted, analysis.status==='ready'?analysis.value:undefined)
+    unmountJourney = mountJourney(main, id => {
+      const section = document.getElementById(id)
+      const heading = section?.querySelector<HTMLElement>('h2')
+      if(heading) { heading.tabIndex=-1; heading.focus({preventScroll:true}) }
+      section?.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })
+    })
+    if (analysis.status==='idle') void loadAnalysis()
+    if (analysis.status==='failed') refreshJourneyData(main,lang)
+  }
   else if (route.screen === 'play') renderPlay()
   else if (route.screen === 'compare') renderCompare(route.world)
   else main.innerHTML = renderAbout(lang)
@@ -183,12 +225,15 @@ async function loadAnalysis() {
     analysis = { status: 'failed' }
   }
   if (route.screen === 'compare') render(main.contains(document.activeElement))
+  else if (route.screen==='home') refreshJourneyData(main,lang,analysis.status==='ready'?analysis.value:undefined)
 }
 
 window.addEventListener('hashchange', () => {
   const previous = route.screen
+  if(previous==='home') landingScroll = window.scrollY
   route = readRoute()
   if (route.screen === 'compare' && previous !== 'compare') compareBack = previous === 'play' ? 'play' : 'home'
   render(true)
+  if(route.screen==='home' && previous==='compare' && landingScroll) window.scrollTo(0,landingScroll)
 })
 render()

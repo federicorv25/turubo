@@ -7,13 +7,13 @@
     "prologue": {
       "world": "earth",
       "title": { "es": "La montaña y el cielo", "en": "The mountain and the sky" },
-      "text": { "es": "Turubó talla figuras de madera y barro, pero no logra darles vida. Una noche bebe del vaso misterioso de la vida y la muerte y, en esta adaptación, vislumbra otros mundos. Sueña que Uaituparr le advierte sobre su desafío. Al despertar, vuelve a la montaña: está por terminar la plataforma.", "en": "Turubó carves figures from wood and clay but cannot bring them to life. One night he drinks from the mysterious cup of life and death and, in this adaptation, glimpses other worlds. He dreams that Uaituparr warns him about his defiance. When he wakes, he returns to the mountain: the platform is nearly finished." },
+      "text": { "es": "Turubó vive solo. Talla figuras de madera y barro para hacerse compañía, pero no logra darles vida. Al beber del vaso de la vida y la muerte ve otros mundos. Uaituparr le advierte en sueños que no siga. La nave está lista; ayúdalo a terminar la plataforma de la montaña.", "en": "Turubó lives alone. He makes figures from wood and clay for company, but cannot bring them to life. The cup of life and death shows him other worlds. In a dream, Uaituparr warns him to stop. The ship is ready; help Turubó finish the mountain platform." },
       "choices": [{ "label": { "es": "Terminar la plataforma", "en": "Finish the platform" }, "next": "earth" }]
     },
     "earth": {
       "world": "earth",
       "title": { "es": "La serpiente", "en": "The serpent" },
-      "text": { "es": "A un paso de alcanzar la morada de Uaituparr, Turubó se recuesta agotado sobre la plataforma y se duerme. Uaituparr manda una serpiente venenosa, que lo muerde y lo despierta. La nave de esta adaptación está cerca. ¿Qué haces?", "en": "One step from reaching Uaituparr's dwelling, Turubó lies down, exhausted, on the platform and falls asleep. Uaituparr sends a venomous serpent, which bites him awake. The ship in this adaptation is nearby. What do you do?" },
+      "text": { "es": "Turubó se duerme en la plataforma. Una serpiente enviada por Uaituparr lo despierta con una mordida. Su nave está cerca. Elige cómo superar a la serpiente y partir con sus figuras.", "en": "Turubó falls asleep on the platform. A serpent sent by Uaituparr wakes him with a bite. His ship is close. Choose how to get past the serpent and leave with his figures." },
       "poison": { "es": "El veneno comienza", "en": "The venom takes hold" },
       "choices": [
         { "label": { "es": "Esquivar a la serpiente", "en": "Dodge the serpent" }, "feedback": { "es": "Turubó se aparta del último embate y vence a la serpiente. Parte con sus figuras, herido y con el veneno en el cuerpo.", "en": "Turubó evades the final strike and defeats the serpent. He leaves with his figures, wounded and carrying the venom." }, "next": "moon" },
@@ -23,7 +23,7 @@
     "moon": {
       "world": "moon",
       "title": { "es": "Figuras entre sombras", "en": "Figures among shadows" },
-      "text": { "es": "En esta historia, Turubó hace una escala ficticia en la Luna para revisar la nave y preparar el siguiente trayecto. Durante la parada, sombras mueven las figuras que trajo de la Tierra. Aquí las llaman lémures: son formas parecidas a sombras, no animales. Turubó observa el terreno inspirado en Nobile Rim 1 antes de seguir hacia Marte.", "en": "In this story, Turubó makes a fictional stopover on the Moon to check the ship and prepare for the next leg. During the stop, shadows move the figures he brought from Earth. Here they are called lemures: shadowlike forms, not animals. Turubó studies terrain inspired by Nobile Rim 1 before continuing to Mars." },
+      "text": { "es": "Antes de seguir a Marte, Turubó hace una escala imaginaria en la Luna para revisar la nave. Sombras que llamamos lémures se apoderan de sus figuras. ¿Exploras el relieve inspirado en Nobile Rim 1 o atraviesas las sombras?", "en": "Before flying to Mars, Turubó makes an imagined stop on the Moon to check his ship. Shadows we call lemures take hold of his figures. Will you study the terrain inspired by Nobile Rim 1 or pass through the shadows?" },
       "poison": { "es": "El veneno avanza", "en": "The venom spreads" },
       "choices": [
         { "label": { "es": "Observar el relieve", "en": "Study the relief" }, "feedback": { "es": "Una forma parecida plantea una pregunta. Las medidas dicen qué se parece y qué cambia.", "en": "A similar shape raises a question. Measurements show what matches and what differs." }, "next": "mars" },
@@ -33,7 +33,7 @@
     "mars": {
       "world": "mars",
       "title": { "es": "El último desafío", "en": "The final challenge" },
-      "text": { "es": "En un paisaje marciano inspirado en Jezero, Turubó desafía a Uaituparr dentro de un templo imaginario: ese templo no forma parte del Jezero real. La luz llena el umbral y el veneno le pesa en el cuerpo. Aún reúne fuerzas para un último intento.", "en": "In a Martian landscape inspired by Jezero, Turubó challenges Uaituparr inside an imagined temple; that temple is not part of real Jezero. Light fills the doorway and the venom weighs on him. He gathers his strength for one last attempt." },
+      "text": { "es": "Uaituparr espera en un templo de nuestra ficción, en un paisaje inspirado en Jezero. El veneno debilita a Turubó, pero aún puede acercarse al creador. Decide cómo hará su último intento.", "en": "Uaituparr waits in a fictional temple in a landscape inspired by Jezero. The venom weakens Turubó, but he can still approach the creator. Choose how he makes his final attempt." },
       "poison": { "es": "El veneno lo alcanza", "en": "The venom overtakes him" },
       "choices": [
         { "label": { "es": "Alzar la figura tallada", "en": "Raise the carved figure" }, "feedback": { "es": "Al ver la figura, Uaituparr vacila. Turubó da un paso más, pero le fallan las fuerzas antes del golpe final.", "en": "At the sight of the figure, Uaituparr hesitates. Turubó takes one more step, but his strength fails before the final blow." }, "next": "epilogue" },
@@ -43,7 +43,7 @@
     "epilogue": {
       "world": "earth",
       "title": { "es": "Lo que queda", "en": "What remains" },
-      "text": { "es": "Turubó muere antes de vencer a Uaituparr. Su nombre permanece en la montaña. Desde aquí puedes salir de la ficción y volver a las comparaciones de terrenos terrestres, lunares y marcianos.", "en": "Turubó dies before defeating Uaituparr. His name remains on the mountain. From here you can leave the story and return to the Earth, Moon, and Mars terrain comparisons." },
+      "text": { "es": "El veneno acaba con la vida de Turubó. Su nombre permanece en la montaña. Vuelve al origen de la historia o explora las mediciones de los paisajes que la inspiraron.", "en": "The venom ends Turubó’s life. His name remains on the mountain. Return to the start of the story or explore measurements of the landscapes that inspired it." },
       "choices": [{ "label": { "es": "Volver al comienzo", "en": "Return to the beginning" }, "next": "prologue" }]
     }
   }

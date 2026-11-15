@@ -20,6 +20,7 @@ La ficha para el primer traspaso a Asael está en [`personajes.md`](personajes.m
 
 ## Experiencia y traspaso
 
+- **Revisión #26:** la portada explica el viaje antes de abrir la historia. Los cinco pasajes ES/EN se acortaron para que la acción siguiente se entienda en una lectura. El prólogo presenta la soledad, las figuras y el vaso; Tierra pide elegir cómo superar a la serpiente; Luna presenta la escala y las sombras; Marte invita al último intento ante Uaituparr; el epílogo ofrece volver o explorar los mapas.
 - `story.json` conserva los cinco identificadores existentes y las claves bilingües `es`/`en`.
 - «Ver análisis» está disponible en cada escena. El panel recibe únicamente el destino `earth`, `moon` o `mars`, nunca la respuesta del jugador. Volver a la historia conserva la escena y la respuesta actual.
 - En `earth`, el análisis debe mantener separados el Cerro Turubó y el Valle de la Luna de San José de Chiquitos. Cerro Turubó es el caso guiado y queda fuera del ranking. Las comparaciones de Luna y Marte usan Nobile Rim 1 y Jezero, respectivamente.
@@ -33,7 +34,7 @@ La ficha para el primer traspaso a Asael está en [`personajes.md`](personajes.m
 - Revisión humana del texto bilingüe: Federico revisó el guion en español e inglés y señaló que faltaba explicar la escala lunar; este ajuste añade ese motivo. Esa revisión editorial no significa que Federico haya ejecutado personalmente la prueba del recorrido.
 - Prueba manual del recorrido: Codex recorrió las cinco escenas y las decisiones en español e inglés en el navegador integrado, abrió «Ver análisis» y volvió conservando la escena y la respuesta, por encargo de Federico.
 - Revisión cultural del arte final: corresponde a la issue #7 y queda pendiente allí; no es una revisión lingüística pendiente de este guion.
-- No se usó arte generado por IA en estos archivos.
+- No se usó arte generado por IA en `story.json`. La portada y la entrada de la aventura usan ilustraciones de ficción etiquetadas en la web y en el [registro de arte](../design/ai-art-manifest.json). El diseño jugable de Asael sigue en #7.
 
 ## Referencias de contexto
 

@@ -47,7 +47,7 @@ Desde una carpeta aparte del ZIP:
 
 ~~~powershell
 gh repo clone federicorv25/turubo
-Set-Location turubo-atlas
+Set-Location turubo
 git remote -v
 gh repo view --json nameWithOwner,viewerPermission
 ~~~
