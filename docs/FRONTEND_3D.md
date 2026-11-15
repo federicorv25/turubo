@@ -1,6 +1,6 @@
 # TURUBO: plan de la experiencia 3D
 
-Estado: recorrido publicado en turubo.tech con la galería de la Chiquitania (#36) y el encuentro 3D de Asael (#7). Consulta [las pruebas del frontend y de la demo](evidence/viaje-3d.md), [las del encuentro 3D](evidence/encuentro-tierra-3d.md) y [la entrega preparada](../submission/README.md). El resto de esta guía conserva el plan original.
+Estado: el recorrido incluye la galería de la Chiquitania (#36), la escena original de Asael (#7) y el relato por scroll, el juego explorable y el comparador de #39. Consulta [las pruebas del frontend y de la demo](evidence/viaje-3d.md), [las del encuentro 3D](evidence/encuentro-tierra-3d.md) y [la entrega preparada](../submission/README.md). El resto de esta guía conserva el plan original.
 
 ## Resultado que se entregará
 

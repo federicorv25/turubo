@@ -21,4 +21,6 @@ La foto real del Valle no se sustituye por las formaciones de La Paz, el Salar d
 
 ## Arte narrativo
 
-La portada nocturna y la ilustración del viajero son ficciones generadas con Seedream 5.0 Pro mediante Kie.ai. Ambas llevan una marca visible en la web; no sustituyen fotografías ni mapas. [Registro de arte](ai-art-manifest.json). El arte vectorial de la aventura cuenta con asistencia de Codex. La firma del sitio es el nombre TURUBO en texto.
+La portada nocturna, el viajero, el artesano, la serpiente, las sombras lunares y el umbral marciano son ficciones generadas con Seedream 5.0 Pro mediante Kie.ai. Todas llevan una marca visible en la web; no sustituyen fotografías ni mapas. [Registro de arte](ai-art-manifest.json). El arte vectorial de la aventura cuenta con asistencia de Codex. La firma del sitio es el nombre TURUBO en texto.
+
+Cuatro ilustraciones narrativas añadidas en #39: tallador, serpiente, sombras y umbral. Seedream 5.0 Pro (Kie.ai), 2K, 14 créditos cada una; US$0,28 en total a la tarifa consultada. Consumo acumulado del proyecto: 84 créditos, US$0,42. No se generó vídeo ni se alteraron fotografías de Bolivia.

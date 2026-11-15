@@ -4,7 +4,7 @@ import './graphics.css'
 /**
  * Keeps one 3D instance alive across the play screen re-renders.
  * main.ts rebuilds the stage HTML on every decision and language change, so the canvas lives in a
- * persistent element that is moved into each new `.scene-figure`, next to its SVG fallback.
+ * persistent element that is moved into each new `.scene-figure`, above its illustrated fallback.
  * Three.js is only downloaded when a scene that uses it is shown (see ./index).
  */
 let element: HTMLDivElement | undefined
@@ -14,7 +14,7 @@ let unavailable = false
 let latest: GraphicsScene | undefined
 let session = 0
 
-/** First cut of issue #7: only the Earth encounter is drawn in 3D; the other scenes keep their illustration. */
+/** Three explorable worlds. The prologue and the ending use cinematic illustrations. */
 const usesGraphics = ({ state }: GraphicsScene) => ['earth', 'moon', 'mars'].includes(state.sceneId)
 
 function supported() {
@@ -22,7 +22,7 @@ function supported() {
   return 'WebGL2RenderingContext' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches && !connection?.saveData
 }
 
-/** Call after drawing the play stage (SVG first). */
+/** Call after drawing the play stage (illustration first). */
 export function syncSceneGraphics(figure: HTMLElement | null, next: GraphicsScene) {
   if (!figure || !usesGraphics(next) || !supported()) {
     releaseSceneGraphics()
@@ -31,7 +31,7 @@ export function syncSceneGraphics(figure: HTMLElement | null, next: GraphicsScen
   }
   if (latest && latest.state.sceneId !== next.state.sceneId) releaseSceneGraphics()
   latest = next
-  if (unavailable) return
+  if (unavailable) { next.onStatus('fallback', true); return }
   if (!element) {
     element = document.createElement('div')
     element.className = 'scene-graphics'

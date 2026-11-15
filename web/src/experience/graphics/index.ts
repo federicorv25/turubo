@@ -54,8 +54,11 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
  const qa=(import.meta.env.DEV||import.meta.env.MODE==='graphics-qa')&&['localhost','127.0.0.1'].includes(location.hostname)&&new URLSearchParams(location.search).has('graphics-qa')
  let current=initial,outcome=outcomeOf(initial),reaction=Infinity,time=0,previous=0,frame=0,lastAction=performance.now()
  let visible=false,dead=false,ready=false,dirty=true,auto=false,jump=Infinity,walking=0,facing=0
- let target:Vector3|undefined,pointer:number|undefined,frames:number[]=[],sampleStart=0
+ let target:Vector3|undefined,pointer:number|undefined,frames:number[]=[],sampleStart=0,measuring=qa
+ let pixels=650_000,qualityFrames=0,qualityTime=0
  const keys=new Set<string>(),touch=new Set<string>()
+ const pressFrom=new Map<string,{x:number;z:number}>()
+ let touchStart:{x:number;z:number;dir:string}|undefined
  const ray=new Raycaster(),plane=new Plane(new Vector3(0,1,0),-.65),hit=new Vector3()
  const position=new Vector3(),focus=new Vector3(),cameraGoal=new Vector3(),figureFrom=new Vector3()
  let thrown=outcome==='distract'
@@ -72,8 +75,13 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
  }
  settle()
  function wake(){dirty=true;lastAction=performance.now();if(!frame&&active()){previous=0;frame=requestAnimationFrame(loop)}}
- function clearInput(){keys.clear();touch.clear();target=undefined;auto=false;pointer=undefined}
+ function clearInput(){keys.clear();touch.clear();pressFrom.clear();touchStart=undefined;target=undefined;auto=false;pointer=undefined}
  const movable=()=>!current.exploration.arrived&&outcome==='waiting'
+ function nudge(code:string){
+  const x=['KeyA','ArrowLeft','left'].includes(code)?-1:['KeyD','ArrowRight','right'].includes(code)?1:0
+  const z=['KeyW','ArrowUp','up'].includes(code)?-1:['KeyS','ArrowDown','down'].includes(code)?1:0
+  if(x||z){movePosition(current.exploration,x,z,.05,5.5);facing=Math.atan2(-x,-z);wake()}
+ }
  function arrive(){
   current.exploration.arrived=true;current.exploration.x=destination.x;current.exploration.z=destination.z
   clearInput();notify();lastAction=performance.now()
@@ -84,16 +92,31 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   if((event.target as HTMLElement).closest('button,a,input,select,textarea'))return
   event.preventDefault()
   if(movable()){
+   if(!keys.has(event.code))pressFrom.set(event.code,{x:current.exploration.x,z:current.exploration.z})
    keys.add(event.code);auto=false;target=undefined
    if(event.code==='Space'&&jump===Infinity){jump=0;turubo.triggerJumpSquash()}
   }
   wake()
  },opts)
- document.addEventListener('keyup',e=>{keys.delete(e.code)},opts)
- window.addEventListener('blur',clearInput,opts)
- document.addEventListener('visibilitychange',()=>{clearInput();if(document.hidden){if(frame)cancelAnimationFrame(frame);frame=0}else wake()},opts)
+ document.addEventListener('keyup',e=>{
+  const from=pressFrom.get(e.code)
+  if(from&&movable()&&Math.hypot(current.exploration.x-from.x,current.exploration.z-from.z)<.025)nudge(e.code)
+  keys.delete(e.code);pressFrom.delete(e.code)
+ },opts)
+ function interruptSample(){if(measuring){frames=[];sampleStart=0}}
+ window.addEventListener('blur',()=>{clearInput();interruptSample()},opts)
+ window.addEventListener('focus',()=>{if(measuring)wake()},opts)
+ document.addEventListener('visibilitychange',()=>{clearInput();if(document.hidden){interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()},opts)
+ let tap:{x:number; y:number; id:number}|undefined
  host.addEventListener('pointerdown',event=>{
   if(!movable())return
+  tap={x:event.clientX,y:event.clientY,id:event.pointerId}
+  if(event.pointerType==='mouse')host.focus({preventScroll:true})
+ },opts)
+ host.addEventListener('pointercancel',()=>{tap=undefined},opts)
+ host.addEventListener('pointerup',event=>{
+  const start=tap;tap=undefined
+  if(!movable()||!start||start.id!==event.pointerId||Math.hypot(event.clientX-start.x,event.clientY-start.y)>10)return
   host.focus({preventScroll:true})
   const rect=canvas.getBoundingClientRect()
   ray.setFromCamera(new Vector2((event.clientX-rect.left)/rect.width*2-1,-(event.clientY-rect.top)/rect.height*2+1),camera)
@@ -103,9 +126,13 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   const button=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-walk]')
   if(!button||!shell()?.contains(button)||!movable())return
   event.preventDefault();button.setPointerCapture(event.pointerId);pointer=event.pointerId
+  touchStart={x:current.exploration.x,z:current.exploration.z,dir:button.dataset.walk!}
   touch.add(button.dataset.walk!);auto=false;target=undefined;wake()
  },opts)
- const releaseTouch=(e:PointerEvent)=>{if(e.pointerId===pointer){touch.clear();pointer=undefined}}
+ const releaseTouch=(e:PointerEvent)=>{if(e.pointerId===pointer){
+  if(e.type==='pointerup'&&touchStart&&movable()&&Math.hypot(current.exploration.x-touchStart.x,current.exploration.z-touchStart.z)<.025)nudge(touchStart.dir)
+  touch.clear();pointer=undefined;touchStart=undefined
+ }}
  document.addEventListener('pointerup',releaseTouch,opts);document.addEventListener('pointercancel',releaseTouch,opts);document.addEventListener('lostpointercapture',releaseTouch,opts)
  document.addEventListener('click',event=>{
   const step=(event.target as HTMLElement).closest<HTMLButtonElement>('[data-walk]')
@@ -128,6 +155,7 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   if(moved>.0001){walking=1;facing=Math.atan2(-x,-z);lastAction=performance.now()}
   if(reached(current.exploration))arrive()
  }
+ let previousProgress=-1,meter=shell()?.querySelector<HTMLProgressElement>('.approach-progress')
  function step(dt:number){
   time+=dt;move(dt)
   if(jump!==Infinity){jump+=dt;if(jump>.65){jump=Infinity;turubo.triggerLandSquash()}}
@@ -170,39 +198,56 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   if(current.exploration.arrived)facing=Math.atan2(-(SERPENT_POSITION.x-x),-(SERPENT_POSITION.z-z))
   turubo.update(x,ground(x,z)+hop,z,facing,hop<.02,time,dt,ground(x,z),walking)
   shading.update(time);light?.update(time,serpent?.alert??0);planet?.update(time,outcome);marker.update(time,current.exploration.arrived)
-  if(current.exploration.arrived){cameraGoal.set(7.6,ground(x,z)+3.5,-1.9);focus.set(-.2,2,-9.1)}
+  if(current.exploration.arrived){
+   if(current.scene.world==='mars'){cameraGoal.set(9.8,ground(x,z)+4.5,.7);focus.set(-.2,3,-9.6)}
+   else{cameraGoal.set(7.6,ground(x,z)+3.5,-1.9);focus.set(-.2,2,-9.1)}
+  }
   else{cameraGoal.set(x+1.5,ground(x,z)+4.1,z+7.8);focus.set(x,ground(x,z)+1.7,z-2)}
   camera.position.lerp(cameraGoal,1-Math.exp(-3*dt));camera.lookAt(focus)
   forest?.update(camera.position.x,camera.position.y,camera.position.z)
+  const progress=current.exploration.arrived?100:Math.round(MathUtils.clamp(1-Math.hypot(x-destination.x,z-destination.z)/11.9,0,1)*100)
+  if(meter&&progress!==previousProgress){meter.value=progress;previousProgress=progress}
   if(qa)host.dataset.position=JSON.stringify({x:current.exploration.x,z:current.exploration.z,arrived:current.exploration.arrived})
  }
  function sample(now:number){
+  if(!document.hasFocus()||document.hidden){interruptSample();return}
   if(!sampleStart)sampleStart=now
   frames.push(now)
   if(now-sampleStart<30000)return
   const gaps=frames.slice(1).map((n,i)=>n-frames[i]).sort((a,b)=>a-b)
-  host.dataset.graphicsPerformance=JSON.stringify({fps:Math.round(gaps.length*10000/(now-sampleStart))/10,p95ms:gaps[Math.floor(gaps.length*.95)],longFrames:gaps.filter(n=>n>34).length,drawCalls:renderer.info.render.calls,size:[canvas.width,canvas.height]})
-  frames=[];sampleStart=0
+  host.dataset.graphicsPerformance=JSON.stringify({durationMs:Math.round(now-sampleStart),frames:gaps.length,fps:Math.round(gaps.length*10000/(now-sampleStart))/10,p95ms:Math.round(gaps[Math.floor(gaps.length*.95)]*10)/10,longFrames:gaps.filter(n=>n>34).length,drawCalls:renderer.info.render.calls,size:[canvas.width,canvas.height],viewport:[innerWidth,innerHeight],pixelBudget:pixels})
+  measuring=false;frames=[];sampleStart=0
  }
  function loop(now:number){
   frame=0
   if(!active())return
-  if(!qa&&!dirty&&!keys.size&&!touch.size&&!auto&&!target&&reaction===Infinity&&jump===Infinity&&now-lastAction>5000)return
-  const dt=previous?Math.min(.05,(now-previous)/1000):1/60
+  if(!measuring&&!dirty&&!keys.size&&!touch.size&&!auto&&!target&&reaction===Infinity&&jump===Infinity&&now-lastAction>5000)return
+  const gap=previous?now-previous:0
+  const dt=previous?Math.min(.05,gap/1000):1/60
+  // Two modest reductions on integrated/mobile GPUs; do not count tab suspensions or
+  // resize repeatedly. Text, controls and scientific maps always retain native resolution.
+  if(gap>0&&gap<120&&document.hasFocus()){
+   qualityFrames++;qualityTime+=gap
+   if(qualityFrames>=90){
+    if(qualityTime/qualityFrames>22&&pixels>400_000){pixels=pixels===650_000?500_000:400_000;resize(false)}
+    qualityFrames=0;qualityTime=0
+   }
+  }
   previous=now;step(dt);renderer.render(scene,camera);dirty=false
   if(!ready){ready=true;host.dataset.state='ready';notify()}
-  if(qa)sample(now)
+  if(measuring)sample(now)
   frame=requestAnimationFrame(loop)
  }
- function resize(){
+ function resize(schedule=true){
   const {width,height}=host.getBoundingClientRect()
   if(width<2||height<2)return
-  renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<760?1:1.4,Math.max(.7,Math.sqrt(1_200_000/(width*height)))))
+  renderer.setPixelRatio(Math.min(devicePixelRatio,innerWidth<760?1:1.25,Math.max(.55,Math.sqrt(pixels/(width*height)))))
   renderer.setSize(width,height,false)
-  camera.aspect=width/height;camera.fov=camera.aspect<1?57:47;camera.updateProjectionMatrix();wake()
+  camera.aspect=width/height;camera.fov=camera.aspect<1?57:47;camera.updateProjectionMatrix();if(schedule)wake()
  }
- const resizeObserver=new ResizeObserver(resize)
- const visibility=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(!visible){clearInput();if(frame)cancelAnimationFrame(frame);frame=0}else wake()})
+ const resizeObserver=new ResizeObserver(()=>resize())
+ const visibility=new IntersectionObserver(([entry])=>{visible=entry.isIntersecting;if(!visible){clearInput();interruptSample();if(frame)cancelAnimationFrame(frame);frame=0}else wake()})
+ if(qa)host.addEventListener('turubo-game-benchmark',()=>{measuring=true;interruptSample();delete host.dataset.graphicsPerformance;wake()},opts)
  resizeObserver.observe(host);visibility.observe(host)
  function teardown(){
   if(dead)return
@@ -221,7 +266,7 @@ function start(host:HTMLElement,initial:GraphicsScene,p:Parts):SceneGraphics{
   update(next){
    if(dead){next.onStatus('fallback',true);return}
    const nextOutcome=outcomeOf(next),wasWaiting=outcome==='waiting'
-   current=next
+   current=next;meter=shell()?.querySelector<HTMLProgressElement>('.approach-progress');previousProgress=-1
    if(next.state.answer&&!current.exploration.arrived){
     current.exploration.arrived=true;current.exploration.x=destination.x;current.exploration.z=destination.z
    }

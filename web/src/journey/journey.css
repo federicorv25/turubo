@@ -8,6 +8,16 @@
 .hero-veil { z-index: -2; background: linear-gradient(90deg,#0a141be8 1%,#0b141bb1 27%,#101c2240 58%,transparent 100%),linear-gradient(0deg,#081117 0%,#09131ad8 9%,transparent 53%,#090f1466 100%) }
 .hero-sky { z-index: -1; opacity: .8 }
 .hero-sky {transition:transform .35s ease-out}
+.sky-route {position:absolute;z-index:2;right:var(--gutter);top:32%;width:clamp(235px,23vw,390px);padding:.75rem 1rem .65rem;background:linear-gradient(105deg,#09151bd9,#101d258c);border:1px solid #dfcc9a49;backdrop-filter:blur(5px)}
+.route-caption {font-size:.58rem;letter-spacing:.2em;color:#e6d1a6;font-weight:700}
+.route-line {display:block;width:100%;height:43px;margin:.3rem 0 -.5rem;overflow:visible}
+.route-line path {fill:none;stroke:#e0c48c;stroke-width:1.4;stroke-dasharray:1;animation:trace-journey 2.2s cubic-bezier(.26,.67,.4,1) both}
+.route-stops {display:flex;justify-content:space-between;gap:.5rem}
+.route-stops button {display:inline-flex;min-height:44px;align-items:center;gap:.35rem;background:none;border:0;padding:.1rem 0;color:#f3e7cd;font-size:.66rem;white-space:nowrap}
+.route-stops i {width:5px;height:5px;flex:none;border-radius:50%;background:#e4c68b;transition:transform .25s,box-shadow .25s}
+.route-stops button:is(:hover,:focus-visible) i {transform:scale(1.5);box-shadow:0 0 8px #e7c48a}
+@keyframes trace-journey {from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.scene-attribution {position:absolute;right:var(--gutter);bottom:.9rem;background:#0b1419c9;border:1px solid #b2aaa54f;padding:.3rem .5rem;font-size:.57rem;letter-spacing:.09em;color:#e1dfd4}
 .sky-orbit { position: absolute; right: -8%; top: 15%; width: 59vw; height: 20vw; border: 1px solid #f6db9d3d; border-radius: 50%; transform: rotate(-15deg); mask-image: linear-gradient(70deg, transparent 12%, #000 66%); animation: orbit-ink 2.1s ease-out both }
 .sky-dot { position: absolute; right: 31%; top: 23%; width: 5px; height: 5px; border-radius: 50%; background: #f4cb82; box-shadow: 0 0 18px 5px #f4cb823c; animation: sky-signal 3.4s ease-in-out both }
 @keyframes orbit-ink { from { opacity:0; transform:rotate(-9deg) scale(.96) } to { opacity:1; transform:rotate(-15deg) scale(1) } }
@@ -181,6 +191,7 @@
 @keyframes cover-in { from { opacity:.48; transform:translateY(14px) } to { opacity:1; transform:translateY(0) } }
 
 @media(max-width:960px){
+ .sky-route {top:22%;width:210px;right:var(--gutter)}
  .cinema-hero { min-height:max(36rem, calc(100svh - var(--mast-height))) }
  .hero-bottom { align-items:flex-start; flex-direction:column; gap:1.1rem }
  .origin-layout { grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem }
@@ -195,6 +206,12 @@
  .hero-bottom { margin:1.35rem 0 1rem }
 }
 @media(max-width:700px){
+ .cinema-hero .sky-route {position:relative;top:auto;right:auto;order:4;width:100%;background:none;border:0;border-top:1px solid #e8d6ae3d;backdrop-filter:none;padding:.35rem 0 0;margin-top:.2rem;display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+ .sky-route .route-line {display:none}
+ .sky-route .route-stops {gap:.7rem}
+ .sky-route .route-caption {font-size:.52rem}
+ .sky-route .route-stops button {font-size:.6rem}
+ .scene-attribution {bottom:.45rem;font-size:.51rem}
  .story-beat {max-width:100%;min-height:85svh;padding-block:20svh 11svh;justify-content:flex-end}
  .story-beat h2 {font-size:clamp(3.15rem,12.3vw,5rem)}
  .story-beat p {font-size:1rem;max-width:38ch}

@@ -2,6 +2,8 @@ main[data-screen='play'] {max-width:none;padding:0;background:#0a1118}
 .expedition {width:100%;margin:0 auto;--play-inset:clamp(1rem,3.8vw,5rem)}
 .play-top {margin:0;padding:.6rem var(--play-inset);background:#0c161e;border-bottom:1px solid #ffffff24;min-height:64px}
 .play-home {font-size:.78rem;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.play-links {display:flex;align-items:center;gap:1.2rem}
+.play-links button {font-size:.7rem;border:0;padding:.4rem .2rem;background:none;color:#c8d1d7}
 .chapter-trail {gap:clamp(.35rem,1.7vw,2rem);margin:0;align-items:center}
 .chapter-trail li {display:flex;gap:.45rem;align-items:center;padding:.45rem 0;border:0;opacity:.6}
 .chapter-trail li[aria-current='step'] {opacity:1}
@@ -17,6 +19,14 @@ main[data-screen='play'] {max-width:none;padding:0;background:#0a1118}
 .objective-label {font-size:.61rem;font-weight:700;letter-spacing:.15em;color:#dfc99e}
 .stage-objective strong {font:600 clamp(1.4rem,2.5vw,2.1rem)/1.05 var(--display);color:#f8eedb}
 .walk-objective {font-size:.76rem;color:#d7e0e2;max-width:35ch}
+.stage-objective [data-show-choices] {display:none}
+.approach-progress {width:100%;height:4px;margin-top:.35rem;background:#44505a;color:#ebca87;accent-color:#ebca87;border:0}
+.approach-progress::-webkit-progress-bar {background:#44505a}
+.approach-progress::-webkit-progress-value {background:#ebca87}
+.expedition[data-arrived='true'] .approach-progress {display:none}
+body:has(.expedition[data-theatre='true']) .site-header, body:has(.expedition[data-theatre='true']) footer {display:none}
+.expedition[data-theatre='true'] .scene-figure {height:max(360px,73svh)}
+.expedition[data-graphics='ready'][data-arrived='true'] .stage-objective [data-show-choices] {display:inline-flex;justify-self:start;pointer-events:auto;color:#f8dfac;background:none;border:0;border-bottom:1px solid #c9a966;min-height:44px;padding:.4rem .1rem;font-size:.75rem}
 .walking-tools {position:absolute;left:var(--play-inset);right:var(--play-inset);bottom:49px;z-index:3;display:flex;align-items:end;justify-content:space-between;gap:1rem;pointer-events:none}
 .walking-tools button {pointer-events:auto;background:#101a25e8;font-size:.75rem;border-color:#ccb994;padding:.7rem 1rem}
 .key-guide {display:grid;gap:.3rem;font-size:.72rem;color:#f6f1e5;padding:.55rem .75rem;background:#0b1421db}
@@ -81,6 +91,12 @@ main[data-screen='play'] {max-width:none;padding:0;background:#0a1118}
  .chapter-trail {gap:.4rem}
  .chapter-trail li>span:first-child {width:23px;height:23px}
  .play-home {font-size:.7rem}
+ .play-links {gap:.5rem}
+ .play-links button span {display:none}
+ .play-links button {min-width:44px}
+ .play-links {gap:.1rem}
+ .play-links:has([data-theatre-toggle]) .play-home {font-size:0}
+ .play-links:has([data-theatre-toggle]) .play-home::before {content:'←';font-size:1rem;min-width:32px}
  .scene-figure {height:53svh;min-height:355px}
  .expedition-bookend .play-grid {min-height:760px;justify-content:flex-end}
  .expedition-bookend .chapter {max-width:100%;padding-block:3rem}

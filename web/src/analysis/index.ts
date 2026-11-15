@@ -2,7 +2,7 @@ import type {Analysis,Destination,Lang,Terrain,World} from '../app/contracts'
 import {messages} from '../app/i18n'
 import './analysis.css'
 
-type Extras={finding?:()=>HTMLElement;method?:()=>HTMLElement;backLabel?:string}
+type Extras={method?:()=>HTMLElement;backLabel?:string}
 type Metric=keyof Terrain['metrics']
 const selectedRank:Partial<Record<Destination,string>>={}
 const selectedMetric:Record<Destination,Metric>={moon:'reliefM',mars:'slopeMedianDeg'}
@@ -22,7 +22,7 @@ export function renderAnalysis(container:HTMLElement,data:Analysis,world:World,l
  const header=el('div','','discovery-intro')
  const heading=el('div','','discovery-heading')
  heading.append(el('p',t('DE LA HISTORIA A LA EVIDENCIA','FROM STORY TO EVIDENCE'),'eyebrow'))
- const h1=el('h1',world==='earth'?t('Aquí empieza la búsqueda.','The search begins here.'):t('Dos mundos.\nUna misma pregunta.','Two worlds.\nOne question.'))
+ const h1=el('h1',world==='earth'?t('Aquí empieza la búsqueda.','The search begins here.'):world==='moon'?t('Bolivia y\nla Luna.','Bolivia and\nthe Moon.'):t('Bolivia y\nMarte.','Bolivia and\nMars.'))
  h1.id='analysis-title';h1.tabIndex=-1
  heading.append(h1)
  const intro=el('div','','discovery-lead')

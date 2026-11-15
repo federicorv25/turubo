@@ -5,7 +5,7 @@ export const site = {
     subtitle: 'De la Tierra a nuevos mundos',
     lead: 'Juega una aventura inspirada en un relato chiquitano. Compara el relieve de Bolivia con mapas reales de la Luna y Marte.',
     homeTag: 'Una aventura desde la Chiquitania',
-    play: 'Jugar la aventura', resume: 'Continuar la aventura', compare: 'Comparar terrenos',
+    play: 'Jugar la aventura', resume: 'Continuar la aventura', compare: 'Los descubrimientos',
     route: 'Ruta de exploración',
     stops: {
       earth: ['Bolivia', 'Valle de la Luna y Cerro Turubó'],
@@ -52,7 +52,7 @@ export const site = {
     subtitle: 'From Earth to New Worlds',
     lead: 'Play an adventure inspired by a Chiquitano story. Compare Bolivia’s terrain with real elevation maps of the Moon and Mars.',
     homeTag: 'An adventure from the Chiquitania',
-    play: 'Play the adventure', resume: 'Continue the adventure', compare: 'Compare terrain',
+    play: 'Play the adventure', resume: 'Continue the adventure', compare: 'Discoveries',
     route: 'Exploration route',
     stops: {
       earth: ['Bolivia', 'Valle de la Luna and Cerro Turubó'],

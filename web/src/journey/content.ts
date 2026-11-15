@@ -25,6 +25,15 @@ export function renderJourney(lang: Lang, started: boolean, data?: Analysis, pho
       <div class="hero-veil" aria-hidden="true"></div>
       <div class="hero-sky" aria-hidden="true"><span class="sky-orbit"></span><span class="sky-dot"></span></div>
       <div class="hero-topline"><span>NASA SPACE APPS 2026</span><span>SANTA CRUZ, BOLIVIA <i></i> 17° S</span></div>
+      <nav class="sky-route" aria-label="${t('Saltar a un lugar del viaje','Jump to a place in the journey')}">
+        <span class="route-caption">${t('EL ITINERARIO','THE ITINERARY')}</span>
+        <svg class="route-line" viewBox="0 0 300 56" preserveAspectRatio="none" aria-hidden="true"><path d="M14 44 C70 44 84 10 145 23 S222 40 285 7" pathLength="1"/></svg>
+        <div class="route-stops">
+          <button type="button" data-scroll="origin"><i></i><span>01 · Bolivia</span></button>
+          <button type="button" data-scroll="world-moon"><i></i><span>02 · ${t('Luna','Moon')}</span></button>
+          <button type="button" data-scroll="world-mars"><i></i><span>03 · ${t('Marte','Mars')}</span></button>
+        </div>
+      </nav>
       <div class="cinema-title"><p class="eyebrow">${t('Una leyenda nos lleva más lejos','A legend takes us further')}</p><h1 id="journey-title">TURUBO<span class="title-star" aria-hidden="true">✧</span></h1><p class="cinema-subtitle">${t('De la Tierra a','From Earth to')}<br><em>${t('nuevos mundos.','new worlds.')}</em></p></div>
       <div class="hero-bottom"><p>${t('Turubó miró al cielo buscando compañía. Sigue su historia y descubre qué conecta los paisajes de Bolivia con la Luna y Marte.','Turubó looked to the sky in search of company. Follow his story and discover what connects Bolivia’s landscapes to the Moon and Mars.')}</p><div class="hero-links"><button type="button" class="button primary" data-scroll="legend-origin">${t('Entrar en el viaje','Enter the journey')} <span aria-hidden="true">↓</span></button><a class="button quiet" href="#/play">${started ? t('Continuar la aventura','Continue the adventure') : t('Jugar la aventura','Play the adventure')} ${arrow}</a></div></div>
       <div class="hero-baseline"><a class="hero-data-link" href="#/compare/moon">${t('Nuestros descubrimientos','Our discoveries')} <span aria-hidden="true">↗</span></a><span>${t('Ilustración generada con IA','AI-generated illustration')} · Kie.ai</span></div>
@@ -38,6 +47,7 @@ export function renderJourney(lang: Lang, started: boolean, data?: Analysis, pho
         <div class="story-vignette"></div>
         <span class="story-orbit"></span>
         <span class="story-spark spark-one"></span><span class="story-spark spark-two"></span>
+        <span class="scene-attribution">${t('FICCIÓN · ARTE CON IA','FICTION · AI ART')} / KIE.AI</span>
       </div>
       <div class="story-beats">
         <article class="story-beat" data-beat="0"><span class="chapter-number">${t('EL RELATO QUE NOS MUEVE','THE STORY THAT MOVES US')} · 01</span><h2 id="legend-title">${t('Antes del viaje,','Before the journey,')}<br><em>${t('la soledad.','there was solitude.')}</em></h2><p>${t('Turubó modela figuras de barro y talla la madera. Busca compañía en sus creaciones, pero ninguna cobra vida. Solo le responden el silencio y la montaña.','Turubó shapes clay and carves wood. He seeks company in his creations, but none comes to life. Only silence and the mountain answer him.')}</p></article>

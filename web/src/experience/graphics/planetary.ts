@@ -1,7 +1,7 @@
 import {
   BackSide, BufferAttribute, BufferGeometry, Color, CylinderGeometry, DirectionalLight, DodecahedronGeometry,
   DoubleSide, FogExp2, Group, HemisphereLight, InstancedMesh, Mesh, MeshBasicMaterial, MeshStandardMaterial,
-  Object3D, PlaneGeometry, Points, PointsMaterial, RingGeometry, SphereGeometry,
+  Object3D, PlaneGeometry, Points, PointsMaterial, RingGeometry, ShaderMaterial, SphereGeometry,
 } from 'three'
 import type { Scene } from 'three'
 import type { Destination } from '../../app/contracts'
@@ -14,15 +14,22 @@ export const planetHeight = (x: number, z: number) =>
 export function createPlanetary(world: Destination, scene: Scene, track: Tracker) {
   const lunar = world === 'moon'
   const group = new Group()
-  const mist = lunar ? 0x090f21 : 0x34212b
+  const mist = lunar ? 0x090f21 : 0x241c2a
   scene.background = new Color(mist)
   scene.fog = new FogExp2(mist, .012)
-  const hemi = new HemisphereLight(lunar ? 0x829fd0 : 0xc894ad, lunar ? 0x252c48 : 0x603321, 1.4)
-  const sun = new DirectionalLight(lunar ? 0xd4e8ff : 0xffc395, 2.5)
+  const hemi = new HemisphereLight(lunar ? 0x829fd0 : 0x8591bc, lunar ? 0x252c48 : 0x4e3025, 1.05)
+  const sun = new DirectionalLight(lunar ? 0xd4e8ff : 0xffd4a6, 2.15)
   sun.position.set(-22, 20, 14)
   const rim = new DirectionalLight(lunar ? 0x6688dc : 0xbc838f, 1.6)
   rim.position.set(9, 7, -15)
   scene.add(hemi, sun, rim)
+  const sky=new Mesh(track.add(new SphereGeometry(140,24,16)),track.add(new ShaderMaterial({
+    side:BackSide,depthWrite:false,fog:false,
+    uniforms:{top:{value:new Color(lunar?0x040818:0x0e1427)},horizon:{value:new Color(lunar?0x1d2c48:0x76515a)}},
+    vertexShader:'varying vec3 direction; void main(){direction=position;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);gl_Position.z=gl_Position.w;}',
+    fragmentShader:'varying vec3 direction;uniform vec3 top;uniform vec3 horizon;void main(){float h=clamp(normalize(direction).y,0.,1.);gl_FragColor=vec4(mix(horizon,top,smoothstep(0.,.6,h)),1.);\n#include <tonemapping_fragment>\n#include <colorspace_fragment>\n}',
+  })))
+  sky.renderOrder=-1;group.add(sky)
 
   const surface = track.add(new PlaneGeometry(140, 140, 75, 75))
   surface.rotateX(-Math.PI / 2)
@@ -34,7 +41,7 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
     const distance = Math.hypot(x, z)
     const mound = Math.max(0, distance - 19) * .13 * (1.3 + Math.sin(Math.atan2(z, x) * 6))
     pos.setY(i, planetHeight(x, z) + mound)
-    c.set(lunar ? 0x8991a5 : 0xab654b).multiplyScalar(.82 + .13 * Math.sin(x * .25 + z * .4))
+    c.set(lunar ? 0x8991a5 : 0x94664f).multiplyScalar(.82 + .13 * Math.sin(x * .25 + z * .4))
     colors.set([c.r, c.g, c.b], i * 3)
   }
   surface.setAttribute('color', new BufferAttribute(colors, 3))
@@ -42,7 +49,7 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
   group.add(new Mesh(surface, track.add(new MeshStandardMaterial({vertexColors:true,roughness:.94,flatShading:true}))))
 
   const rockGeometry = track.add(new DodecahedronGeometry(1, 0))
-  const rockMaterial = track.add(new MeshStandardMaterial({color:lunar?0x727d94:0x854830,roughness:.96,flatShading:true}))
+  const rockMaterial = track.add(new MeshStandardMaterial({color:lunar?0x727d94:0x775545,roughness:.96,flatShading:true}))
   const rocks = track.add(new InstancedMesh(rockGeometry, rockMaterial, 68))
   const dummy = new Object3D()
   for (let i = 0; i < 68; i++) {
@@ -61,7 +68,7 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
   group.add(rocks)
   const stars = new Float32Array(260 * 3)
   for (let i=0; i<260; i++) {
-    const angle = i * 2.39996, h = .1 + (i % 37) / 39
+    const angle = i * 2.39996, h = .08 + (i % 37) / 40
     const d = Math.sqrt(1 - h * h) * 85
     stars.set([Math.cos(angle)*d, h*85, Math.sin(angle)*d], i*3)
   }
@@ -94,7 +101,7 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
       actors.add(shade)
     }
   } else {
-    const stone = track.add(new MeshStandardMaterial({color:0x7c4b45,roughness:.86,flatShading:true}))
+    const stone = track.add(new MeshStandardMaterial({color:0x604642,roughness:.86,flatShading:true}))
     for(const x of [-2.8,2.8]) {
       const pillar=new Mesh(track.add(new CylinderGeometry(.65,.9,7,6)),stone)
       pillar.position.set(x,3.5,0)
@@ -107,6 +114,15 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
     const opening=new Mesh(track.add(new PlaneGeometry(4.5,6.5)),track.add(new MeshBasicMaterial({color:0xa2b7d8,transparent:true,opacity:.13,side:DoubleSide,depthWrite:false})))
     opening.position.set(0,3.2,-.08)
     actors.add(opening)
+    const gold=track.add(new MeshBasicMaterial({color:0xf3d6a5}))
+    for(const x of [-2.17,2.17]){
+      const seam=new Mesh(track.add(new CylinderGeometry(.018,.018,6.7,6)),gold)
+      seam.position.set(x,3.4,.54);actors.add(seam)
+    }
+    for(let i=0;i<3;i++){
+      const step=new Mesh(track.add(new CylinderGeometry(3.6-i*.5,3.8-i*.5,.22,6)),stone)
+      step.position.set(0,.11+i*.15,.4);actors.add(step)
+    }
     const cloth=track.add(new MeshStandardMaterial({color:0xd5d8ef,emissive:0x52638a,emissiveIntensity:.6,roughness:.4}))
     const robe=new Mesh(track.add(new CylinderGeometry(.4,1.1,3.4,8)),cloth)
     robe.position.set(0,1.9,.3)
@@ -115,6 +131,16 @@ export function createPlanetary(world: Destination, scene: Scene, track: Tracker
     const crown=new Mesh(track.add(new RingGeometry(.7,.75,48)),track.add(new MeshBasicMaterial({color:0xf8d69f,side:DoubleSide})))
     crown.position.set(0,3.8,.1)
     actors.add(robe,face,crown)
+    const torso=new Mesh(track.add(new SphereGeometry(1,16,12)),cloth)
+    torso.position.set(0,3.15,.3);torso.scale.set(.78,.5,.34);actors.add(torso)
+    for(const side of [-1,1]){
+      const arm=new Mesh(track.add(new CylinderGeometry(.13,.09,1.25,8)),cloth)
+      arm.position.set(side*.8,2.9,.4);arm.rotation.z=side*.5;actors.add(arm)
+      const hand=new Mesh(track.add(new SphereGeometry(.13,12,8)),cloth)
+      hand.position.set(side*1.1,2.35,.4);actors.add(hand)
+    }
+    const halo=new Mesh(track.add(new RingGeometry(1.75,1.8,64)),track.add(new MeshBasicMaterial({color:0xe0be88,side:DoubleSide,transparent:true,opacity:.45})))
+    halo.position.set(0,.61,.4);halo.rotation.x=-Math.PI/2;actors.add(halo)
     shadowParts.push(robe)
   }
 

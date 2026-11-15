@@ -6,7 +6,7 @@ import { renderAnalysis } from '../analysis'
 import type { Analysis, Lang, Story, World } from './contracts'
 import { messages } from './i18n'
 import { site } from './site-copy'
-import { renderAbout, renderStage, renderFinding, renderMethod } from './screens'
+import { renderAbout, renderStage, renderMethod } from './screens'
 import { renderJourney, refreshJourneyData } from '../journey/content'
 import { mountJourney } from '../journey/mount'
 import type { OriginPhoto } from '../journey/origin-gallery'
@@ -35,6 +35,7 @@ let analysis: DataState = { status: 'idle' }
 let unmountJourney: (() => void) | undefined
 let landingScroll=0
 let originPhoto: OriginPhoto = 'cerro'
+let theatre=false
 
 function preferredLanguage(): Lang {
   try {
@@ -185,6 +186,11 @@ function render(moveFocus = false) {
 function renderPlay() {
   const scene = story.scenes[journey.sceneId]
   main.innerHTML = renderStage(lang, story, journey.sceneId)
+  const restart=main.querySelector<HTMLButtonElement>('[data-restart]')
+  if(restart)restart.onclick=()=>{
+    explorations.clear();journeyStarted=false;journey={sceneId:story.order[0],answer:null}
+    saveAdventure(story,journey,explorations);render(true)
+  }
   renderExperience(main.querySelector<HTMLDivElement>('.chapter-host')!, story, journey, lang, {
     update: next => {
       journeyStarted = true
@@ -198,6 +204,24 @@ function renderPlay() {
   })
   if (!explorations.has(journey.sceneId)) explorations.set(journey.sceneId, { x: 2.1, z: 6, arrived: false })
   const expedition = main.querySelector<HTMLElement>('.expedition')
+  const toggle=expedition?.querySelector<HTMLButtonElement>('[data-theatre-toggle]')
+  if(toggle&&expedition){
+    const sync=()=>{
+      expedition.dataset.theatre=String(theatre)
+      toggle.setAttribute('aria-pressed',String(theatre))
+      const label=lang==='es'?(theatre?'Reducir escenario':'Ampliar escenario'):(theatre?'Reduce scene':'Expand scene')
+      toggle.setAttribute('aria-label',label);toggle.querySelector('span')!.textContent=label
+    }
+    toggle.onclick=()=>{theatre=!theatre;sync();window.scrollTo(0,0)}
+    expedition.onkeydown=e=>{if(e.key==='Escape'&&theatre){theatre=false;sync();toggle.focus()}}
+    sync()
+  }else theatre=false
+  const showChoices=expedition?.querySelector<HTMLButtonElement>('[data-show-choices]')
+  if(showChoices)showChoices.onclick=()=>{
+    const first=expedition?.querySelector<HTMLButtonElement>('.decision-choices button')
+    first?.focus({preventScroll:true})
+    first?.scrollIntoView({block:'center',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'})
+  }
   syncSceneGraphics(main.querySelector<HTMLElement>('.scene-figure'), {
     scene, state: journey, language: lang, exploration: explorations.get(journey.sceneId)!,
     onStatus: (status, arrived) => {
@@ -207,7 +231,8 @@ function renderPlay() {
       const instruction = expedition.querySelector<HTMLElement>('.walk-objective')
       if (instruction) instruction.textContent = status === 'loading'
         ? (lang === 'es' ? 'Preparando el paisaje…' : 'Preparing the landscape…')
-        : arrived ? (lang === 'es' ? 'Llegaste. Elige cómo seguir.' : 'You arrived. Choose how to continue.')
+        : journey.answer ? (lang==='es'?'Tu decisión está tomada.':'Your choice is made.')
+          : arrived ? (lang === 'es' ? 'Llegaste. Elige cómo seguir.' : 'You arrived. Choose how to continue.')
           : (lang === 'es' ? 'Sigue la luz hasta el encuentro.' : 'Follow the light to the encounter.')
     }
   })
@@ -232,7 +257,6 @@ function renderCompare(world: World) {
 
   const data = analysis.value
   renderAnalysis(main, data, world, lang, target => go('compare', target), () => go(compareBack), {
-    finding: () => renderFinding(world, data, lang),
     method: () => renderMethod(lang),
     backLabel: compareBack === 'play' ? messages[lang].story : c.nav.home
   })

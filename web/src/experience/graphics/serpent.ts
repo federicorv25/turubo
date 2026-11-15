@@ -1,6 +1,6 @@
 import {
   BoxGeometry, BufferAttribute, BufferGeometry, ConeGeometry, CylinderGeometry, DodecahedronGeometry, DoubleSide, Group,
-  MathUtils, Mesh, MeshBasicMaterial, MeshStandardMaterial, OctahedronGeometry, Points, PointsMaterial, RingGeometry, Vector3,
+  DynamicDrawUsage, InstancedMesh, Matrix4, MathUtils, Mesh, MeshBasicMaterial, MeshStandardMaterial, OctahedronGeometry, Points, PointsMaterial, RingGeometry, Vector3,
   type Material,
 } from 'three'
 import type { Shading, Tracker } from './shading'
@@ -24,6 +24,8 @@ export class Serpent {
 
   private readonly body = new Group()
   private readonly segments: Group[] = []
+  private readonly batches:{mesh:InstancedMesh;parts:{joint:Group;local:Matrix4}[]}[]=[]
+  private readonly instanceMatrix=new Matrix4()
   private readonly headGroup = new Group()
   private readonly jawPivot = new Group()
   private readonly auraRing: Mesh
@@ -101,6 +103,27 @@ export class Serpent {
       }
       this.segments.push(segment)
       this.body.add(segment)
+    }
+    // The original segments keep their shape and animation. Batch their repeated plates
+    // by material so a moving coil costs a handful of draw calls instead of one per scale.
+    const repeated=new Map<string,{geometry:BufferGeometry;material:Material;parts:{joint:Group;local:Matrix4}[]}>()
+    for(const joint of this.segments){
+      for(const child of [...joint.children]){
+        if(!(child instanceof Mesh)||Array.isArray(child.material))continue
+        const key=child.geometry.uuid+child.material.uuid
+        let batch=repeated.get(key)
+        if(!batch){batch={geometry:child.geometry,material:child.material,parts:[]};repeated.set(key,batch)}
+        child.updateMatrix()
+        batch.parts.push({joint,local:child.matrix.clone()})
+        joint.remove(child)
+      }
+    }
+    for(const {geometry,material,parts} of repeated.values()){
+      const mesh=track.add(new InstancedMesh(geometry,material,parts.length))
+      mesh.instanceMatrix.setUsage(DynamicDrawUsage)
+      mesh.frustumCulled=false
+      this.body.add(mesh)
+      this.batches.push({mesh,parts})
     }
 
     // Head: skull, snout, hood, brow, horns, eyes and a jaw (fangs kept small and out of close-up).
@@ -196,6 +219,11 @@ export class Serpent {
     const tail = this.segments[n - 1].position
     const beforeTail = this.segments[n - 2].position
     this.segments[n - 1].lookAt(origin.x + tail.x * 2 - beforeTail.x, origin.y + tail.y * 2 - beforeTail.y, origin.z + tail.z * 2 - beforeTail.z)
+    for(const joint of this.segments)joint.updateMatrix()
+    for(const {mesh,parts} of this.batches){
+      parts.forEach(({joint,local},i)=>mesh.setMatrixAt(i,this.instanceMatrix.multiplyMatrices(joint.matrix,local)))
+      mesh.instanceMatrix.needsUpdate=true
+    }
 
     const neck = this.segments[0].position
     this.headGroup.position.set(neck.x, neck.y + 0.18 + Math.sin(elapsed * 2.15) * 0.045 * calm, neck.z)
