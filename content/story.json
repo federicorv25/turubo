@@ -1,50 +1,177 @@
 {
   "version": 1,
-  "title": { "es": "Turubó: de la Tierra a nuevos mundos", "en": "Turubó: From Earth to New Worlds" },
-  "disclosure": { "es": "Adaptación fantástica de un relato chiquitano", "en": "A fantasy adaptation of a Chiquitano story" },
-  "order": ["prologue", "earth", "moon", "mars", "epilogue"],
+  "title": {
+    "es": "Turubó: de la Tierra a nuevos mundos",
+    "en": "Turubó: From Earth to New Worlds"
+  },
+  "disclosure": {
+    "es": "Adaptación fantástica de un relato chiquitano",
+    "en": "A fantasy adaptation of a Chiquitano story"
+  },
+  "order": [
+    "prologue",
+    "earth",
+    "moon",
+    "mars",
+    "epilogue"
+  ],
   "scenes": {
     "prologue": {
       "world": "earth",
-      "title": { "es": "La montaña y el cielo", "en": "The mountain and the sky" },
-      "text": { "es": "Turubó vive solo. Talla figuras de madera y barro para hacerse compañía, pero no logra darles vida. Al beber del vaso de la vida y la muerte ve otros mundos. Uaituparr le advierte en sueños que no siga. La nave está lista; ayúdalo a terminar la plataforma de la montaña.", "en": "Turubó lives alone. He makes figures from wood and clay for company, but cannot bring them to life. The cup of life and death shows him other worlds. In a dream, Uaituparr warns him to stop. The ship is ready; help Turubó finish the mountain platform." },
-      "choices": [{ "label": { "es": "Terminar la plataforma", "en": "Finish the platform" }, "next": "earth" }]
+      "title": {
+        "es": "El cielo no era el límite.",
+        "en": "The sky was only the beginning."
+      },
+      "text": {
+        "es": "Turubó vive solo y talla figuras para hacerse compañía. Una noche, el vaso de la vida y la muerte le revela otros mundos. Su montaña será el punto de partida. Camina con él, elige cómo superar tres encuentros y descubre los lugares reales que inspiran el viaje.",
+        "en": "Turubó lives alone, carving figures to keep him company. One night, the cup of life and death reveals other worlds. His mountain will be the beginning. Walk beside him, choose your way through three encounters, and discover the real places that inspire the journey."
+      },
+      "choices": [
+        {
+          "label": {
+            "es": "Comenzar la aventura →",
+            "en": "Begin the adventure →"
+          },
+          "next": "earth"
+        }
+      ]
     },
     "earth": {
       "world": "earth",
-      "title": { "es": "La serpiente", "en": "The serpent" },
-      "text": { "es": "Turubó se duerme en la plataforma. Una serpiente enviada por Uaituparr lo despierta con una mordida. Su nave está cerca. Elige cómo superar a la serpiente y partir con sus figuras.", "en": "Turubó falls asleep on the platform. A serpent sent by Uaituparr wakes him with a bite. His ship is close. Choose how to get past the serpent and leave with his figures." },
-      "poison": { "es": "El veneno comienza", "en": "The venom takes hold" },
+      "title": {
+        "es": "La primera prueba.",
+        "en": "The first trial."
+      },
+      "text": {
+        "es": "La nave espera sobre la montaña. Uaituparr ha enviado una serpiente: su mordida ya dejó el veneno en el cuerpo de Turubó. Sigue la luz hacia la plataforma y elige cómo abrirte paso.",
+        "en": "The ship waits on the mountain. Uaituparr has sent a serpent: its bite has already left venom in Turubó’s body. Follow the light to the platform and choose how to get past it."
+      },
+      "poison": {
+        "es": "El veneno comienza",
+        "en": "The venom takes hold"
+      },
       "choices": [
-        { "label": { "es": "Esquivar a la serpiente", "en": "Dodge the serpent" }, "feedback": { "es": "Turubó se aparta del último embate y vence a la serpiente. Parte con sus figuras, herido y con el veneno en el cuerpo.", "en": "Turubó evades the final strike and defeats the serpent. He leaves with his figures, wounded and carrying the venom." }, "next": "moon" },
-        { "label": { "es": "Distraerla con una figura", "en": "Distract it with a figure" }, "feedback": { "es": "La serpiente se vuelve hacia una figura. Turubó aprovecha para vencerla y llegar a la nave con sus figuras. El veneno viaja con él.", "en": "The serpent turns toward a figure. Turubó uses the moment to defeat it and reach the ship with his figures. The venom travels with him." }, "next": "moon" }
+        {
+          "label": {
+            "es": "Esquivar a la serpiente",
+            "en": "Dodge the serpent"
+          },
+          "feedback": {
+            "es": "Turubó se aparta del último embate y vence a la serpiente. Parte con sus figuras, herido y con el veneno en el cuerpo.",
+            "en": "Turubó evades the final strike and defeats the serpent. He leaves with his figures, wounded and carrying the venom."
+          },
+          "next": "moon"
+        },
+        {
+          "label": {
+            "es": "Distraerla con una figura",
+            "en": "Distract it with a figure"
+          },
+          "feedback": {
+            "es": "La serpiente se vuelve hacia una figura. Turubó aprovecha para vencerla y llegar a la nave con sus figuras. El veneno viaja con él.",
+            "en": "The serpent turns toward a figure. Turubó uses the moment to defeat it and reach the ship with his figures. The venom travels with him."
+          },
+          "next": "moon"
+        }
       ]
     },
     "moon": {
       "world": "moon",
-      "title": { "es": "Figuras entre sombras", "en": "Figures among shadows" },
-      "text": { "es": "Antes de seguir a Marte, Turubó hace una escala imaginaria en la Luna para revisar la nave. Sombras que llamamos lémures se apoderan de sus figuras. ¿Exploras el relieve inspirado en Nobile Rim 1 o atraviesas las sombras?", "en": "Before flying to Mars, Turubó makes an imagined stop on the Moon to check his ship. Shadows we call lemures take hold of his figures. Will you study the terrain inspired by Nobile Rim 1 or pass through the shadows?" },
-      "poison": { "es": "El veneno avanza", "en": "The venom spreads" },
+      "title": {
+        "es": "Las figuras despiertan.",
+        "en": "The figures awaken."
+      },
+      "text": {
+        "es": "La Luna es una escala imaginaria para revisar la nave antes de seguir a Marte. Pero unas sombras se han metido en las figuras de Turubó. Acércate a ellas: tu próximo paso puede empezar mirando el paisaje.",
+        "en": "The Moon is an imagined stop to check the ship before Mars. But shadows have slipped into Turubó’s figures. Approach them: your next step may begin with a closer look at the landscape."
+      },
+      "poison": {
+        "es": "El veneno avanza",
+        "en": "The venom spreads"
+      },
       "choices": [
-        { "label": { "es": "Observar el relieve", "en": "Study the relief" }, "feedback": { "es": "Una forma parecida plantea una pregunta. Las medidas dicen qué se parece y qué cambia.", "en": "A similar shape raises a question. Measurements show what matches and what differs." }, "next": "mars" },
-        { "label": { "es": "Pasar entre las sombras", "en": "Pass through the shadows" }, "feedback": { "es": "Las figuras se quedan quietas. Turubó encuentra paso hacia el siguiente mundo.", "en": "The figures fall still. Turubó finds a way onward to the next world." }, "next": "mars" }
+        {
+          "label": {
+            "es": "Observar el relieve",
+            "en": "Study the relief"
+          },
+          "feedback": {
+            "es": "Una forma parecida plantea una pregunta. Las medidas dicen qué se parece y qué cambia.",
+            "en": "A similar shape raises a question. Measurements show what matches and what differs."
+          },
+          "next": "mars"
+        },
+        {
+          "label": {
+            "es": "Pasar entre las sombras",
+            "en": "Pass through the shadows"
+          },
+          "feedback": {
+            "es": "Las figuras se quedan quietas. Turubó encuentra paso hacia el siguiente mundo.",
+            "en": "The figures fall still. Turubó finds a way onward to the next world."
+          },
+          "next": "mars"
+        }
       ]
     },
     "mars": {
       "world": "mars",
-      "title": { "es": "El último desafío", "en": "The final challenge" },
-      "text": { "es": "Uaituparr espera en un templo de nuestra ficción, en un paisaje inspirado en Jezero. El veneno debilita a Turubó, pero aún puede acercarse al creador. Decide cómo hará su último intento.", "en": "Uaituparr waits in a fictional temple in a landscape inspired by Jezero. The venom weakens Turubó, but he can still approach the creator. Choose how he makes his final attempt." },
-      "poison": { "es": "El veneno lo alcanza", "en": "The venom overtakes him" },
+      "title": {
+        "es": "Frente al creador.",
+        "en": "Before the creator."
+      },
+      "text": {
+        "es": "El polvo rojo anuncia el último mundo. Uaituparr espera al otro lado de un umbral de nuestra ficción. El veneno avanza. Acércate con la figura tallada y decide cómo hacer tu último intento.",
+        "en": "Red dust announces the final world. Uaituparr waits beyond a doorway imagined for this story. The venom is spreading. Approach with the carved figure and choose your final attempt."
+      },
+      "poison": {
+        "es": "El veneno lo alcanza",
+        "en": "The venom overtakes him"
+      },
       "choices": [
-        { "label": { "es": "Alzar la figura tallada", "en": "Raise the carved figure" }, "feedback": { "es": "Al ver la figura, Uaituparr vacila. Turubó da un paso más, pero le fallan las fuerzas antes del golpe final.", "en": "At the sight of the figure, Uaituparr hesitates. Turubó takes one more step, but his strength fails before the final blow." }, "next": "epilogue" },
-        { "label": { "es": "Atravesar el umbral", "en": "Cross the threshold" }, "feedback": { "es": "Turubó atraviesa la luz y parece a punto de vencer. Antes de alcanzar al creador, el veneno lo derriba.", "en": "Turubó crosses the light and seems about to win. Before he can reach the creator, the venom brings him down." }, "next": "epilogue" }
+        {
+          "label": {
+            "es": "Alzar la figura tallada",
+            "en": "Raise the carved figure"
+          },
+          "feedback": {
+            "es": "Al ver la figura, Uaituparr vacila. Turubó da un paso más, pero le fallan las fuerzas antes del golpe final.",
+            "en": "At the sight of the figure, Uaituparr hesitates. Turubó takes one more step, but his strength fails before the final blow."
+          },
+          "next": "epilogue"
+        },
+        {
+          "label": {
+            "es": "Atravesar el umbral",
+            "en": "Cross the threshold"
+          },
+          "feedback": {
+            "es": "Turubó atraviesa la luz y parece a punto de vencer. Antes de alcanzar al creador, el veneno lo derriba.",
+            "en": "Turubó crosses the light and seems about to win. Before he can reach the creator, the venom brings him down."
+          },
+          "next": "epilogue"
+        }
       ]
     },
     "epilogue": {
       "world": "earth",
-      "title": { "es": "Lo que queda", "en": "What remains" },
-      "text": { "es": "El veneno acaba con la vida de Turubó. Su nombre permanece en la montaña. Vuelve al origen de la historia o explora las mediciones de los paisajes que la inspiraron.", "en": "The venom ends Turubó’s life. His name remains on the mountain. Return to the start of the story or explore measurements of the landscapes that inspired it." },
-      "choices": [{ "label": { "es": "Volver al comienzo", "en": "Return to the beginning" }, "next": "prologue" }]
+      "title": {
+        "es": "Un nombre en la montaña.",
+        "en": "A name upon the mountain."
+      },
+      "text": {
+        "es": "Turubó cae antes del último golpe. El veneno termina su viaje, pero su nombre permanece en la montaña. La historia nos llevó lejos; ahora las mediciones nos permiten volver a mirar Bolivia con otra pregunta.",
+        "en": "Turubó falls before the final blow. The venom ends his journey, but his name remains on the mountain. The story took us far; the measurements let us look at Bolivia again with a new question."
+      },
+      "choices": [
+        {
+          "label": {
+            "es": "Volver al comienzo",
+            "en": "Return to the beginning"
+          },
+          "next": "prologue"
+        }
+      ]
     }
   }
 }

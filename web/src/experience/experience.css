@@ -1,0 +1,94 @@
+main[data-screen='play'] {max-width:none;padding:0;background:#0a1118}
+.expedition {width:100%;margin:0 auto;--play-inset:clamp(1rem,3.8vw,5rem)}
+.play-top {margin:0;padding:.6rem var(--play-inset);background:#0c161e;border-bottom:1px solid #ffffff24;min-height:64px}
+.play-home {font-size:.78rem;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+.chapter-trail {gap:clamp(.35rem,1.7vw,2rem);margin:0;align-items:center}
+.chapter-trail li {display:flex;gap:.45rem;align-items:center;padding:.45rem 0;border:0;opacity:.6}
+.chapter-trail li[aria-current='step'] {opacity:1}
+.chapter-trail li>span:first-child {display:grid;place-items:center;width:28px;height:28px;border:1px solid #b4becc60;border-radius:50%;font-size:.65rem}
+.chapter-trail li[aria-current='step']>span:first-child {background:#f3d298;color:#12151c;border-color:#f3d298}
+.chapter-trail .trail-name {font-size:.73rem;font-weight:700}
+.play-grid {display:flex;flex-direction:column;border:0;background:none;gap:0}
+.scene-figure {position:relative;display:block;width:100%;height:clamp(390px,55svh,760px);min-width:0;isolation:isolate;background:#15252d}
+.scene-figure .scene-art {position:absolute;inset:0 0 32px;max-height:none;min-height:0;height:auto;width:100%;display:block;overflow:hidden}
+.cinematic-art img {width:100%;height:100%;object-fit:cover;object-position:65% 52%;animation:scene-arrival 1.1s ease-out both}
+.scene-figure figcaption {position:absolute;bottom:0;inset-inline:0;height:32px;padding:.35rem var(--play-inset);font-size:.62rem;letter-spacing:.025em;background:#0b141f}
+.stage-objective {position:absolute;z-index:2;left:var(--play-inset);top:1.5rem;display:grid;gap:.22rem;max-width:min(350px,75%);padding:.9rem 1.1rem;background:#0b1420de;border-left:2px solid #d7ba82;pointer-events:none;backdrop-filter:blur(8px)}
+.objective-label {font-size:.61rem;font-weight:700;letter-spacing:.15em;color:#dfc99e}
+.stage-objective strong {font:600 clamp(1.4rem,2.5vw,2.1rem)/1.05 var(--display);color:#f8eedb}
+.walk-objective {font-size:.76rem;color:#d7e0e2;max-width:35ch}
+.walking-tools {position:absolute;left:var(--play-inset);right:var(--play-inset);bottom:49px;z-index:3;display:flex;align-items:end;justify-content:space-between;gap:1rem;pointer-events:none}
+.walking-tools button {pointer-events:auto;background:#101a25e8;font-size:.75rem;border-color:#ccb994;padding:.7rem 1rem}
+.key-guide {display:grid;gap:.3rem;font-size:.72rem;color:#f6f1e5;padding:.55rem .75rem;background:#0b1421db}
+.key-guide kbd {display:inline-grid;place-items:center;width:24px;height:24px;border:1px solid #ccbe9a; border-radius:3px;font-family:inherit;font-size:.7rem;margin-right:3px}
+.touch-walk {position:absolute;z-index:3;bottom:49px;left:var(--play-inset);display:none;grid-template-columns:repeat(3,44px);grid-template-rows:repeat(2,44px);gap:3px}
+.touch-walk button {padding:0;min-width:44px;touch-action:none;user-select:none;background:#13212de8;color:#fae5bd;border-color:#dfc69eaa;font-size:1.1rem}
+.touch-walk button[data-walk='up'] {grid-column:2}
+.touch-walk button[data-walk='left'] {grid-column:1;grid-row:2}
+.touch-walk button[data-walk='down'] {grid-column:2;grid-row:2}
+.touch-walk button[data-walk='right'] {grid-column:3;grid-row:2}
+.chapter-host {display:block}
+.expedition .chapter {display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(1.5rem,4vw,5rem);padding:1.7rem var(--play-inset) 2.1rem;background:#111e28;border:0}
+.expedition .chapter h1 {font-size:clamp(2.6rem,4vw,4.8rem);margin:.25rem 0 .65rem;line-height:.96}
+.expedition .story-copy {font-size:clamp(.93rem,1.15vw,1.12rem);max-width:72ch;line-height:1.58;margin:0;color:#e2e6e3}
+.expedition .eyebrow {font-size:.66rem}
+.chapter-actions {align-self:center}
+.decision-prompt {font-size:.61rem;letter-spacing:.13em;font-weight:700;color:#c7d3db;margin-bottom:.6rem}
+.decision-choices {margin:0;display:flex;align-items:stretch;gap:.5rem}
+.decision-choices button {flex:1;justify-content:space-between;text-align:left;padding:.8rem 1rem;min-height:50px}
+.story-data-link {padding:.5rem 0;border:0;border-bottom:1px solid #af9c776b;background:none;min-height:44px;font-size:.8rem;color:#efd19d;margin-top:.6rem;border-radius:0}
+.chapter-actions .notice {font-size:.68rem;max-width:55ch;margin-top:.6rem;color:#a6b8c5}
+.approach-note {display:none;font-size:.85rem;color:#dbe1dc;max-width:40ch}
+.expedition[data-graphics='ready'][data-arrived='false'] .decision-choices,
+.expedition[data-graphics='ready'][data-arrived='false'] .decision-prompt {display:none}
+.expedition[data-graphics='ready'][data-arrived='false'] .approach-note {display:block}
+.expedition[data-arrived='true'] .walking-tools,
+.expedition[data-arrived='true'] .touch-walk,
+.expedition[data-graphics='fallback'] .walking-tools,
+.expedition[data-graphics='fallback'] .touch-walk,
+.expedition[data-graphics='fallback'] .stage-objective {display:none}
+.expedition[data-graphics='ready'][data-arrived='true'] .stage-objective {animation:objective-arrival .55s ease both}
+.expedition-bookend .play-grid {position:relative;min-height:max(650px,calc(100svh - 132px));justify-content:center}
+.expedition-bookend .scene-figure {position:absolute;inset:0;height:auto}
+.expedition-bookend .scene-figure::after {content:'';position:absolute;inset:0 0 32px;background:linear-gradient(90deg,#08111af0 0%,#08111ace 33%,#08111a54 62%,#08111a00 90%);pointer-events:none}
+.expedition-bookend .chapter-host {position:relative;z-index:2;pointer-events:none}
+.expedition-bookend .chapter {display:block;background:none;max-width:min(58%,870px);padding-block:4rem;pointer-events:auto}
+.expedition-bookend .chapter h1 {font-size:clamp(3.7rem,6.8vw,7.5rem);margin:.7rem 0 1.3rem}
+.expedition-bookend .story-copy {font-size:clamp(1rem,1.4vw,1.25rem);max-width:45ch}
+.expedition-bookend .chapter-actions {margin-top:1.6rem;max-width:510px}
+.expedition-bookend .decision-choices button {flex:0 1 auto;min-width:210px;gap:2rem}
+@keyframes scene-arrival {from{opacity:.5;transform:scale(1.035)}to{opacity:1;transform:scale(1)}}
+@keyframes objective-arrival {from{border-color:#fff}to{border-color:#e4c487}}
+@media (pointer:coarse),(max-width:760px){
+ .touch-walk {display:grid}
+ .key-guide {display:none}
+ .walking-tools {justify-content:flex-end;left:auto;max-width:calc(100% - 185px)}
+ .walking-tools button {font-size:.68rem;padding:.65rem;line-height:1.35}
+}
+@media(max-width:850px){
+ .trail-name {display:none}
+ .chapter-trail .trail-name {display:none}
+ .play-top {min-height:58px;gap:.5rem}
+ .expedition .chapter {grid-template-columns:1fr;gap:1.3rem;padding-block:1.4rem 1.8rem}
+ .chapter-actions {width:100%}
+ .scene-figure {height:clamp(360px,55svh,560px)}
+ .expedition-bookend .play-grid {min-height:calc(100svh - 119px)}
+ .expedition-bookend .chapter {max-width:80%;padding-block:4rem}
+ .expedition-bookend .chapter h1 {font-size:clamp(3.5rem,8.5vw,6rem)}
+ .stage-objective {top:1rem;padding:.6rem .8rem}
+}
+@media(max-width:550px){
+ .chapter-trail {gap:.4rem}
+ .chapter-trail li>span:first-child {width:23px;height:23px}
+ .play-home {font-size:.7rem}
+ .scene-figure {height:53svh;min-height:355px}
+ .expedition-bookend .play-grid {min-height:760px;justify-content:flex-end}
+ .expedition-bookend .chapter {max-width:100%;padding-block:3rem}
+ .expedition-bookend .scene-figure::after {background:linear-gradient(0deg,#08111a 0,#08111ade 40%,#08111a35 85%)}
+ .expedition-bookend .cinematic-art img {object-position:70% 40%}
+ .expedition-bookend .chapter h1 {font-size:3.9rem}
+ .expedition .chapter .choices {display:grid;grid-template-columns:1fr}
+ .expedition .chapter .choices>button {width:100%}
+ .expedition[data-graphics='ready'][data-arrived='false'] .decision-choices {display:none}
+ .stage-objective strong {font-size:1.45rem}
+}

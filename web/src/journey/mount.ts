@@ -9,6 +9,29 @@ export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void, 
   const rail = page.querySelector<HTMLElement>('.reading-line i')!
   const gallery = page.querySelector<HTMLElement>('.origin-gallery')
   const stopGallery = gallery && mountOriginGallery(gallery, reduced, connection, onPhoto)
+  const story = page.querySelector<HTMLElement>('.story-interlude')
+  const beats = [...page.querySelectorAll<HTMLElement>('.story-beat')]
+  const beatsObserver = new IntersectionObserver(entries => {
+    for (const entry of entries) if(entry.isIntersecting && story) {
+      story.dataset.beat=(entry.target as HTMLElement).dataset.beat
+      entry.target.classList.add('beat-active')
+    }
+  },{rootMargin:'-25% 0px -35% 0px',threshold:0})
+  beats.forEach(beat=>beatsObserver.observe(beat))
+  const pointerAbort=new AbortController()
+  const heroArea=page.querySelector<HTMLElement>('.cinema-hero')
+  const sky=page.querySelector<HTMLElement>('.hero-sky')
+  let pointerFrame=0
+  if(heroArea&&sky&&matchMedia('(pointer:fine)').matches){
+    let px=0,py=0
+    heroArea.addEventListener('pointermove',event=>{
+      if(reduced.matches||connection?.saveData)return
+      const rect=heroArea.getBoundingClientRect()
+      px=(event.clientX-rect.left)/rect.width-.5;py=(event.clientY-rect.top)/rect.height-.5
+      if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{pointerFrame=0;sky.style.transform=`translate(${px*20}px,${py*14}px)`})
+    },{signal:pointerAbort.signal,passive:true})
+    heroArea.addEventListener('pointerleave',()=>{sky.style.transform='translate(0,0)'},{signal:pointerAbort.signal})
+  }
   let stopOrbit: (()=>void) | undefined
   let loading = false
   let loaded = false
@@ -54,6 +77,13 @@ export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void, 
     rail.style.transform=`scaleX(${p})`
     const hero=page.querySelector<HTMLElement>('.hero-landscape')
     if(hero && !reduced.matches && !connection?.saveData && scrollY<innerHeight*1.3) hero.style.transform=`translateY(${scrollY*.14}px) scale(${1+Math.min(.12,p*.4)})`
+    if(story&&!reduced.matches&&!connection?.saveData){
+      const rect=story.getBoundingClientRect()
+      if(rect.bottom>0&&rect.top<innerHeight){
+        const progress=Math.max(0,Math.min(1,-rect.top/(rect.height-innerHeight)))
+        story.style.setProperty('--story-progress',String(progress))
+      }
+    }
   }
   addEventListener('scroll',()=>{if(!frame)frame=requestAnimationFrame(drawScroll)},{ passive:true,signal:abort.signal })
   drawScroll()
@@ -64,6 +94,9 @@ export function mountJourney(page: HTMLElement, scrollTo: (id: string) => void, 
     reveal.disconnect()
     lazy.disconnect()
     stopGallery?.()
+    beatsObserver.disconnect()
+    pointerAbort.abort()
+    if(pointerFrame)cancelAnimationFrame(pointerFrame)
     stopOrbit?.()
   }
 }
