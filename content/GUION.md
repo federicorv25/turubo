@@ -30,7 +30,8 @@ La ficha para el primer traspaso a Asael está en [`personajes.md`](personajes.m
 
 - Relato de referencia: Antonio Paredes Candia, *Leyendas de Bolivia*, Librería Editorial Popular, 1986, pp. 189–191; ficha y páginas digitalizadas por el [Archivo de Folklore Boliviano](https://archivodefolkloreboliviano.org/motivo/turubo/). La fuente se identifica como versión chiquitana; no se presenta como una única versión de toda tradición chiquitana.
 - Herramienta de IA: ChatGPT se usó para apoyar la edición bilingüe y la preparación de esta guía. El contenido se contrastó con la ficha y el texto digitalizado de la fuente citada.
-- Revisión humana del guion bilingüe: Federico revisó el texto en ambos idiomas y confirmó el recorrido; esta actualización incorpora su pedido de explicar el propósito ficticio de la escala lunar.
+- Revisión humana del texto bilingüe: Federico revisó el guion en español e inglés y señaló que faltaba explicar la escala lunar; este ajuste añade ese motivo. Esa revisión editorial no significa que Federico haya ejecutado personalmente la prueba del recorrido.
+- Prueba manual del recorrido: Codex recorrió las cinco escenas y las decisiones en español e inglés en el navegador integrado, abrió «Ver análisis» y volvió conservando la escena y la respuesta, por encargo de Federico.
 - Revisión cultural del arte final: corresponde a la issue #7 y queda pendiente allí; no es una revisión lingüística pendiente de este guion.
 - No se usó arte generado por IA en estos archivos.
 
