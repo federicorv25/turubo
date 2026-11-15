@@ -1,7 +1,7 @@
 # Entrega preparada: TURUBO 2026
 
 - [Proyecto público](https://turubo.tech/) · [Comparación lunar](https://turubo.tech/#/compare/moon) · [Comparación marciana](https://turubo.tech/#/compare/mars)
-- [Demo en inglés, PDF de siete diapositivas](https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf) · [PowerPoint editable](https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pptx)
+- [Demo en inglés, PDF de siete diapositivas](https://github.com/federicorv25/turubo/releases/download/turubo-demo-final-2026/TURUBO_Demo_3D_EN.pdf) · [PowerPoint editable](https://github.com/federicorv25/turubo/releases/download/turubo-demo-final-2026/TURUBO_Demo_3D_EN.pptx)
 - [Textos y enlaces para el formulario](project-en.md) · [Créditos y declaración de IA](credits-en.md) · [Defensa en español](defensa-es.md)
 - [Reglas y plazos](checklist-nasa.md) · [Pruebas de la web y demo](../docs/evidence/viaje-3d.md)
 

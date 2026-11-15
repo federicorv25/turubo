@@ -85,7 +85,7 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 | Campo | Estado |
 |-------|--------|
 | Proyecto NASA (spaceappschallenge.org) | **PENDIENTE** — Federico #16 |
-| Demo pública (≤ 7 slides o video ≤ 30 s) | [PDF público, 7 diapositivas EN](https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf) |
+| Demo pública (≤ 7 slides o video ≤ 30 s) | [PDF público, 7 diapositivas EN](https://github.com/federicorv25/turubo/releases/download/turubo-demo-final-2026/TURUBO_Demo_3D_EN.pdf) |
 | Final Project (juego / Pages) | https://turubo.tech/ |
 | Código fuente | https://github.com/federicorv25/turubo |
 
