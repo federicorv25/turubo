@@ -1,9 +1,100 @@
 {
   "version": 1,
   "simulated": false,
-  "terrains": [],
+  "terrains": [
+    {
+      "id": "bo-r02-c02",
+      "name": "Valle de la Luna · R02 C02",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r02-c02.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 1.6404633610448378,
+        "slopeP90Deg": 3.412745943311468,
+        "reliefM": 63.384648524234194
+      }
+    },
+    {
+      "id": "bo-r03-c01",
+      "name": "Valle de la Luna · R03 C01",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-r03-c01.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 7.164971824983873,
+        "slopeP90Deg": 14.542802302925303,
+        "reliefM": 229.60652071263593
+      }
+    },
+    {
+      "id": "bo-cerro-turubo",
+      "name": "Cerro Turubó",
+      "body": "earth",
+      "source": "https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001",
+      "image": "maps/bo-cerro-turubo.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 2.148356756456221,
+        "slopeP90Deg": 13.563536467546298,
+        "reliefM": 119.11531654835926
+      }
+    },
+    {
+      "id": "moon-nobile-rim-1",
+      "name": "Nobile Rim 1",
+      "body": "moon",
+      "source": "https://pgda.gsfc.nasa.gov/products/78",
+      "image": "maps/moon-nobile-rim-1.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 14.695189664021298,
+        "slopeP90Deg": 21.67027176803469,
+        "reliefM": 624.6136180877675
+      }
+    },
+    {
+      "id": "mars-jezero",
+      "name": "Jezero",
+      "body": "mars",
+      "source": "https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic",
+      "image": "maps/mars-jezero.png",
+      "resolutionM": 40,
+      "coverage": 1,
+      "metrics": {
+        "slopeMedianDeg": 2.1101635161982073,
+        "slopeP90Deg": 4.408824966743379,
+        "reliefM": 77.55926551565153
+      }
+    }
+  ],
   "comparisons": {
-    "moon": { "status": "not_assessed", "ranked": [] },
-    "mars": { "status": "not_assessed", "ranked": [] }
+    "moon": {
+      "status": "reviewed",
+      "referenceId": "moon-nobile-rim-1",
+      "ranked": [
+        {
+          "id": "bo-r03-c01",
+          "distance": 6.8677333767069335
+        }
+      ],
+      "guidedId": "bo-cerro-turubo"
+    },
+    "mars": {
+      "status": "reviewed",
+      "referenceId": "mars-jezero",
+      "ranked": [
+        {
+          "id": "bo-r02-c02",
+          "distance": 0.38509561139682974
+        }
+      ],
+      "guidedId": "bo-cerro-turubo"
+    }
   }
 }
