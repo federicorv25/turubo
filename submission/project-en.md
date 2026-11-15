@@ -12,7 +12,7 @@ TURUBO is a bilingual interactive journey and web adventure inspired by the Chiq
 
 ## Project Demonstration
 
-https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf
+https://github.com/federicorv25/turubo/releases/download/turubo-demo-final-2026/TURUBO_Demo_3D_EN.pdf
 
 Seven English slides, including cover and closing. This link works without an account.
 

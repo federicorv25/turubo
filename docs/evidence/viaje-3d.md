@@ -23,9 +23,9 @@
 
 ## Demo y preparación de entrega
 
-- [PDF público](https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf) distinto de la web: siete diapositivas EN renderizadas y revisadas, diez enlaces HTTPS. SHA-256: 9d59958e482cc25f3ae4de7f817dfd681ea15dcac4d662500911ebf622ad7584. PDF y PPTX descargados sin cuenta y verificados por hash. Las capturas provienen de producción.
+- [PDF público final](https://github.com/federicorv25/turubo/releases/download/turubo-demo-final-2026/TURUBO_Demo_3D_EN.pdf), distinto de la web: siete diapositivas EN renderizadas y revisadas, once enlaces HTTPS. SHA-256: dd893112035134e0c867380a5f80b3c9e980285c808b61f8168fc9be216d04b4. PDF y PPTX descargados sin cuenta y verificados por hash. La demo explica el encuentro 3D de Tierra y muestra una captura del capítulo ilustrado de la Luna.
 - Kie.ai: dos ilustraciones, 28 créditos verificados (US$0,14 a tarifa publicada). Presupuesto acumulado de US$5. Las fotos y mapas no se generaron con IA. La web no realiza llamadas pagadas.
 - Se leyeron los campos del formulario de Space Apps. El [texto preparado](../../submission/project-en.md) no se guardó allí y no se envió al jurado. Los términos y confirmaciones de #16 quedan para Federico.
-- La aventura actual de cinco capítulos permanece jugable. Asael conserva #7 y su revisión seguirá el [contrato](../../web/src/experience/INTEGRACION.md).
+- El [encuentro 3D de Asael](encuentro-tierra-3d.md) se integró en #35. La portada con tres fotos de la Chiquitania se integró en #37. [Pages](https://github.com/federicorv25/turubo/actions/runs/43720556353) publicó la versión combinada; se comprobaron sin cuenta las fotos, los mapas, el JSON, los archivos de juego y la firma tipográfica.
 
 Las capturas de escritorio y móvil se guardan junto a los entregables locales. Las capturas para jurado están en el PDF.
