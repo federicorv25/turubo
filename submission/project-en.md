@@ -21,15 +21,17 @@ The challenge asks teams to identify Earth locations that analog permanent Moon-
 
 ## Data, sources, and method
 
-The planned Mars reference is the USGS/PDS **M20 Jezero Crater CTX DEM**, with a native pixel scale of 20 m. The documented pipeline uses 4 × 4 km windows, a common 40 m resolution, and at least 95% valid coverage. It derives median slope and P90 slope in degrees, plus relief as P95 minus P5 in metres. Cerro Turubó remains a guided comparison outside the order.
+The Mars reference is the [USGS/NASA CTX Jezero Science Investigation DEM](https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic), with a native pixel scale of 20 m. The documented pipeline uses 4 × 4 km windows, a common 40 m resolution, and at least 95% valid coverage. It derives median slope and P90 slope in degrees, plus relief as P95 minus P5 in metres. Cerro Turubó remains a guided comparison outside the order.
 
 The reproducible pipeline in issue #12 processed **NASA LRO/LOLA Site06** for
 Nobile Rim 1. It is derived from the LOLA instrument on NASA's Lunar
 Reconnaissance Orbiter, a mission linked in the challenge resources. The same
-pipeline processed NASADEM HGT v001 for Bolivia and the USGS/NASA CTX Jezero
+pipeline processed [NASADEM HGT v001](https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001) for Bolivia and the USGS/NASA CTX Jezero
 DEM for Mars. The manifest records product URLs, input hashes, CRS, native
 resolution, 4 × 4 km recrops, 40 m analysis grids, coverage, maps, and
-metrics.
+metrics. [NASA LRO/LOLA Site06](https://pgda.gsfc.nasa.gov/products/78) is
+the lunar data source. The [processing manifest](https://github.com/federicorv25/turubo-atlas/blob/6d6111179c1580c3932b383ce8a1da3dc21c0781/science/pipeline/preview/manifest.json)
+provides the trace from source products to derived maps.
 
 **Pending verification before submission:** confirm in the final credits
 inventory which of these processed products appears in the published experience
@@ -56,7 +58,7 @@ The comparison describes relief. It cannot establish biological, geological, ope
 
 ## Credits, licenses, and AI disclosure
 
-Issue #15 maintains the final credits inventory in `submission/credits-en.md`; incorporate it before submission. It must cover data, maps, cultural source, software, artwork, audio, fonts, and public licenses.
+The [working credits inventory](https://github.com/federicorv25/turubo-atlas/pull/18) records the processed sources and their provenance. Its final review remains pending in #15, including the terms for the cultural adaptation and the credits for materials in the final version. Incorporate that reviewed inventory before submission.
 
 OpenAI Codex assisted Belinda Quispe with this first draft and the presentation outline. Belinda, Erick, Luciana, and Federico must review it before publication. The final disclosure must list the tools actually used. Every AI-generated visual in the public demo must retain a visible label. The demo will not include photos, voice, or identifying features of minors.
 
