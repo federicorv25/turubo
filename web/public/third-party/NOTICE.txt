@@ -1,0 +1,14 @@
+TURUBO third-party notices
+==========================
+The repository MIT license covers original software only.
+
+Three.js 0.187.0: MIT, see three-MIT.txt.
+Manrope 5.3.0 (Fontsource distribution): SIL OFL 1.1, see manrope-OFL.txt.
+Cormorant Garamond 5.3.0 (Fontsource distribution): SIL OFL 1.1, see cormorant-garamond-OFL.txt.
+GSAP and ScrollTrigger 3.15.1: Webflow, Standard No Charge License:
+https://gsap.com/community/standard-license/
+
+Photography, space mission imagery and data maintain their own terms.
+Full attribution, source URLs and processing:
+https://github.com/federicorv25/turubo/blob/main/submission/credits-en.md
+https://github.com/federicorv25/turubo/blob/main/design/FUENTES_VISUALES.md
