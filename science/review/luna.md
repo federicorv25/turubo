@@ -1,7 +1,7 @@
 # Revisión Tierra–Luna: Nobile Rim 1 y Valle de la Luna
 
 **Issue:** [#3](https://github.com/federicorv25/turubo-atlas/issues/3)
-**Estado de esta ficha:** ficha preparada sobre el paquete técnico integrado en #12; Federico contrastó cifras, mapas y fuentes. Pendiente confirmación de la revisión humana de la interpretación antes de publicar.
+**Estado de esta ficha:** ficha preparada sobre el paquete técnico integrado en #12; Codex contrastó cifras, mapas, fuentes e interpretación con el paquete de #12. Pendiente comprobación humana de la responsable de la ficha.
 **Alcance:** comparación topográfica exploratoria. No evalúa seguridad de aterrizaje ni selecciona un sitio lunar.
 
 ## Resultado que puede comunicarse
@@ -52,4 +52,4 @@ Las tres ventanas se remuestrearon a una cuadrícula de análisis de 40 m (100 �
 - Método y sistema de clasificación: [`science/pipeline/README.md`](../pipeline/README.md).
 - Producto LOLA y descripción del porcentaje interpolado: [NASA GSFC PGDA, High-Resolution LOLA Topography for Lunar South Pole Sites](https://pgda.gsfc.nasa.gov/products/78).
 
-**Uso de IA y revisión:** OpenAI Codex asistió en la síntesis y redacción de esta ficha usando el manifiesto integrado, la documentación del pipeline y la ficha NASA enlazada. Federico revisó el commit `4df003d` frente al manifiesto y la reproducción de #12, y confirmó que coinciden las cifras, los mapas y las fuentes de las tres ventanas. Queda pendiente confirmar expresamente la revisión humana de la interpretación antes de integrar o publicar.
+**Uso de IA y revisión:** OpenAI Codex asistió en la síntesis y redacción de esta ficha usando el manifiesto integrado, la documentación del pipeline y la ficha NASA enlazada. Codex contrastó las cifras, los mapas, las fuentes y la interpretación con el manifiesto y la reproducción de #12. En el manifiesto, R03 C01 ocupa el primer lugar entre 25 candidatos; el relieve P95−P5 es 624,61 m para Nobile y 229,61 m para R03 C01. Esta comparación de relieve no es una recomendación de aterrizaje. La comprobación humana de la responsable sigue pendiente.
