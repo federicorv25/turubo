@@ -46,7 +46,7 @@ Usa solo los comandos de tu área. Si falta esa versión o Windows pide permiso,
 Desde una carpeta aparte del ZIP:
 
 ~~~powershell
-gh repo clone federicorv25/turubo-atlas
+gh repo clone federicorv25/turubo
 Set-Location turubo-atlas
 git remote -v
 gh repo view --json nameWithOwner,viewerPermission

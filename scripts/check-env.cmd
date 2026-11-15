@@ -73,7 +73,7 @@ if errorlevel 1 (
     exit /b 0
 )
 set "PUSH_ACCESS="
-for /f "delims=" %%P in ('gh api --hostname github.com repos/federicorv25/turubo-atlas --jq .permissions.push 2^>nul') do set "PUSH_ACCESS=%%P"
+for /f "delims=" %%P in ('gh api --hostname github.com repos/federicorv25/turubo --jq .permissions.push 2^>nul') do set "PUSH_ACCESS=%%P"
 if not "%PUSH_ACCESS%"=="true" (
     echo [REVISAR] Confirma la cuenta y acepta la invitacion antes de subir ramas.
     set "PENDIENTE=1"

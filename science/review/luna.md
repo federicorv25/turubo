@@ -1,6 +1,6 @@
 # Revisión Tierra–Luna: Nobile Rim 1 y Valle de la Luna
 
-**Issue:** [#3](https://github.com/federicorv25/turubo-atlas/issues/3)
+**Issue:** [#3](https://github.com/federicorv25/turubo/issues/3)
 **Estado de esta ficha:** ficha preparada sobre el paquete técnico integrado en #12; Codex contrastó cifras, mapas, fuentes e interpretación con el paquete de #12. Luciana, responsable de la ficha, confirmó la conclusión de la comparación; la aprobación del PR para integrar queda pendiente.
 **Alcance:** comparación topográfica exploratoria. No evalúa seguridad de aterrizaje ni selecciona un sitio lunar.
 

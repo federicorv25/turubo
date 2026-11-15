@@ -6,7 +6,7 @@ import journeyArt from './art/journey.svg'
 
 export const culturalUrl = 'https://archivodefolkloreboliviano.org/motivo/turubo/'
 export const challengeUrl = 'https://www.spaceappschallenge.org/2026/challenges/permanent-moon-base-locations-and-mars/'
-const repository = 'https://github.com/federicorv25/turubo-atlas'
+const repository = 'https://github.com/federicorv25/turubo'
 const worlds = ['earth', 'moon', 'mars'] as const
 
 export function renderHome(lang: Lang, journeyStarted: boolean) {
