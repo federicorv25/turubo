@@ -1,73 +1,72 @@
-# TURUBO — From Earth to New Worlds
+# TURUBO: From Earth to New Worlds
 
-> **Submission draft for review.** This document does not replace the Space Apps form. Fields marked **Pending verification** require the stable release, final credits, or team account before submission.
+Copy-ready text for [My Team → Project → Edit](https://www.spaceappschallenge.org/2026/find-a-team/turubo/?tab=project). This prepares the submission; nothing has been saved or submitted to Space Apps.
 
-## High-level summary
+## Project Name
 
-TURUBO Atlas is a short interactive story and terrain-comparison project. It uses the Turubó legend as a clearly labelled adaptation and invites visitors to open a separate evidence panel. The panel compares measured relief at sites in Bolivia with planetary reference areas at a common scale.
+TURUBO: From Earth to New Worlds
 
-The Valle de la Luna near San José de Chiquitos provides terrestrial windows. Cerro Turubó is a guided case outside the ranking. Nobile Rim 1 and Jezero are planetary references. The comparison concerns relief only. It does not claim landing safety, climate, composition, water, ice, resources, or habitability.
+## Summary
 
-## How to play
+TURUBO is a bilingual interactive journey and web adventure inspired by the Chiquitano story of Turubó. Visitors explore Bolivia, the Moon and Mars through interactive globes and can compare real terrain from San José de Chiquitos with Nobile Rim 1 and Jezero. We use open elevation data to find the closest Bolivian tiles within a fixed sample and show how they differ in slope and relief. Local storytelling makes planetary data accessible and gives visitors a reason to explore the evidence.
 
-1. Open the bilingual web experience.
-2. Follow the short story through Earth, the Moon, and Mars. Choices affect story feedback, not the scientific result.
-3. Select **View analysis** from any scene to inspect sources, scale, coverage, and terrain metrics.
-4. Return to the story without losing the current scene.
+## Project Demonstration
 
-## Response to the challenge
+https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf
 
-The challenge asks teams to identify Earth locations that analog permanent Moon-base locations and Mars. TURUBO Atlas provides an auditable way to explore terrain analogs. It keeps the story separate from measurements, uses comparable elevation windows, and states what the data can and cannot support.
+Seven English slides, including cover and closing. This link works without an account.
 
-## Data, sources, and method
+## Final Project
 
-The Mars reference is the [USGS/NASA CTX Jezero Science Investigation DEM](https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic), with a native pixel scale of 20 m. The documented pipeline uses 4 × 4 km windows, a common 40 m resolution, and at least 95% valid coverage. It derives median slope and P90 slope in degrees, plus relief as P95 minus P5 in metres. Cerro Turubó remains a guided comparison outside the order.
+https://turubo.tech/
 
-The reproducible pipeline in issue #12 processed **NASA LRO/LOLA Site06** for
-Nobile Rim 1. It is derived from the LOLA instrument on NASA's Lunar
-Reconnaissance Orbiter, a mission linked in the challenge resources. The same
-pipeline processed [NASADEM HGT v001](https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001) for Bolivia and the USGS/NASA CTX Jezero
-DEM for Mars. The manifest records product URLs, input hashes, CRS, native
-resolution, 4 × 4 km recrops, 40 m analysis grids, coverage, maps, and
-metrics. [NASA LRO/LOLA Site06](https://pgda.gsfc.nasa.gov/products/78) is
-the lunar data source. The [processing manifest](https://github.com/federicorv25/turubo-atlas/blob/6d6111179c1580c3932b383ce8a1da3dc21c0781/science/pipeline/preview/manifest.json)
-provides the trace from source products to derived maps.
+## Project Information
 
-**Pending verification before submission:** confirm in the final credits
-inventory which of these processed products appears in the published experience
-and demo, with its license and public location. Do not describe a processed
-product as visible to jurors until #9 publishes it.
+TURUBO connects a story from the Chiquitania in Bolivia with NASA Space Apps' challenge to identify and characterize terrestrial terrain analogs. Visitors scroll from the Chiquitanian forest to interactive views of the Moon and Mars, play a short fantasy adventure or open the measured terrain directly. A visitor can return from a comparison to the same choice in the story. Cerro Turubó is a separate guided example outside the ranking.
 
-## Results and limits
+We fixed 25 tiles of 4 × 4 km around the Valle de la Luna of San José de Chiquitos. We averaged all elevation crops onto a 40 m grid and kept tiles with at least 95% valid coverage. We ranked the Bolivian sample by standardized distance over median slope, P90 slope and P95 minus P5 relief. The same-scale maps display elevations relative to each tile's median.
 
-The reviewed technical package from issue #12 compares Jezero with the Valle de
-la Luna window R02 C02. Both 4 × 4 km windows have 100% valid coverage at the
-40 m analysis resolution. Jezero has a median slope of 2.11°, P90 slope of
-4.41°, and relief of 77.56 m. R02 C02 has a median slope of 1.64°, P90 slope
-of 3.41°, and relief of 63.38 m. The result shows similar low median slopes,
-while Jezero has 14.18 m more P95−P5 relief. R02 C02 ranks first in this
-terrestrial grid at a standardized distance of 0.3851, but R05 C02 is nearly
-tied at 0.3905. The ranking does not validate an analogue for a mission.
+R03 C01 ranks first for the Moon within our sample. Nobile Rim 1 has 624.61 m of relief and a 14.70° median slope, compared with 229.61 m and 7.16° in R03 C01. The lunar DEM interpolates numerous heights, so full valid grid coverage does not mean direct measurements at every point. R02 C02 is closest to Jezero. Their median slopes are close (1.64° and 2.11°), while Jezero has more relief (77.56 m versus 63.38 m). These results describe the terrain shape in the selected windows. They do not establish landing safety, access, geology, climate, resources or habitability.
 
-**Publication status:** issue #9 must still publish the reviewed JSON, maps,
-and stable screenshots before this wording enters the final NASA form or demo.
-If evidence is insufficient for a destination, the public panel and this form
-will say **Not assessed**.
+Python, Rasterio, PyProj, NumPy and Pillow prepare the evidence. The site uses TypeScript, Vite, Three.js and GSAP ScrollTrigger. An illustrated fallback keeps the journey usable with reduced motion, data saver or without WebGL. The [source-to-result workflow](https://github.com/federicorv25/turubo/tree/main/science/pipeline) and [credits](https://github.com/federicorv25/turubo/blob/main/submission/credits-en.md) are public.
 
-The comparison describes relief. It cannot establish biological, geological, operational, or safety conclusions beyond the measured terrain metrics.
+## Use of Super Intelligence (SI)
 
-## Credits, licenses, and AI disclosure
+OpenAI Codex assisted with software, tests, vector art, scientific communication and the demo. ChatGPT supported bilingual story editing. Cursor Composer supported the terrain comparison interface. Kie.ai Seedream 5.0 Pro generated the cover and adventure illustrations, which are labeled visibly. Documentary photos are sourced separately. The maps, measurements and sample rankings come from the cited elevation products and reproducible calculations. The site makes no model API calls. Choose only form options corresponding to these uses.
 
-The [working credits inventory](https://github.com/federicorv25/turubo-atlas/pull/18) records the processed sources and their provenance. Its final review remains pending in #15, including the terms for the cultural adaptation and the credits for materials in the final version. Incorporate that reviewed inventory before submission.
+## NASA Data
 
-OpenAI Codex assisted Belinda Quispe with this first draft and the presentation outline. Belinda, Erick, Luciana, and Federico must review it before publication. The final disclosure must list the tools actually used. Every AI-generated visual in the public demo must retain a visible label. The demo will not include photos, voice, or identifying features of minors.
+Enter each resource name as Link Text and its URL in Link.
 
-## Links and final checks
-
-| Item | Status |
+| Link Text | Link |
 | --- | --- |
-| Public demo URL | **Pending** — distinct and accessible without sign-in |
-| Final project URL | **Pending** — stable public release from #9 |
-| Credits inventory | **Pending review** — issue #15 |
-| Stable screenshots and published commit | **Pending** — issue #9 |
-| NASA portal submission | **Pending** — Federico, issue #16 |
+| NASA LRO mission and LOLA instrument (challenge resource) | https://pds-geosciences.wustl.edu/missions/lro/ |
+| NASA GSFC LRO/LOLA Site06, Nobile Rim 1 elevation | https://pgda.gsfc.nasa.gov/products/78 |
+| NASA EOSDIS LP DAAC NASADEM HGT V001 | https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001 |
+| NASA SVS CGI Moon Kit, LROC global texture | https://svs.gsfc.nasa.gov/4720/ |
+| NASA VIPER Nobile-area composite | https://science.nasa.gov/mission/viper/lunar-operations/ |
+| NASA/JPL/ASU/MSSS Perseverance panorama PIA24921 | https://science.nasa.gov/photojournal/detailed-panorama-of-mars-jezero-crater-delta/ |
+| NASA/JPL-Caltech global Mars texture | https://science.nasa.gov/3d-resources/mars/ |
+
+## Space Agency Partner & Other Data
+
+| Link Text | Link |
+| --- | --- |
+| USGS Astrogeology Jezero CTX DEM | https://astrogeology.usgs.gov/search/map/mars_2020_science_investigation_ctx_dem_mosaic |
+| OpenTopography NASADEM distribution | https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2 |
+| Archivo de Folklore Boliviano: Motivo Turubó | https://archivodefolkloreboliviano.org/motivo/turubo/ |
+| Ruditaly: Cerro Turubó (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Cerro_Turub%C3%B3_-_San_Jos%C3%A9_de_Chiquitos,_Bolivia.jpg |
+| Aldrihe: Valle de la Luna de San José de Chiquitos (CC BY-SA 4.0) | https://commons.wikimedia.org/wiki/File:Imagen_del_Ni%C3%B1o_Jes%C3%BAs_en_la_monta%C3%B1a_del_Valle_de_la_luna_de_San_Jos%C3%A9_de_Chiquitos.jpg |
+| Three.js | https://threejs.org/ |
+| GSAP / ScrollTrigger | https://gsap.com/docs/v3/Plugins/ScrollTrigger/ |
+| Kie.ai Seedream 5.0 Pro | https://kie.ai/seedream-5-0-pro |
+| Complete credits, font and software licenses and AI usage | https://github.com/federicorv25/turubo/blob/main/submission/credits-en.md |
+
+## Handoff for Federico
+
+1. Review the [submission guide](https://www.spaceappschallenge.org/resources/project-submission-guide/) and the current form. The Summary field allows 1,500 characters; this draft is below the limit. The project and demo links were checked separately without account credentials.
+2. Confirm each member's local registration, any separate Santa Cruz process and the presentation schedule. The team's target is 11:15 Bolivia; the supplied schedule lists a 12:00 local upload. The portal's November 15 23:59 local deadline does not replace the local process.
+3. Review the terms, originality and rights statements before choosing whether to accept them and click **Submit for Judging**. **Save Progress** makes edits visible without sending them to judging.
+4. When you submit, save the confirmation banner, timestamp and public project URL. If the game changes before submission, update the demo and credits to match.
+
+Status: no fields saved in the portal, neither submission checkbox checked, no judging submission. The unreceived game in #7 is not part of this version.

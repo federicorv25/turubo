@@ -80,13 +80,13 @@ Redactar en **inglés**. Validar etiquetas exactas en **My Team → Project → 
 - [ ] En la sesión de TURUBO, comprobar **Save Progress** según procedimiento de #16 y confirmar que únicamente guarda un borrador; nunca considerarlo prueba de envío al jurado.
 - [ ] Federico verifica las casillas reales de **términos y originalidad**, pulsa **`Submit for Judging`** en el proyecto correcto y archiva **banner/captura de confirmación**, hora y URL pública; comprobar que el sistema confirma el envío y no solo guarda cambios ([#16](https://github.com/federicorv25/turubo/issues/16)).
 
-**URLs por completar (no inventar):**
+**Enlaces de entrega:**
 
 | Campo | Estado |
 |-------|--------|
 | Proyecto NASA (spaceappschallenge.org) | **PENDIENTE** — Federico #16 |
-| Demo pública (≤ 7 slides o video ≤ 30 s) | **PENDIENTE** — Belinda #11 |
-| Final Project (juego / Pages) | **PENDIENTE** — Federico #9 |
+| Demo pública (≤ 7 slides o video ≤ 30 s) | [PDF público, 7 diapositivas EN](https://github.com/federicorv25/turubo/releases/download/turubo-demo-3d-2026/TURUBO_Demo_3D_EN.pdf) |
+| Final Project (juego / Pages) | https://turubo.tech/ |
 | Código fuente | https://github.com/federicorv25/turubo |
 
 ## 3. Contenido científico mínimo demostrable

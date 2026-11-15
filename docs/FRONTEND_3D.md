@@ -1,6 +1,6 @@
 # TURUBO: plan de la experiencia 3D
 
-Estado: preparación para el Goal. Se conserva la web publicada mientras se construye y verifica la siguiente versión. Responsable del frontend, contenido, QA y revisión de PR: **Federico con Codex, GPT-6.1 Sol Max**. Asael trabaja exclusivamente en el juego #7.
+Estado: recorrido publicado en turubo.tech. Consulta [las pruebas del frontend y de la demo](evidence/viaje-3d.md) y [la entrega preparada](../submission/README.md). Esta guía conserva el plan original. Asael continúa el juego en #7.
 
 ## Resultado que se entregará
 
