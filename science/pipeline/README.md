@@ -1,6 +1,6 @@
 # Comparaciones de terreno · #12
 
-Este módulo transforma los tres DEM originales en ventanas comparables para TURUBO Atlas. La carpeta [preview/](preview/) contiene **datos calculados y verificables, pendientes de revisión del equipo para publicar**. En la web estable, la carga de resultados es trabajo de [#9](https://github.com/federicorv25/turubo-atlas/issues/9).
+Este módulo transforma los tres DEM originales en ventanas comparables para TURUBO Atlas. La carpeta [preview/](preview/) contiene **datos calculados y verificables, pendientes de revisión del equipo para publicar**. En la web estable, la carga de resultados es trabajo de [#9](https://github.com/federicorv25/turubo/issues/9).
 
 | Cuerpo | Producto | Ventana |
 |---|---|---|

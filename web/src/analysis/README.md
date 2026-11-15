@@ -20,7 +20,7 @@ Comparador Tierra–Luna y Tierra–Marte para TURUBO. Solo edita archivos en es
 2. En la historia, **Ver análisis**; probar Tierra / Luna / Marte, ES/EN y **Volver a la historia** (el viaje conserva escena y elección).
 3. Para QA del panel con mediciones reales sin publicar: copiar el **paquete de prueba** `science/pipeline/preview/analysis.preview.json` → `web/public/data/analysis.json` y `science/pipeline/preview/maps/*.png` → `web/public/maps/` (ver [README del pipeline](../../../science/pipeline/README.md#traspaso-al-equipo)). **No commitear** esos archivos.
 
-   Ese JSON es solo para probar la interfaz en local. El `status: reviewed` del preview **activa la vista** (columnas, candidatos, Turubó guiado), pero **no** significa que las comparaciones de Luna o Marte estén aprobadas para publicación. La revisión científica y el `web/public/data/analysis.json` definitivo son [#9](https://github.com/federicorv25/turubo-atlas/issues/9) (Federico).
+   Ese JSON es solo para probar la interfaz en local. El `status: reviewed` del preview **activa la vista** (columnas, candidatos, Turubó guiado), pero **no** significa que las comparaciones de Luna o Marte estén aprobadas para publicación. La revisión científica y el `web/public/data/analysis.json` definitivo son [#9](https://github.com/federicorv25/turubo/issues/9) (Federico).
 
 En la web publicada, sin integración #9, el estado «No evaluado» es el esperado.
 

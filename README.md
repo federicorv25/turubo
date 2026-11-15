@@ -8,6 +8,8 @@ The Valle de la Luna in San José de Chiquitos supplies the 25 terrestrial windo
 
 See the [lunar and Martian reviews](science/review/), the [reproducible elevation pipeline](science/pipeline/) and the [submission checklist](submission/README.md). Codex assisted with the interface and vector illustrations, which are identified in the experience. The measurements come from the elevation products cited in the pipeline.
 
+The original project code is available under the [MIT License](LICENSE). Third-party data, photography, fonts and libraries keep their own terms and attribution; the code license does not relicense those materials. The upcoming cinematic frontend is specified in [the implementation guide](docs/FRONTEND_3D.md).
+
 ## Arranque
 
 1. Lee [INICIO.md](INICIO.md), [AGENTS.md](AGENTS.md) y tu issue en GitHub. [CLAUDE.md](CLAUDE.md) importa las mismas reglas para Claude Code.

@@ -1,7 +1,7 @@
 # Ficha Tierra–Marte: Jezero
 
 **Estado de la comparación:** revisión de Belinda sobre el paquete técnico de
-la [issue #12](https://github.com/federicorv25/turubo-atlas/pull/19), 14 de
+la [issue #12](https://github.com/federicorv25/turubo/pull/19), 14 de
 noviembre de 2026. La publicación web permanece a cargo de #9; hasta entonces,
 el JSON público conserva `not_assessed`.
 
@@ -73,7 +73,7 @@ ventana comparada: 2.11° en Jezero y 1.64° en R02 C02.
 - **Caso guiado:** el Cerro Turubó se muestra separado. Tiene pendiente mediana
   de 2.15°, P90 de 13.56° y relieve P95−P5 de 119.12 m, frente a 4.41° P90 y
   77.56 m de relieve en Jezero; no recibe puesto ni distancia de ranking. El
-  [manifiesto integrado de #12](https://github.com/federicorv25/turubo-atlas/blob/6d6111179c1580c3932b383ce8a1da3dc21c0781/science/pipeline/preview/manifest.json)
+  [manifiesto integrado de #12](https://github.com/federicorv25/turubo/blob/6d6111179c1580c3932b383ce8a1da3dc21c0781/science/pipeline/preview/manifest.json)
   conserva la procedencia y los mapas de ambas ventanas.
 - **Límite:** la comparación prevista es solo de relieve. No evalúa seguridad
   de aterrizaje, clima, composición, agua, hielo ni habitabilidad.
