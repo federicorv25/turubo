@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict'
 import { access, readFile } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import Ajv from 'ajv'
 
 const root = new URL('../../', import.meta.url)
@@ -68,4 +69,13 @@ for (const [file, simulated] of [['web/public/data/analysis.json', false], ['fix
     }
   }
 }
-console.log('Story EN/ES, transitions, terrain schema and public data checked.')
+const visuals = [...await json('design/media-manifest.json'), ...await json('design/ai-art-manifest.json')]
+for (const record of visuals) {
+  for (const file of record.files) {
+    assert(/^media\/[a-z0-9-]+\.webp$/.test(file.path), file.path + ': invalid public media path')
+    const bytes = await readFile(new URL('web/public/' + file.path, root))
+    assert.equal(bytes.length, file.bytes, file.path + ': size differs from provenance manifest')
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), file.sha256, file.path + ': update attribution/provenance before replacing the asset')
+  }
+}
+console.log('Story EN/ES, transitions, terrain schema, public data and visual provenance checked.')
