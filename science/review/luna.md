@@ -1,7 +1,7 @@
 # Revisión Tierra–Luna: Nobile Rim 1 y Valle de la Luna
 
 **Issue:** [#3](https://github.com/federicorv25/turubo-atlas/issues/3)
-**Estado de esta ficha:** revisión de Luciana preparada sobre el paquete técnico integrado en #12; requiere revisión humana antes de publicar en la experiencia.
+**Estado de esta ficha:** ficha preparada sobre el paquete técnico integrado en #12; Federico contrastó cifras, mapas y fuentes. Pendiente confirmación de la revisión humana de la interpretación antes de publicar.
 **Alcance:** comparación topográfica exploratoria. No evalúa seguridad de aterrizaje ni selecciona un sitio lunar.
 
 ## Resultado que puede comunicarse
@@ -20,7 +20,7 @@ Las tres ventanas se remuestrearon a una cuadrícula de análisis de 40 m (100 �
 
 ## Fuentes y procedencia
 
-- **Luna:** NASA GSFC Planetary Geodesy Data Archive, [LRO/LOLA High-Resolution Topography for Lunar South Pole Sites](https://pgda.gsfc.nasa.gov/products/78), Site06, Nobile Rim 1, archivo `Site06_final_adj_5mpp_surf.tif`. DEM de superficie de 5 m/píxel, alturas en metros, coordenadas X/Y de proyección estereográfica polar sur, marco MOON_ME (DE421). DOI no indicado en la ficha del producto. Hash SHA-256 del raster empleado: `cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d`.
+- **Luna:** NASA GSFC Planetary Geodesy Data Archive, [LRO/LOLA High-Resolution Topography for Lunar South Pole Sites](https://pgda.gsfc.nasa.gov/products/78), Site06, Nobile Rim 1, [GeoTIFF directo `Site06_final_adj_5mpp_surf.tif`](https://pgda.gsfc.nasa.gov/data/LOLA_5mpp/Site06/Site06_final_adj_5mpp_surf.tif). Centro del recorte: X = 84 000 m, Y = 110 000 m en la proyección estereográfica polar sur del producto. DEM de superficie de 5 m/píxel, alturas en metros, coordenadas X/Y de proyección estereográfica polar sur, marco MOON_ME (DE421). DOI no indicado en la ficha del producto. Hash SHA-256 del raster empleado: `cca17e8067601dd659b583f889204db6bce685bc30c60a9e62427a8bce36b03d`.
 - **Tierra:** NASADEM Merged DEM Global 1 arc second V001, tesela `s18w061`, [DOI del producto](https://doi.org/10.5067/MEASURES/NASADEM/NASADEM_HGT.001), distribuido por [OpenTopography](https://portal.opentopography.org/datasetMetadata?otCollectionID=OT.032021.4326.2). Elevaciones en metros referidas a EGM96; el producto derivado de radar puede incluir vegetación o estructuras y no es un levantamiento de roca desnuda. Hash SHA-256 del raster empleado: `2167f354026d11e1455bbe4f885a48e0efe737d6ee969ce54a74732619681e73`.
 - **Manifiesto de procedencia y resultados:** [`manifest.json`](../pipeline/preview/manifest.json). Contiene CRS de origen/destino, coordenadas, límites, cobertura, método y hashes de los mapas.
 - **Mapas revisados:** [Nobile Rim 1](../pipeline/preview/maps/moon-nobile-rim-1.png), [R03 C01](../pipeline/preview/maps/bo-r03-c01.png) y [Cerro Turubó](../pipeline/preview/maps/bo-cerro-turubo.png). Muestran elevación relativa en gris, centrada en la mediana y recortada al intervalo −100 a +100 m; no son mapas de sombreado. En Nobile se satura visualmente el 57 % del recorte. La saturación afecta solo la visualización, no las métricas.
@@ -52,4 +52,4 @@ Las tres ventanas se remuestrearon a una cuadrícula de análisis de 40 m (100 �
 - Método y sistema de clasificación: [`science/pipeline/README.md`](../pipeline/README.md).
 - Producto LOLA y descripción del porcentaje interpolado: [NASA GSFC PGDA, High-Resolution LOLA Topography for Lunar South Pole Sites](https://pgda.gsfc.nasa.gov/products/78).
 
-**Uso de IA y revisión:** OpenAI Codex asistió en la síntesis y redacción de esta ficha usando el manifiesto integrado, la documentación del pipeline y la ficha NASA enlazada. Revisión humana de los cálculos e interpretación pendiente antes de marcar la issue como lista para publicación.
+**Uso de IA y revisión:** OpenAI Codex asistió en la síntesis y redacción de esta ficha usando el manifiesto integrado, la documentación del pipeline y la ficha NASA enlazada. Federico revisó el commit `4df003d` frente al manifiesto y la reproducción de #12, y confirmó que coinciden las cifras, los mapas y las fuentes de las tres ventanas. Queda pendiente confirmar expresamente la revisión humana de la interpretación antes de integrar o publicar.
