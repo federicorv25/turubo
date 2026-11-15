@@ -8,7 +8,7 @@ export function renderExperience(
   story: Story,
   state: JourneyState,
   lang: Lang,
-  actions: { update: (next: JourneyState) => void; openAnalysis: (world: World) => void }
+  actions: { update: (next: JourneyState) => void; openAnalysis: (world: World) => void; analysisLabel?: string }
 ) {
   const m = messages[lang]
   const scene = story.scenes[state.sceneId]
@@ -47,7 +47,7 @@ export function renderExperience(
       )))
     }
   }
-  choices.append(actionButton(m.analysis, () => actions.openAnalysis(scene.world), 'secondary'))
+  choices.append(actionButton(actions.analysisLabel ?? m.analysis, () => actions.openAnalysis(scene.world), 'secondary'))
   section.append(choices)
   container.replaceChildren(section)
 }

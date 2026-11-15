@@ -3,6 +3,12 @@ import { messages } from '../app/i18n'
 import { panelCopy } from './copy'
 import './analysis.css'
 
+type PanelExtras = {
+  finding?: () => HTMLElement
+  method?: () => HTMLElement
+  backLabel?: string
+}
+
 type RenderOpts = {
   container: HTMLElement
   data: Analysis
@@ -10,6 +16,7 @@ type RenderOpts = {
   lang: Lang
   onWorld: (world: World) => void
   onBack: () => void
+  extras: PanelExtras
 }
 
 const selectedRankId: Partial<Record<Destination, string>> = {}
@@ -20,13 +27,14 @@ export function renderAnalysis(
   world: World,
   lang: Lang,
   onSelect: (world: World) => void,
-  onBack: () => void
+  onBack: () => void,
+  extras: PanelExtras = {}
 ) {
-  renderPanel({ container, data, world, lang, onWorld: onSelect, onBack })
+  renderPanel({ container, data, world, lang, onWorld: onSelect, onBack, extras })
 }
 
 function renderPanel(opts: RenderOpts) {
-  const { container, data, world, lang, onWorld, onBack } = opts
+  const { container, data, world, lang, onWorld, onBack, extras } = opts
   const m = messages[lang]
   const p = panelCopy[lang]
   const section = document.createElement('section')
@@ -60,6 +68,8 @@ function renderPanel(opts: RenderOpts) {
     worlds.append(button)
   }
   section.append(worlds)
+  const finding = extras.finding?.()
+  if (finding) section.append(finding)
 
   const live = document.createElement('div')
   live.className = 'analysis-live'
@@ -82,11 +92,14 @@ function renderPanel(opts: RenderOpts) {
   const back = document.createElement('button')
   back.type = 'button'
   back.className = 'secondary'
-  back.textContent = m.story
+  back.textContent = extras.backLabel ?? m.story
   back.onclick = onBack
   actions.append(back)
 
-  section.append(method, actions)
+  section.append(method)
+  const methodDetails = extras.method?.()
+  if (methodDetails) section.append(methodDetails)
+  section.append(actions)
   container.replaceChildren(section)
 }
 
