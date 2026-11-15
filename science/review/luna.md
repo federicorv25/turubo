@@ -1,12 +1,12 @@
 # Revisión Tierra–Luna: Nobile Rim 1 y Valle de la Luna
 
-**Issue:** [#3](https://github.com/federicorv25/turubo-atlas/issues/3)  
-**Estado de esta ficha:** revisión de Luciana preparada sobre el paquete técnico integrado en #12; requiere revisión humana antes de publicar en la experiencia.  
+**Issue:** [#3](https://github.com/federicorv25/turubo-atlas/issues/3)
+**Estado de esta ficha:** revisión de Luciana preparada sobre el paquete técnico integrado en #12; requiere revisión humana antes de publicar en la experiencia.
 **Alcance:** comparación topográfica exploratoria. No evalúa seguridad de aterrizaje ni selecciona un sitio lunar.
 
 ## Resultado que puede comunicarse
 
-La ventana terrestre R03 C01 es la primera entre las 25 ventanas del Valle de la Luna de San José de Chiquitos en el ranking de similitud de #12, pero sus métricas muestran diferencias importantes respecto de Nobile Rim 1. La pendiente mediana de Nobile (14,70°) es aproximadamente el doble que la de R03 C01 (7,16°); su relieve P95−P5 (624,61 m) es 2,72 veces mayor (R03 C01: 229,61 m). Por tanto, el resultado sostiene una **semejanza parcial en el rango general de pendientes**, no una equivalencia de terreno: el relieve lunar medido en esta ventana es mucho mayor.
+La ventana terrestre R03 C01 es la primera entre las 25 ventanas del Valle de la Luna de San José de Chiquitos en el ranking de similitud de #12, pero sus métricas muestran diferencias importantes respecto de Nobile Rim 1. La pendiente mediana de Nobile (14,70°) es aproximadamente el doble que la de R03 C01 (7,16°); su relieve P95−P5 (624,61 m) es 2,72 veces mayor (R03 C01: 229,61 m). Como comparación puntual, la pendiente P90 de R03 C01 (14,54°) se aproxima a la mediana de Nobile (14,70°), aunque son percentiles distintos y no demuestran que las distribuciones sean similares. El relieve lunar medido en esta ventana es mucho mayor; el ranking no implica equivalencia de terreno.
 
 El Cerro Turubó es un ejemplo terrestre guiado y se mantiene fuera de la cuadrícula y del ranking. Su relieve (119,12 m) es menor que el de R03 C01 y Nobile; la pendiente mediana es 2,15° y la P90, 13,56°. Mostrarlo por separado evita presentarlo como candidato ganador o como análogo lunar.
 
@@ -42,7 +42,7 @@ Las tres ventanas se remuestrearon a una cuadrícula de análisis de 40 m (100 �
 
 ### Texto breve para la interfaz
 
-**ES:** «La ventana R03 C01 del Valle de la Luna es la más parecida de esta muestra a Nobile Rim 1 según el método del proyecto. Aun así, Nobile presenta mayor pendiente mediana (14,70° frente a 7,16°) y casi 2,72 veces el relieve (624,61 m frente a 229,61 m). El DEM lunar de 5 m incluye una alta proporción de píxeles interpolados; esta comparación topográfica no evalúa seguridad ni habitabilidad.»
+**ES:** «La ventana R03 C01 del Valle de la Luna es la más parecida de esta muestra a Nobile Rim 1 según el método del proyecto. Aun así, Nobile presenta mayor pendiente mediana (14,70° frente a 7,16°) y aproximadamente 2,72 veces el relieve (624,61 m frente a 229,61 m). El DEM lunar de 5 m incluye una alta proporción de píxeles interpolados; esta comparación topográfica no evalúa seguridad ni habitabilidad.»
 
 **EN:** “Among the sampled Valle de la Luna windows, R03 C01 is the closest to Nobile Rim 1 under the project’s method. Even so, Nobile has a higher median slope (14.70° vs. 7.16°) and about 2.72 times the relief (624.61 m vs. 229.61 m). The 5 m lunar DEM contains a high proportion of interpolated pixels; this topographic comparison does not assess safety or habitability.”
 
